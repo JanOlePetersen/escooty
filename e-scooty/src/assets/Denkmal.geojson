@@ -1,0 +1,316 @@
+{
+	"type" : "FeatureCollection",
+	"name" : "Haltestelle_JSON",
+	"features" : [
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.65358, 53.756 ]
+			},
+			"properties" : {
+				"NAME" : "Bismarckschule"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.65421, 53.75761 ]
+			},
+			"properties" : {
+				"NAME" : "Jüdischer Friedhof"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.65803, 53.75091 ]
+			},
+			"properties" : {
+				"NAME" : "Knecht’sche Hallen"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.67144, 53.76079 ]
+			},
+			"properties" : {
+				"NAME" : "Backsteinvillen Kaltenweide"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6654, 53.75463 ]
+			},
+			"properties" : {
+				"NAME" : "Villen Mühlendamm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.66396, 53.75525 ]
+			},
+			"properties" : {
+				"NAME" : "Eckbebauung Mühlendamm/Mühlenstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.66826, 53.760109 ]
+			},
+			"properties" : {
+				"NAME" : "Villen Roonstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.652318, 53.753088 ]
+			},
+			"properties" : {
+				"NAME" : "Wohn- und Geschäftshaus"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.65289, 53.75322 ]
+			},
+			"properties" : {
+				"NAME" : "Kirche St. Nikolai mit Ausstattung"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.63498, 53.75356 ]
+			},
+			"properties" : {
+				"NAME" : "Wohnhaus"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.659355, 53.756548 ]
+			},
+			"properties" : {
+				"NAME" : "Wohn- und Geschäftshaus"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.65185, 53.75731 ]
+			},
+			"properties" : {
+				"NAME" : "Bankgebäude"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.65254, 53.7571 ]
+			},
+			"properties" : {
+				"NAME" : "Amtsgericht"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.63596, 53.75475 ]
+			},
+			"properties" : {
+				"NAME" : "Wohnhaus"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.656638, 53.755848 ]
+			},
+			"properties" : {
+				"NAME" : "Industriemuseum"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.654169, 53.757501 ]
+			},
+			"properties" : {
+				"NAME" : "Trauerhalle"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.650443, 53.753157 ]
+			},
+			"properties" : {
+				"NAME" : "Wohn- und Geschäftshaus"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.652391, 53.749325 ]
+			},
+			"properties" : {
+				"NAME" : "Fachhallenhaus mit Wohnhausanbau"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.64636, 53.75606 ]
+			},
+			"properties" : {
+				"NAME" : "Ehemaliger Wasserturm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.66691, 53.75685 ]
+			},
+			"properties" : {
+				"NAME" : "Villa Mendel"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.670557, 53.760581 ]
+			},
+			"properties" : {
+				"NAME" : "Villa"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.67077, 53.7609 ]
+			},
+			"properties" : {
+				"NAME" : "Villa (Wohn- u. Büronutzung)"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.663929, 53.755099 ]
+			},
+			"properties" : {
+				"NAME" : "Wohn- und Geschäftshaus"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.665662, 53.75451 ]
+			},
+			"properties" : {
+				"NAME" : "Villa Schlüter"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.642632, 53.76292 ]
+			},
+			"properties" : {
+				"NAME" : "Bohlenscheune"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6376, 53.75363 ]
+			},
+			"properties" : {
+				"NAME" : "Fachhallenkate"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.656941, 53.75236 ]
+			},
+			"properties" : {
+				"NAME" : "Markthalle Elmshorn"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.65448, 53.75435 ]
+			},
+			"properties" : {
+				"NAME" : "Rathaus"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.644594, 53.744274 ]
+			},
+			"properties" : {
+				"NAME" : "Reit- und Fahrschule"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.644476, 53.745451 ]
+			},
+			"properties" : {
+				"NAME" : "Wohn- und Wirtschaftsgebäude"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.670629, 53.755589 ]
+			},
+			"properties" : {
+				"NAME" : "Technik- und Bademeisterhaus"
+			}
+		}
+	]
+}
