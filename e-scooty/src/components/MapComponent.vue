@@ -281,6 +281,9 @@ export default {
       });
 
       if (intersections.length > 0) {
+        intersections.forEach((intersection) => {
+          console.log(`{ ${intersection.stellplatzId}, ${intersection.parkverbotId} }`);
+        });
         console.log("Überschneidungen gefunden:", intersections);
         alert(`Überschneidungen gefunden: ${intersections.length}`);
       } else {

@@ -64,7 +64,11 @@ body {
 .dropdown-item.active:hover, #leichte-sprache .green:hover {
     background: #55CC55;
 }
-  
+
+.dropdown-item:hover {
+    cursor: pointer;
+}
+
 .accept:hover, .cancel {
     background-color: #D3D3D3;
     --bs-btn-hover-border-color: #6C757D;
