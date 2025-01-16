@@ -53,10 +53,12 @@ export default {
       escooterStellplatz: Escooter_Stellplatz,
       escooterParkverbot: EScooter_Parkverbot_EL,
       geojsonOptions: {
-        //"color": "ffffff",
+        //"color": "#ffffff",
       },
       geojsonOptions2: {
-        "color": "ff0000",
+        "stroke": "true",
+        "color": "#ff0000",
+        "weight": "3",
       }
     };
   },
