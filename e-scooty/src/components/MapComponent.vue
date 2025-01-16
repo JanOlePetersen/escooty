@@ -88,6 +88,13 @@ const busStopIcon = L.icon({
   // iconAnchor: [12, 25], // Punkt des Icons, der auf den Marker zeigt
   // popupAnchor: [0, -25] // Punkt, von dem aus das Popup relativ zum Icon geöffnet wird
 });
+import denkmalIconUrl from "../assets/landmark-solid.svg"; 
+const denkmalIcon = L.icon({
+  iconUrl: denkmalIconUrl,
+  iconSize: [15, 15], // Größe des Icons
+  // iconAnchor: [12, 25], // Punkt des Icons, der auf den Marker zeigt
+  // popupAnchor: [0, -25] // Punkt, von dem aus das Popup relativ zum Icon geöffnet wird
+});
 
 export default {
   components: {
@@ -203,7 +210,9 @@ export default {
         }
       },
       geojsonOptionsDenkmal: {
-        "color": "blue"
+        pointToLayer: (feature, latlng) => {
+          return L.marker(latlng, { icon: denkmalIcon });
+        }
       },
     };
   },
