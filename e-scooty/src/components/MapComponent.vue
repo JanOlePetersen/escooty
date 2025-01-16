@@ -76,9 +76,14 @@ export default {
       elmshornVelorouten: Velorouten,
       elmshornBebauungsFlaeche: BebauungsFlaeche,
       geojsonOptionsStellplatz: {
-        "stroke": "true",
-        "color": "#ff0000",
-        "weight": "3",
+      // Färbt die jeweilige genannte EScooterID ein
+        onEachFeature: (feature, layer) => {
+          if (feature.properties && feature.properties.Escoote_ID === 1) {
+            layer.setStyle({
+              color: 'red'
+            });
+          }
+        }
       },
       geojsonOptionsParkverbot: {
         //"color": "#ffffff",
@@ -105,7 +110,7 @@ export default {
         "color": "blue"
       },
       geojsonOptionsBebauungsFlaeche: {
-        "color": "red"
+        "color": "white"
       },
     };
   },
