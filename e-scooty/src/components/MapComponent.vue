@@ -81,6 +81,14 @@ import L from "leaflet";
 import CheckBox from "../assets/square-check-regular.svg";
 import CheckBoxOff from "../assets/square-regular.svg";
 
+import busStopIconUrl from "../assets/bus-solid.svg"; 
+const busStopIcon = L.icon({
+  iconUrl: busStopIconUrl,
+  iconSize: [15, 15], // Größe des Icons
+  // iconAnchor: [12, 25], // Punkt des Icons, der auf den Marker zeigt
+  // popupAnchor: [0, -25] // Punkt, von dem aus das Popup relativ zum Icon geöffnet wird
+});
+
 export default {
   components: {
     LMap,
@@ -149,14 +157,7 @@ export default {
       },
       geojsonOptionsHaltestellen: {
         pointToLayer: (feature, latlng) => {
-          return L.circleMarker(latlng, {
-            radius: 5,
-            fillColor: "#ff7800",
-            color: "#000",
-            weight: 1,
-            opacity: 1,
-            fillOpacity: 0.8
-          });
+          return L.marker(latlng, { icon: busStopIcon });
         }
       },
       geojsonOptionsStrassenbeleuchtung: {
