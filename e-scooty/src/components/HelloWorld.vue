@@ -22,7 +22,8 @@
         layer-type="base"
         name="OpenStreetMap"
       ></l-tile-layer>
-      <l-geo-json :geojson="geojson" :options="geojsonOptions" />
+      <l-geo-json :geojson="escooterStellplatz" :options="geojsonOptions" />
+      <l-geo-json :geojson="escooterParkverbot" :options="geojsonOptions" />
     </l-map>
   </div>
 </template>
@@ -31,6 +32,7 @@
 import "leaflet/dist/leaflet.css";
 import { LMap, LTileLayer, LGeoJson } from "@vue-leaflet/vue-leaflet";
 import Escooter_Stellplatz from "../assets/Escooter_Stellplatz.geojson";
+import EScooter_Parkverbot_EL from "../assets/EScooter_Parkverbot_EL.geojson";
 // import L from "leaflet";
 // import { onMounted } from "vue";
 
@@ -43,7 +45,11 @@ export default {
   data() {
     return {
       zoom: 13,
-      geojson: Escooter_Stellplatz,
+      escooterStellplatz: Escooter_Stellplatz,
+      escooterParkverbot: EScooter_Parkverbot_EL,
+      geojsonOptions: {
+        // Optionen für die GeoJSON-Darstellung
+      }
     };
   },
 };
