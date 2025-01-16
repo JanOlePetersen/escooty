@@ -50,6 +50,7 @@ import Escooter_Stellplatz from "../assets/Escooter_Stellplatz.geojson";
 import EScooter_Parkverbot_EL from "../assets/EScooter_Parkverbot_EL.geojson";
 import Haltestellen from "../assets/Haltestellen.geojson";
 import BebauungsFlaeche from "../assets/BebauungsFlaeche.geojson";
+import L from "leaflet";
 
 export default {
   components: {
@@ -78,7 +79,16 @@ export default {
         //"color": "#ffffff",
       },
       geojsonOptionsHaltestellen: {
-        "color": "red"
+        pointToLayer: (feature, latlng) => {
+          return L.circleMarker(latlng, {
+            radius: 5,
+            fillColor: "#ff7800",
+            color: "#000",
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+          });
+        }
       },
       // geojsonOptionsStrassenbeleuchtung: {
       //   "color": "yellow"
