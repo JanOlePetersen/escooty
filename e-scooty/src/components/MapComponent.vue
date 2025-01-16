@@ -1,5 +1,5 @@
 <script setup>
-  var filterOneOptions = ["Straßennetz", "Veloruten", "Stellplätze", "Bushaltestellen", "Parkverbot", "Bebauungsfläche", "Straßenbeleuchtung"];
+  var filterOneOptions = ["Straßennetz", "Veloruten", "Stellplätze", "Bushaltestellen", "Parkverbot", "Bebauungsfläche", "Straßenbeleuchtung", "Denkmäler"];
   var filterTwoOptions = [2023, 2024, 2025];
 </script>
 
@@ -49,14 +49,14 @@
         layer-type="base"
         name="OpenStreetMap"
       ></l-tile-layer>
-      <!-- <l-geo-json v-if="layerVisibility[6].visible" :geojson="elmshornStrassenbeleuchtung" :options="geojsonOptionsStrassenbeleuchtung" /> -->
+      <l-geo-json v-if="layerVisibility[6].visible" :geojson="elmshornStrassenbeleuchtung" :options="geojsonOptionsStrassenbeleuchtung" />
       <l-geo-json v-if="layerVisibility[0].visible" :geojson="elmshornStraßennetz" :options="geojsonOptionsStraßennetz" />
       <l-geo-json v-if="layerVisibility[1].visible" :geojson="elmshornVelorouten" :options="geojsonOptionsVelorouten" />
       <l-geo-json v-if="layerVisibility[4].visible" :geojson="escooterParkverbot" :options="geojsonOptionsParkverbot" />
       <l-geo-json v-if="layerVisibility[2].visible" :geojson="escooterStellplatz" :options="geojsonOptionsStellplatz" />
       <l-geo-json v-if="layerVisibility[3].visible" :geojson="elmshornHaltestellen" :options="geojsonOptionsHaltestellen" />
       <l-geo-json v-if="layerVisibility[5].visible" :geojson="elmshornBebauungsFlaeche" :options="geojsonOptionsBebauungsFlaeche" />
-      <l-geo-json v-if="layerVisibility[6].visible" :geojson="elmDenkmal" :options="geojsonOptionsDenkmal" />
+      <l-geo-json v-if="layerVisibility[7].visible" :geojson="elmDenkmal" :options="geojsonOptionsDenkmal" />
 
     </l-map>
   </div>
@@ -66,7 +66,7 @@
 import '../assets/main.css';
 import "leaflet/dist/leaflet.css";
 import { LMap, LTileLayer, LGeoJson } from "@vue-leaflet/vue-leaflet";
-// import Strassenbeleuchtung from "../assets/Strassenbeleuchtung.geojson";
+import Strassenbeleuchtung from "../assets/Strassenbeleuchtung.geojson";
 import Straßennetz from "../assets/Straßennetz.geojson";
 import Velorouten from "../assets/Velorouten.geojson";
 import Escooter_Stellplatz from "../assets/Escooter_Stellplatz.geojson";
@@ -93,13 +93,14 @@ export default {
         { id: 3, name: "Straßenbeleuchtung", visible: true },
         { id: 4, name: "Parkverbot", visible: true },
         { id: 5, name: "Bebauungsfläche", visible: true },
-        { id: 6, name: "Straßenbeleuchtung", visible: true }
+        { id: 6, name: "Straßenbeleuchtung", visible: true },
+        { id: 7, name: "Denkmäler", visible: true }
       ],
       zoom: 13,
       escooterStellplatz: Escooter_Stellplatz,
       escooterParkverbot: EScooter_Parkverbot_EL,
       elmshornHaltestellen: Haltestellen,
-      // elmshornStrassenbeleuchtung: Strassenbeleuchtung,
+      elmshornStrassenbeleuchtung: Strassenbeleuchtung,
       elmshornStraßennetz: Straßennetz,
       elmshornVelorouten: Velorouten,
       elmshornBebauungsFlaeche: BebauungsFlaeche,
@@ -153,9 +154,18 @@ export default {
           });
         }
       },
-      // geojsonOptionsStrassenbeleuchtung: {
-      //   "color": "yellow"
-      // },
+      geojsonOptionsStrassenbeleuchtung: {
+        pointToLayer: (feature, latlng) => {
+          return L.circleMarker(latlng, {
+            radius: 5,
+            fillColor: "yellow",
+            color: "#000",
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+          });
+        }
+      },
       geojsonOptionsStraßennetz: {
         "color": "green"
       },
