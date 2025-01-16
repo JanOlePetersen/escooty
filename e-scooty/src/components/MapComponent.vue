@@ -56,6 +56,8 @@
       <l-geo-json v-if="layerVisibility[2].visible" :geojson="escooterStellplatz" :options="geojsonOptionsStellplatz" />
       <l-geo-json v-if="layerVisibility[3].visible" :geojson="elmshornHaltestellen" :options="geojsonOptionsHaltestellen" />
       <l-geo-json v-if="layerVisibility[5].visible" :geojson="elmshornBebauungsFlaeche" :options="geojsonOptionsBebauungsFlaeche" />
+      <l-geo-json v-if="layerVisibility[6].visible" :geojson="elmDenkmal" :options="geojsonOptionsDenkmal" />
+
     </l-map>
   </div>
 </template>
@@ -71,6 +73,7 @@ import Escooter_Stellplatz from "../assets/Escooter_Stellplatz.geojson";
 import EScooter_Parkverbot_EL from "../assets/EScooter_Parkverbot_EL.geojson";
 import Haltestellen from "../assets/Haltestellen.geojson";
 import BebauungsFlaeche from "../assets/BebauungsFlaeche.geojson";
+import Denkmal from "../assets/Denkmal.geojson";
 import L from "leaflet";
 
 export default {
@@ -100,6 +103,7 @@ export default {
       elmshornStraßennetz: Straßennetz,
       elmshornVelorouten: Velorouten,
       elmshornBebauungsFlaeche: BebauungsFlaeche,
+      elmDenkmal: Denkmal,
       geojsonOptionsStellplatz: {
       // Färbt die jeweilige genannte EScooterID ein
       color: 'blue',
@@ -181,6 +185,9 @@ export default {
             });
           }
         }
+      },
+      geojsonOptionsDenkmal: {
+        "color": "blue"
       },
     };
   },
