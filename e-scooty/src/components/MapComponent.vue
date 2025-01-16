@@ -40,6 +40,9 @@
           </a>
         </li>
       </ul>
+      <button @click="checkIntersections" class="btn btn-primary shadow" style="margin-left: 10vw">
+        Prüfe Überschneidungen
+      </button>
     </div>
   </div>
 
@@ -79,6 +82,8 @@ import Haltestellen from "../assets/Haltestellen.geojson";
 import BebauungsFlaeche from "../assets/BebauungsFlaeche.geojson";
 import Denkmal from "../assets/Denkmal.geojson";
 import L from "leaflet";
+
+import * as turf from "@turf/turf";
 
 import CheckBox from "../assets/square-check-regular.svg";
 import CheckBoxOff from "../assets/square-regular.svg";
@@ -250,8 +255,40 @@ export default {
     },
     delay(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
-    }
-  }
+
+    },
+    checkIntersections() {
+      var i = 0;
+      var j = 0;
+      const intersections = [];
+      const parkverbotFeatures = this.escooterParkverbot.features;
+      const stellplatzFeatures = this.escooterStellplatz.features;
+
+      stellplatzFeatures.forEach((stellplatzFeature) => {
+        i++;
+        j = 0;
+        parkverbotFeatures.forEach((parkverbotFeature) => {
+          j++;
+          const isIntersecting = turf.booleanIntersects(stellplatzFeature, parkverbotFeature);
+          if (isIntersecting) {
+            intersections.push({
+              stellplatzId: i,
+              parkverbotId: j,
+            });
+            return;
+          }
+        });
+      });
+
+      if (intersections.length > 0) {
+        console.log("Überschneidungen gefunden:", intersections);
+        alert(`Überschneidungen gefunden: ${intersections.length}`);
+      } else {
+        console.log("Keine Überschneidungen gefunden.");
+        alert("Keine Überschneidungen gefunden.");
+      }
+    },
+  },
 };
 </script>
 
