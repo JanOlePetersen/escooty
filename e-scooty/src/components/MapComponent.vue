@@ -5,12 +5,12 @@
 
 
 <template>
-  <div class="nav justify-content-center mb-4">
+  <div class="nav justify-content-center">
     <h1>E Scooty</h1>
   </div>
 
   <div>
-    <div class="mb-5"> <!-- Filter active / completed project partizipation -->
+    <div> <!-- Filter active / completed project partizipation -->
       <button @click="dropdownInformation = !dropdownInformation"  class="btn btn-outline-dropdown align-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-active">Ebenen</button>
       <ul v-show="dropdownInformation" @:mouseleave="dropdownInformation = false" class="vue-dropdown-menu list-style-none text-small gap-1 p-2 rounded-3 shadow w-25 z-2 ml-filter-one" id="traffic-options">
         <li v-for="(option, index) in filterOneOptions" :key="index"><a class="dropdown-item rounded-2 active" @mousedown="noneLoaded = false" :id="options" v-on:mouseup="dropdownInformation = !dropdownInformation;" aria-current="page">{{ option }}</a></li>
