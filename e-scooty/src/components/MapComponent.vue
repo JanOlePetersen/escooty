@@ -27,8 +27,9 @@
         layer-type="base"
         name="OpenStreetMap"
       ></l-tile-layer>
-      <l-geo-json :geojson="escooterStellplatz" :options="geojsonOptionsStellplatz" />
       <l-geo-json :geojson="escooterParkverbot" :options="geojsonOptionsParkverbot" />
+      <l-geo-json :geojson="escooterStellplatz" :options="geojsonOptionsStellplatz" />
+      
 
     </l-map>
   </div>
