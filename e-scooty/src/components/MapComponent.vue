@@ -27,8 +27,12 @@
         layer-type="base"
         name="OpenStreetMap"
       ></l-tile-layer>
+      <!-- <l-geo-json :geojson="elmshornStrassenbeleuchtung" :options="geojsonOptionsStrassenbeleuchtung" /> -->
+      <l-geo-json :geojson="elmshornStraßennetz" :options="geojsonOptionsStraßennetz" />
+      <l-geo-json :geojson="elmshornVelorouten" :options="geojsonOptionsVelorouten" />
       <l-geo-json :geojson="escooterParkverbot" :options="geojsonOptionsParkverbot" />
       <l-geo-json :geojson="escooterStellplatz" :options="geojsonOptionsStellplatz" />
+      <l-geo-json :geojson="elmshornHaltestellen" :options="geojsonOptionsHaltestellen" />
       
 
     </l-map>
@@ -38,8 +42,12 @@
 <script>
 import "leaflet/dist/leaflet.css";
 import { LMap, LTileLayer, LGeoJson } from "@vue-leaflet/vue-leaflet";
+// import Strassenbeleuchtung from "../assets/Strassenbeleuchtung.geojson";
+import Straßennetz from "../assets/Straßennetz.geojson";
+import Velorouten from "../assets/Velorouten.geojson";
 import Escooter_Stellplatz from "../assets/Escooter_Stellplatz.geojson";
 import EScooter_Parkverbot_EL from "../assets/EScooter_Parkverbot_EL.geojson";
+import Haltestellen from "../assets/Haltestellen.geojson";
 
 export default {
   components: {
@@ -54,6 +62,10 @@ export default {
       zoom: 13,
       escooterStellplatz: Escooter_Stellplatz,
       escooterParkverbot: EScooter_Parkverbot_EL,
+      elmshornHaltestellen: Haltestellen,
+      // elmshornStrassenbeleuchtung: Strassenbeleuchtung,
+      elmshornStraßennetz: Straßennetz,
+      elmshornVelorouten: Velorouten,
       geojsonOptionsStellplatz: {
         "stroke": "true",
         "color": "#ff0000",
@@ -61,7 +73,19 @@ export default {
       },
       geojsonOptionsParkverbot: {
         //"color": "#ffffff",
-      }
+      },
+      geojsonOptionsHaltestellen: {
+        "color": "red"
+      },
+      // geojsonOptionsStrassenbeleuchtung: {
+      //   "color": "yellow"
+      // },
+      geojsonOptionsStraßennetz: {
+        "color": "green"
+      },
+      geojsonOptionsVelorouten: {
+        "color": "blue"
+      },
     };
   },
 };
