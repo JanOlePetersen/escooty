@@ -110,7 +110,28 @@ export default {
         "color": "blue"
       },
       geojsonOptionsBebauungsFlaeche: {
-        "color": "white"
+        onEachFeature: (feature, layer) => {
+          if (feature.properties && feature.properties.allgArtDerBaulNutzung === 1000) {
+            layer.setStyle({
+              color: 'white'
+            });
+          }
+          if (feature.properties && feature.properties.allgArtDerBaulNutzung === 2000) {
+            layer.setStyle({
+              color: 'yellow'
+            });
+          }
+          if (feature.properties && feature.properties.allgArtDerBaulNutzung === 3000) {
+            layer.setStyle({
+              color: 'red'
+            });
+          }
+          if (feature.properties && feature.properties.allgArtDerBaulNutzung === 4000) {
+            layer.setStyle({
+              color: 'red'
+            });
+          }
+        }
       },
     };
   },
