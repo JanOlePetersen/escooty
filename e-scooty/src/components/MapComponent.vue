@@ -86,14 +86,16 @@ import CheckBoxOff from "../assets/square-regular.svg";
 import busStopIconUrl from "../assets/bus-solid.svg"; 
 const busStopIcon = L.icon({
   iconUrl: busStopIconUrl,
-  iconSize: [15, 15], // Größe des Icons
+  iconSize: [15, 15],
+  className: 'custom-icon', // Größe des Icons
   // iconAnchor: [12, 25], // Punkt des Icons, der auf den Marker zeigt
   // popupAnchor: [0, -25] // Punkt, von dem aus das Popup relativ zum Icon geöffnet wird
 });
 import denkmalIconUrl from "../assets/landmark-solid.svg"; 
 const denkmalIcon = L.icon({
   iconUrl: denkmalIconUrl,
-  iconSize: [15, 15], // Größe des Icons
+  iconSize: [15, 15],
+  className: 'custom-icon', // Größe des Icons
   // iconAnchor: [12, 25], // Punkt des Icons, der auf den Marker zeigt
   // popupAnchor: [0, -25] // Punkt, von dem aus das Popup relativ zum Icon geöffnet wird
 });
@@ -256,5 +258,9 @@ main {
 
 .ml-filter-two {
   margin-left: 55vw !important;
+}
+
+.custom-icon{
+  filter: invert(57%) sepia(7%) saturate(14%) hue-rotate(330deg) brightness(86%) contrast(90%);
 }
 </style>
