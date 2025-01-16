@@ -89,8 +89,23 @@ export default {
               layer.setStyle({
               color: 'red'
             });
+            },
+            mouseover: () => {
+              layer.setStyle({
+                weight: 7
+              })
+            },
+            mouseout: () => {
+              layer.setStyle({
+                weight: 2
+              })
+            },
+            popupclose: () => {
+              layer.setStyle({
+                color: 'blue'
+              })
             }
-          });
+          })
         }
       },
       geojsonOptionsParkverbot: {
