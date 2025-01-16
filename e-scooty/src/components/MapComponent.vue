@@ -61,7 +61,7 @@
       <l-geo-json v-if="layerVisibility[3].visible" :geojson="elmshornHaltestellen" :options="geojsonOptionsHaltestellen" />
       <l-geo-json v-if="layerVisibility[5].visible" :geojson="elmshornBebauungsFlaeche" :options="geojsonOptionsBebauungsFlaeche" />
       <l-geo-json v-if="layerVisibility[7].visible" :geojson="elmDenkmal" :options="geojsonOptionsDenkmal" />
-
+      <LHeatmapLayer v-if="layerVisibility[0].visible" :lat-lngs="heatmapData" :options="heatmapOptions" />
     </l-map>
   </div>
 </template>
@@ -69,7 +69,7 @@
 <script>
 import '../assets/main.css';
 import "leaflet/dist/leaflet.css";
-import { LMap, LTileLayer, LGeoJson } from "@vue-leaflet/vue-leaflet";
+import { LMap, LTileLayer, LGeoJson, LHeatmapLayer } from "@vue-leaflet/vue-leaflet";
 import Strassenbeleuchtung from "../assets/Strassenbeleuchtung.geojson";
 import Straßennetz from "../assets/Straßennetz.geojson";
 import Velorouten from "../assets/Velorouten.geojson";
@@ -79,6 +79,8 @@ import Haltestellen from "../assets/Haltestellen.geojson";
 import BebauungsFlaeche from "../assets/BebauungsFlaeche.geojson";
 import Denkmal from "../assets/Denkmal.geojson";
 import L from "leaflet";
+import 'leaflet/dist/leaflet.css';
+import 'leaflet.heat';
 
 import CheckBox from "../assets/square-check-regular.svg";
 import CheckBoxOff from "../assets/square-regular.svg";
@@ -105,6 +107,7 @@ export default {
     LMap,
     LTileLayer,
     LGeoJson,
+    LHeatmapLayer
   },
   data() {
     return {
@@ -218,6 +221,15 @@ export default {
           return L.marker(latlng, { icon: denkmalIcon });
         }
       },
+      heatmapData: [ 
+        [53.744274, 9.644594, 1], 
+        [9.644594, 53.744274, 0.5], 
+        // Weitere Punkte hier 
+        ], 
+        heatmapOptions: { 
+          radius: 25 
+        }, 
+      
     };
   },
   methods: {
