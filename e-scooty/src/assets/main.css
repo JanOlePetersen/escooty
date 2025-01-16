@@ -1,128 +1,170 @@
+@import "bootstrap";
+
 .center {
     margin: auto;
     width: 50%;
     padding: 10px;
-  }
+}
   
-  .format {
-    width: 50vw;
-    height: 50vh;
-  }
+.format {
+    width: 60vw;
+    height: 60vh;
+}
   
-  .display-right {
+.display-right {
     display: right;
-  }
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ Colors ~~~~~~~~~~~~~~~~~~~~~~~~ */
+nav, .download:hover, .vue-dropdown-menu li a:hover, .vue-dropdown-menu-settings li a:hover, .project-hover:hover {
+  background-color: #D3D3D3;
+}
   
-  /* ~~~~~~~~~~~ Button designs (Colors) ~~~~~~~~~~~ */
-  .btn-outline-dropdown {
+#bottom-nav a:hover, #top-nav svg:hover, .dropdown-toggle:hover, .cancel:hover, li .btn:hover {
+    background-color: #F1F1F1;
+}
+  
+.project-background, .vue-dropdown-menu, .vue-dropdown-menu-settings {
+    background-color: #FFFFFF;
+}
+  
+.modal-content {
+    background-color: #F1F1F1;
+}
+  
+body {
+    background-color: #F5F5F5;
+}
+  
+.marked {
+    background-color: #FFFF00;
+}
+  
+.link-hover:hover {
+    color: #808080;
+}
+
+/* ~~~~~~~~~~~ Button designs (Colors) ~~~~~~~~~~~ */
+.btn-outline-dropdown {
     background-color: #FFFFFF;
     --bs-btn-border-color: #808080;
     --bs-btn-hover-border-color: #808080;
     --bs-gradient: none;
-  }
+}
   
-  .accept, .dropdown-item.active {
+.accept, .dropdown-item.active {
     background-color: #90EE90;
     color: #000000;
     --bs-btn-border-color: #808080;
     --bs-gradient: none;
-  }
-  .dropdown-item.active:hover, #leichte-sprache .green:hover {
+}
+.dropdown-item.active:hover, #leichte-sprache .green:hover {
     background: #55CC55;
-  }
+}
   
-  .accept:hover, .cancel {
+.accept:hover, .cancel {
     background-color: #D3D3D3;
     --bs-btn-hover-border-color: #6C757D;
     --bs-btn-border-color: #808080;
     --bs-gradient: none;
-  }
+}
   
-  a, .accept:hover, .cancel {
+a, .accept:hover, .cancel {
     color: #000000;
-  }
+}
   
-  .green {
+.green {
     background: #90EE90;
-  }
+}
   
-  #top-nav {
+#top-nav {
     border-top: #F1F1F1 1px solid;
-  }
+}
   
   
-  /* ~~~~~~~~~~~~~~~~~~~~~~ Nav bars ~~~~~~~~~~~~~~~~~~~~~~ */
-  nav {
+/* ~~~~~~~~~~~~~~~~~~~~~~ Nav bars ~~~~~~~~~~~~~~~~~~~~~~ */
+nav {
     position: fixed;
     display: inline-block;
     width: 100vw;
-  }
+    text-align: center;
+}
   
-  #top-nav {
+#top-nav {
     top: 56px;
     position: fixed;
-  }
+}
   
-  #bottom-nav {
+#bottom-nav {
     bottom: 0;
-  }
+}
   
-  .list-style-none {
+.list-style-none {
     list-style: none;
-  }
+}
   
-  .vue-dropdown-menu, .vue-dropdown-menu-settings {
+.vue-dropdown-menu, .vue-dropdown-menu-settings {
     position: absolute;
-    z-index: var(--bs-dropdown-zindex);
+    z-index: 2;
     margin: 7px 0 0;
     text-align: left;
     list-style: none;
-    border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
-    border-radius: var(--bs-dropdown-border-radius);
-  }
-  .vue-dropdown-menu li, .vue-dropdown-menu-settings li {
+}
+
+.vue-dropdown-menu li, .vue-dropdown-menu-settings li {
     margin: 3px;
-  }
+}
   
-  .medium-width {
+.medium-width {
     min-width: 30vw;
-  }
+}
   
-  .display-right, .display-simple-right {
+.display-right, .display-simple-right {
     text-align: right;
-  }
+}
   
-  img {
+img {
     object-fit: cover;
-  }
+}
   
-  .settings-img {
+.settings-img {
     object-fit: contain;
     height: 4vh;
     width: 5vw;
-  }
+}
   
-  .s-img {
+.s-img {
     object-fit: contain;
     height: 3vh;
     width: 3vw;
-  }
+}
   
-  .project-image {
+.project-image {
     min-height: 10vh;
     max-height: 15vh;
     width: 100%;
-  }
+}
   
-  .search-img {
+.search-img {
     height: inherit;
     object-fit: contain;
-  }
+}
   
-  .desktop-filter h3 {
+.desktop-filter h3 {
     margin-right: 3vw;
-  }
+}
   
-  .project-search {
+.project-search {
     width: 85%;
-  }
+}
+
+
+.vue-dropdown-menu {
+    width: 16vw;
+    min-width: 200px;
+}
+
+.vue-dropdown-menu-settings {
+    width: 25vw;
+    min-width: 165px;
+}
