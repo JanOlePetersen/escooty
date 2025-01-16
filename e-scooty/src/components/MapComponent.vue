@@ -27,8 +27,9 @@
         layer-type="base"
         name="OpenStreetMap"
       ></l-tile-layer>
-      <l-geo-json :geojson="escooterStellplatz" :options="geojsonOptions2" />
-      <l-geo-json :geojson="escooterParkverbot" :options="geojsonOptions" />
+      <l-geo-json :geojson="escooterStellplatz" :options="geojsonOptionsStellplatz" />
+      <l-geo-json :geojson="escooterParkverbot" :options="geojsonOptionsParkverbot" />
+
     </l-map>
   </div>
 </template>
@@ -52,13 +53,13 @@ export default {
       zoom: 13,
       escooterStellplatz: Escooter_Stellplatz,
       escooterParkverbot: EScooter_Parkverbot_EL,
-      geojsonOptions: {
-        //"color": "#ffffff",
-      },
-      geojsonOptions2: {
+      geojsonOptionsStellplatz: {
         "stroke": "true",
         "color": "#ff0000",
         "weight": "3",
+      },
+      geojsonOptionsParkverbot: {
+        //"color": "#ffffff",
       }
     };
   },
