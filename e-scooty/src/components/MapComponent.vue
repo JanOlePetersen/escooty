@@ -1,5 +1,5 @@
 <script setup>
-  var filterOneOptions = ["Straßennetz", 2024, 2025];
+  var filterOneOptions = ["Straßennetz", "Veloruten", "Stellplätze", "Bushaltestellen", "Parkverbot", "Bebauungsfläche", "Straßenbeleuchtung"];
   var filterTwoOptions = [2023, 2024, 2025];
 </script>
 
@@ -11,14 +11,32 @@
 
   <div>
     <div> <!-- Filter active / completed project partizipation -->
-      <button @click="dropdownInformation = !dropdownInformation"  class="btn btn-outline-dropdown align-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-active">Ebenen</button>
-      <ul v-show="dropdownInformation" @:mouseleave="dropdownInformation = false" class="vue-dropdown-menu list-style-none text-small gap-1 p-2 rounded-3 shadow w-25 z-2 ml-filter-one" id="traffic-options">
-        <li v-for="(option, index) in filterOneOptions" :key="index"><a class="dropdown-item rounded-2 active" @mousedown="noneLoaded = false" :id="options" v-on:mouseup="dropdownInformation = !dropdownInformation;" aria-current="page">{{ option }}</a></li>
+      <button @click="dropdownInformation = !dropdownInformation" class="btn btn-outline-dropdown align-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-layers">Ebenen</button>
+      <ul v-show="dropdownInformation" @mouseleave="dropdownInformation = false" class="vue-dropdown-menu list-style-none text-small gap-1 p-2 rounded-3 shadow w-25 z-2 ml-filter-one" id="layer-options">
+        <li v-for="(option, index) in filterOneOptions" :key="index">
+          <a 
+            class="dropdown-item rounded-2 active layer-option" 
+            @mousedown="noneLoaded = false; handleFilter('layer-' + index)" 
+            :id="'layer-' + index" 
+            @mouseup="filterLayers(index)" 
+            aria-current="page">
+            {{ option }}
+          </a>
+        </li>
       </ul>
 
-      <button @click="dropdownActuality = !dropdownActuality"  class="btn btn-outline-dropdown align-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-active" style="margin-left: 10vw">Anderer Filter</button>
-      <ul v-show="dropdownActuality" @:mouseleave="dropdownActuality = false" class="vue-dropdown-menu list-style-none text-small gap-1 p-2 rounded-3 shadow w-25 z-2 ml-filter-two" id="active-options">
-        <li v-for="(option, index) in filterTwoOptions" :key="index"><a class="dropdown-item rounded-2 active" @mousedown="noneLoaded = false" :id="options" v-on:mouseup="dropdownInformation = !dropdownInformation;" aria-current="page">{{ option }}</a></li>
+      <button @click="dropdownActuality = !dropdownActuality" class="btn btn-outline-dropdown align-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-active" style="margin-left: 10vw">Anderer Filter</button>
+      <ul v-show="dropdownActuality" @mouseleave="dropdownActuality = false" class="vue-dropdown-menu list-style-none text-small gap-1 p-2 rounded-3 shadow w-25 z-2 ml-filter-two" id="active-options">
+        <li v-for="(option, index) in filterTwoOptions" :key="index">
+          <a 
+            class="dropdown-item rounded-2 active active-option" 
+            @mousedown="noneLoaded = false; handleFilter('active-' + index)" 
+            :id="'active-' + index" 
+            @mouseup="filterLayers2()" 
+            aria-current="page">
+            {{ option }}
+          </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -31,15 +49,13 @@
         layer-type="base"
         name="OpenStreetMap"
       ></l-tile-layer>
-      <!-- <l-geo-json :geojson="elmshornStrassenbeleuchtung" :options="geojsonOptionsStrassenbeleuchtung" /> -->
-      <l-geo-json :geojson="elmshornStraßennetz" :options="geojsonOptionsStraßennetz" />
-      <l-geo-json :geojson="elmshornVelorouten" :options="geojsonOptionsVelorouten" />
-      <l-geo-json :geojson="escooterParkverbot" :options="geojsonOptionsParkverbot" />
-      <l-geo-json :geojson="elmshornHaltestellen" :options="geojsonOptionsHaltestellen" />
-      <l-geo-json :geojson="elmshornBebauungsFlaeche" :options="geojsonOptionsBebauungsFlaeche" />
-      <l-geo-json :geojson="escooterStellplatz" :options="geojsonOptionsStellplatz" />
-      
-
+      <!-- <l-geo-json v-if="layerVisibility[6].visible" :geojson="elmshornStrassenbeleuchtung" :options="geojsonOptionsStrassenbeleuchtung" /> -->
+      <l-geo-json v-if="layerVisibility[0].visible" :geojson="elmshornStraßennetz" :options="geojsonOptionsStraßennetz" />
+      <l-geo-json v-if="layerVisibility[1].visible" :geojson="elmshornVelorouten" :options="geojsonOptionsVelorouten" />
+      <l-geo-json v-if="layerVisibility[4].visible" :geojson="escooterParkverbot" :options="geojsonOptionsParkverbot" />
+      <l-geo-json v-if="layerVisibility[2].visible" :geojson="escooterStellplatz" :options="geojsonOptionsStellplatz" />
+      <l-geo-json v-if="layerVisibility[3].visible" :geojson="elmshornHaltestellen" :options="geojsonOptionsHaltestellen" />
+      <l-geo-json v-if="layerVisibility[5].visible" :geojson="elmshornBebauungsFlaeche" :options="geojsonOptionsBebauungsFlaeche" />
     </l-map>
   </div>
 </template>
@@ -67,6 +83,15 @@ export default {
     return {
       dropdownInformation: false,
       dropdownActuality: false,
+      layerVisibility: [
+        { id: 0, name: "Straßennetz", visible: true },
+        { id: 1, name: "Veloruten", visible: true },
+        { id: 2, name: "Stellplätze", visible: true },
+        { id: 3, name: "Straßenbeleuchtung", visible: true },
+        { id: 4, name: "Parkverbot", visible: true },
+        { id: 5, name: "Bebauungsfläche", visible: true },
+        { id: 6, name: "Straßenbeleuchtung", visible: true }
+      ],
       zoom: 13,
       escooterStellplatz: Escooter_Stellplatz,
       escooterParkverbot: EScooter_Parkverbot_EL,
@@ -159,6 +184,24 @@ export default {
       },
     };
   },
+  methods: {
+    handleFilter(itemId) {
+      const clickedElement = document.getElementById(itemId);
+
+      //activate if wasn't active before
+      if (!clickedElement) {
+        console.error(`Element with id ${itemId} not found.`);
+        return;
+      }
+      clickedElement.classList.toggle('active');
+    },
+    filterLayers(id) {
+      this.layerVisibility[id].visible = !this.layerVisibility[id].visible;
+    },
+    filterLayers2(id) {
+      this.layerVisibility[id].visible = !this.layerVisibility[id].visible;
+    }
+  }
 };
 </script>
 
