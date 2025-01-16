@@ -10,7 +10,6 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "core-js": "^3.8.3",
-    "leaflet.heat": "^0.2.0",
     "vue": "^3.2.13"
   },
   "devDependencies": {
