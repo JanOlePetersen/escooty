@@ -164,7 +164,7 @@ export default {
         }
       },
       geojsonOptionsParkverbot: {
-        //"color": "#ffffff",
+        color: 'red'
       },
       geojsonOptionsHaltestellen: {
         pointToLayer: (feature, latlng) => {
@@ -193,22 +193,22 @@ export default {
         onEachFeature: (feature, layer) => {
           if (feature.properties && feature.properties.allgArtDerBaulNutzung === 1000) {
             layer.setStyle({
-              color: 'white'
+              color: '#7bb35d'
             });
           }
           if (feature.properties && feature.properties.allgArtDerBaulNutzung === 2000) {
             layer.setStyle({
-              color: 'yellow'
+              color: '#6cc0df'
             });
           }
           if (feature.properties && feature.properties.allgArtDerBaulNutzung === 3000) {
             layer.setStyle({
-              color: 'red'
+              color: '#a8afb1'
             });
           }
           if (feature.properties && feature.properties.allgArtDerBaulNutzung === 4000) {
             layer.setStyle({
-              color: 'red'
+              color: '#a8afb1'
             });
           }
         }
