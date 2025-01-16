@@ -33,6 +33,7 @@
       <l-geo-json :geojson="escooterParkverbot" :options="geojsonOptionsParkverbot" />
       <l-geo-json :geojson="escooterStellplatz" :options="geojsonOptionsStellplatz" />
       <l-geo-json :geojson="elmshornHaltestellen" :options="geojsonOptionsHaltestellen" />
+      <l-geo-json :geojson="elmshornBebauungsFlaeche" :options="geojsonOptionsBebauungsFlaeche" />
       
 
     </l-map>
@@ -48,6 +49,7 @@ import Velorouten from "../assets/Velorouten.geojson";
 import Escooter_Stellplatz from "../assets/Escooter_Stellplatz.geojson";
 import EScooter_Parkverbot_EL from "../assets/EScooter_Parkverbot_EL.geojson";
 import Haltestellen from "../assets/Haltestellen.geojson";
+import BebauungsFlaeche from "../assets/BebauungsFlaeche.geojson";
 
 export default {
   components: {
@@ -66,6 +68,7 @@ export default {
       // elmshornStrassenbeleuchtung: Strassenbeleuchtung,
       elmshornStraßennetz: Straßennetz,
       elmshornVelorouten: Velorouten,
+      elmshornBebauungsFlaeche: BebauungsFlaeche,
       geojsonOptionsStellplatz: {
         "stroke": "true",
         "color": "#ff0000",
@@ -85,6 +88,9 @@ export default {
       },
       geojsonOptionsVelorouten: {
         "color": "blue"
+      },
+      geojsonOptionsBebauungsFlaeche: {
+        "color": "red"
       },
     };
   },
