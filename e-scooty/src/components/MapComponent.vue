@@ -87,7 +87,7 @@ import busStopIconUrl from "../assets/bus-solid.svg";
 const busStopIcon = L.icon({
   iconUrl: busStopIconUrl,
   iconSize: [15, 15],
-  className: 'custom-icon', // Größe des Icons
+  className: 'custom-icon-bus', // Größe des Icons
   // iconAnchor: [12, 25], // Punkt des Icons, der auf den Marker zeigt
   // popupAnchor: [0, -25] // Punkt, von dem aus das Popup relativ zum Icon geöffnet wird
 });
@@ -95,7 +95,7 @@ import denkmalIconUrl from "../assets/landmark-solid.svg";
 const denkmalIcon = L.icon({
   iconUrl: denkmalIconUrl,
   iconSize: [15, 15],
-  className: 'custom-icon', // Größe des Icons
+  className: 'custom-icon-denk', // Größe des Icons
   // iconAnchor: [12, 25], // Punkt des Icons, der auf den Marker zeigt
   // popupAnchor: [0, -25] // Punkt, von dem aus das Popup relativ zum Icon geöffnet wird
 });
@@ -260,7 +260,11 @@ main {
   margin-left: 55vw !important;
 }
 
-.custom-icon{
-  filter: invert(57%) sepia(7%) saturate(14%) hue-rotate(330deg) brightness(86%) contrast(90%);
+.custom-icon-denk{
+  filter: invert(49%) sepia(6%) saturate(448%) hue-rotate(305deg) brightness(103%) contrast(89%);
+}
+
+.custom-icon-bus{
+  filter: invert(43%) sepia(5%) saturate(4177%) hue-rotate(140deg) brightness(89%) contrast(86%);
 }
 </style>
