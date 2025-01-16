@@ -77,6 +77,7 @@ export default {
       elmshornBebauungsFlaeche: BebauungsFlaeche,
       geojsonOptionsStellplatz: {
       // Färbt die jeweilige genannte EScooterID ein
+      color: 'blue',
       onEachFeature: (feature, layer) => {
           // if (feature.properties && feature.properties.Escoote_ID === 1) {
           //   layer.setStyle({
