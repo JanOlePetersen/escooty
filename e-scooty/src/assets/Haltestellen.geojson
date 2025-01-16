@@ -1,0 +1,2950 @@
+{
+	"type" : "FeatureCollection",
+	"name" : "Haltestelle_JSON",
+	"features" : [
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6555004708, 53.7730791039 ]
+			},
+			"properties" : {
+				"HS_NR" : 101,
+				"FGU" : 1,
+				"NAME" : "Carl-Zeiss-Straße ",
+				"FAHRTRICHTUNG" : "Papenhöhe",
+				"BUSLINIEN" : "6503",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Gerlingweg / Carl-Zeiss-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6549165664, 53.7730890811 ]
+			},
+			"properties" : {
+				"HS_NR" : 102,
+				"FGU" : 1,
+				"NAME" : "Carl-Zeiss-Straße",
+				"FAHRTRICHTUNG" : "Sibirien",
+				"BUSLINIEN" : "6503",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Carl-Zeiss-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6588327969, 53.7724767162 ]
+			},
+			"properties" : {
+				"HS_NR" : 103,
+				"FGU" : 1,
+				"NAME" : "Fuchsberger Allee",
+				"FAHRTRICHTUNG" : "Papenhöhe",
+				"BUSLINIEN" : "wird zur Zeit nicht angefahren",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Gerlingweg / Sibirien"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6596349342, 53.7718950502 ]
+			},
+			"properties" : {
+				"HS_NR" : 105,
+				"FGU" : 0,
+				"NAME" : "Fuchsberger Allee",
+				"FAHRTRICHTUNG" : "Sibirien",
+				"BUSLINIEN" : "6503",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Fuchsberger Damm / Höhe Gerlingweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.657042739, 53.7698289813 ]
+			},
+			"properties" : {
+				"HS_NR" : 106,
+				"FGU" : 0,
+				"NAME" : "Fuchsberger Damm",
+				"FAHRTRICHTUNG" : "Sibirien",
+				"BUSLINIEN" : "6503",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Höhe Reiterhof"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6585520166, 53.767556071 ]
+			},
+			"properties" : {
+				"HS_NR" : 108,
+				"FGU" : 1,
+				"NAME" : "Danziger Straße",
+				"FAHRTRICHTUNG" : "Friedensallee",
+				"BUSLINIEN" : "6503",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Am Friedhof / Höhe Danziger Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.658906554, 53.7678589301 ]
+			},
+			"properties" : {
+				"HS_NR" : 109,
+				"FGU" : 0,
+				"NAME" : "Danziger Straße",
+				"FAHRTRICHTUNG" : "Am Friedhof",
+				"BUSLINIEN" : "6503",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Am Friedhof / Danziger Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.661016955, 53.7694965308 ]
+			},
+			"properties" : {
+				"HS_NR" : 110,
+				"FGU" : 0,
+				"NAME" : "Zeppelinplatz",
+				"FAHRTRICHTUNG" : "Am Friedhof",
+				"BUSLINIEN" : "6503",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6612704955, 53.7696199192 ]
+			},
+			"properties" : {
+				"HS_NR" : 111,
+				"FGU" : 0,
+				"NAME" : "Zeppelinplatz",
+				"FAHRTRICHTUNG" : "Weidenstraße",
+				"BUSLINIEN" : "6503",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6659655127, 53.7711419485 ]
+			},
+			"properties" : {
+				"HS_NR" : 112,
+				"FGU" : 1,
+				"NAME" : "Langenmoor",
+				"FAHRTRICHTUNG" : "Am Friedhof",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Weidenstraße / Philosophenweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6665346247, 53.7707076732 ]
+			},
+			"properties" : {
+				"HS_NR" : 113,
+				"FGU" : 0,
+				"NAME" : "Langenmoor",
+				"FAHRTRICHTUNG" : "Kaltenweide",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Breslauer Straße / Philosophenweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6698965472, 53.7687360872 ]
+			},
+			"properties" : {
+				"HS_NR" : 114,
+				"FGU" : 1,
+				"NAME" : "August-Bebel-Platz",
+				"FAHRTRICHTUNG" : "Am Friedhof",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6696772079, 53.768753375 ]
+			},
+			"properties" : {
+				"HS_NR" : 115,
+				"FGU" : 0,
+				"NAME" : "August-Bebel-Platz",
+				"FAHRTRICHTUNG" : "Kaltenweide",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6729636161, 53.7666351711 ]
+			},
+			"properties" : {
+				"HS_NR" : 116,
+				"FGU" : 1,
+				"NAME" : "Stargarder Straße",
+				"FAHRTRICHTUNG" : "Am Friedhof",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Stargarder Straße / Florapromenade"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6761799712, 53.7639825113 ]
+			},
+			"properties" : {
+				"HS_NR" : 118,
+				"FGU" : 1,
+				"NAME" : "Walfängerstraße",
+				"FAHRTRICHTUNG" : "Am Friedhof",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Walfänger Straße / Kaltenweide"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6613187804, 53.7693056326 ]
+			},
+			"properties" : {
+				"HS_NR" : 119,
+				"FGU" : 1,
+				"NAME" : "Zeppelinplatz",
+				"FAHRTRICHTUNG" : "Kaltenweide",
+				"BUSLINIEN" : "6501, 6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Zeppelinplatz / Danziger Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6631334037, 53.7687174096 ]
+			},
+			"properties" : {
+				"HS_NR" : 121,
+				"FGU" : 0,
+				"NAME" : "Zeppelinplatz (nur zum Aussteigen)",
+				"FAHRTRICHTUNG" : "Am Friedhof",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Koppeldamm / Philosophenweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6660226829, 53.7669079282 ]
+			},
+			"properties" : {
+				"HS_NR" : 122,
+				"FGU" : 1,
+				"NAME" : "Koppeldamm",
+				"FAHRTRICHTUNG" : "Kaltenweide",
+				"BUSLINIEN" : "6501, 6503",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Koppeldamm / Ellerndamm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6668229256, 53.7666447024 ]
+			},
+			"properties" : {
+				"HS_NR" : 123,
+				"FGU" : 1,
+				"NAME" : "Koppeldamm",
+				"FAHRTRICHTUNG" : "Am Friedhof",
+				"BUSLINIEN" : "6501, 6503, 6507",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Koppeldamm / Eckermannstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6696088598, 53.764865307 ]
+			},
+			"properties" : {
+				"HS_NR" : 124,
+				"FGU" : 0,
+				"NAME" : "Florapromenade",
+				"FAHRTRICHTUNG" : "Am Friedhof",
+				"BUSLINIEN" : "6501, 6503, 6507",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Koppeldamm / Florapromenade"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6700171926, 53.7643994189 ]
+			},
+			"properties" : {
+				"HS_NR" : 125,
+				"FGU" : 1,
+				"NAME" : "Florapromenade",
+				"FAHRTRICHTUNG" : "Kaltenweide",
+				"BUSLINIEN" : "6501, 6503, 6507",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Koppeldamm / Moordamm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6656107626, 53.7662074898 ]
+			},
+			"properties" : {
+				"HS_NR" : 126,
+				"FGU" : 1,
+				"NAME" : "Koppeldamm",
+				"FAHRTRICHTUNG" : "Koppeldamm",
+				"BUSLINIEN" : "6501, 6507, 6521",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Ellerndamm / Koppeldamm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6629991563, 53.7649210625 ]
+			},
+			"properties" : {
+				"HS_NR" : 127,
+				"FGU" : 1,
+				"NAME" : "Am Friedhof",
+				"FAHRTRICHTUNG" : "Am Friedhof",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Ellerndamm / Am Friedhof"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6627094036, 53.7616303734 ]
+			},
+			"properties" : {
+				"HS_NR" : 129,
+				"FGU" : 1,
+				"NAME" : "Stiftskirche",
+				"FAHRTRICHTUNG" : "Mühlendamm",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Friedhof"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6629280513, 53.7612121091 ]
+			},
+			"properties" : {
+				"HS_NR" : 130,
+				"FGU" : 1,
+				"NAME" : "Stiftskirche",
+				"FAHRTRICHTUNG" : "Am Friedhof",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Friedhof"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6641977923, 53.7578666046 ]
+			},
+			"properties" : {
+				"HS_NR" : 132,
+				"FGU" : 1,
+				"NAME" : "Finanzamt",
+				"FAHRTRICHTUNG" : "Mühlendamm",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Friedensallee / vor Finanzamt"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6656695328, 53.7565821419 ]
+			},
+			"properties" : {
+				"HS_NR" : 134,
+				"FGU" : 1,
+				"NAME" : "Krückauweg",
+				"FAHRTRICHTUNG" : "Barmstedt",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Kaltenweide / Mühlendamm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6697366753, 53.7584333762 ]
+			},
+			"properties" : {
+				"HS_NR" : 136,
+				"FGU" : 1,
+				"NAME" : "Moltkestraße",
+				"FAHRTRICHTUNG" : "Barmstedt",
+				"BUSLINIEN" : "6503, 6504, 6507, 6535",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Moltkestraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6723171309, 53.7618626641 ]
+			},
+			"properties" : {
+				"HS_NR" : 138,
+				"FGU" : 1,
+				"NAME" : "Kaltenweide (Mitte)",
+				"FAHRTRICHTUNG" : "Barmstedt",
+				"BUSLINIEN" : "6503, 6504, 6507",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Koppeldamm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.677338164, 53.7641485965 ]
+			},
+			"properties" : {
+				"HS_NR" : 140,
+				"FGU" : 1,
+				"NAME" : "Walfängerstraße",
+				"FAHRTRICHTUNG" : "Barmstedt",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Kaltenweide / Wittenberger Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.68042976, 53.76673848 ]
+			},
+			"properties" : {
+				"HS_NR" : 141,
+				"FGU" : 1,
+				"NAME" : "Hermann-Sudermann-Allee",
+				"FAHRTRICHTUNG" : "Wittenberger Straße",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Kaltenweide / Hermannn-Sudermann-Allee"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6842604771, 53.7689693829 ]
+			},
+			"properties" : {
+				"HS_NR" : 144,
+				"FGU" : 0,
+				"NAME" : "Voßkuhlen",
+				"FAHRTRICHTUNG" : "Wittenberger Straße",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Kaltenweide / Voßkuhlen"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6856951593, 53.7709801373 ]
+			},
+			"properties" : {
+				"HS_NR" : 145,
+				"FGU" : 1,
+				"NAME" : "Heidkoppelweg",
+				"FAHRTRICHTUNG" : "Wittenberger Straße",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Kaltenweide / Kreuzung Sparrieshoop"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6790376727, 53.7552255491 ]
+			},
+			"properties" : {
+				"HS_NR" : 202,
+				"FGU" : 1,
+				"NAME" : "Beethovenstraße",
+				"FAHRTRICHTUNG" : "Langelohe",
+				"BUSLINIEN" : "6500",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Köllner Chaussee / Beethovenstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6794137367, 53.7551979988 ]
+			},
+			"properties" : {
+				"HS_NR" : 203,
+				"FGU" : 1,
+				"NAME" : "Beethovenstraße",
+				"FAHRTRICHTUNG" : "Wittenberger Straße",
+				"BUSLINIEN" : "6500",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Beethovenstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6645778607, 53.7546461509 ]
+			},
+			"properties" : {
+				"HS_NR" : 207,
+				"FGU" : 1,
+				"NAME" : "Mühlenstraße",
+				"FAHRTRICHTUNG" : "Langelohe",
+				"BUSLINIEN" : "6500, 6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Mühlendamm / Krückau"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6682061598, 53.7531972627 ]
+			},
+			"properties" : {
+				"HS_NR" : 208,
+				"FGU" : 1,
+				"NAME" : "Berufsschule",
+				"FAHRTRICHTUNG" : "Hamburger Straße",
+				"BUSLINIEN" : "489, 6500, 6502",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "vor Schule"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6691619859, 53.7531788345 ]
+			},
+			"properties" : {
+				"HS_NR" : 209,
+				"FGU" : 1,
+				"NAME" : "Berufsschule",
+				"FAHRTRICHTUNG" : "Mühlendamm",
+				"BUSLINIEN" : "6500, 6502",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "gegenüber Schule"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6716955328, 53.7523244217 ]
+			},
+			"properties" : {
+				"HS_NR" : 210,
+				"FGU" : 1,
+				"NAME" : "Schule Langelohe",
+				"FAHRTRICHTUNG" : "Hamburger Straße",
+				"BUSLINIEN" : "6502, 6505, 6506, 6507, 6521, 489",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Langelohe / Steindamm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6720252927, 53.7523417817 ]
+			},
+			"properties" : {
+				"HS_NR" : 211,
+				"FGU" : 1,
+				"NAME" : "Schule Langelohe",
+				"FAHRTRICHTUNG" : "Mühlendamm",
+				"BUSLINIEN" : "6502, 6505, 6506, 6507",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Langelohe / Köllner Chaussee"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6672230656, 53.7474284339 ]
+			},
+			"properties" : {
+				"HS_NR" : 213,
+				"FGU" : 1,
+				"NAME" : "Bussardweg",
+				"FAHRTRICHTUNG" : "Wittenberger Straße",
+				"BUSLINIEN" : "185, 6506",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Hamburger Straße / Bussardweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6727775265, 53.7470670138 ]
+			},
+			"properties" : {
+				"HS_NR" : 214,
+				"FGU" : 0,
+				"NAME" : "Eichenkamp (z.Zt. Ersatzhaltestelle)",
+				"FAHRTRICHTUNG" : "Wittenberger Straße",
+				"BUSLINIEN" : "185, 6506",
+				"BLINDENLEITSYSTEM" : null,
+				"STANDORT" : "Hamburger Straße / Nähe Eichenkamp"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6729380922, 53.7473227517 ]
+			},
+			"properties" : {
+				"HS_NR" : 215,
+				"FGU" : 0,
+				"NAME" : "Eichenkamp",
+				"FAHRTRICHTUNG" : "Westerstraße",
+				"BUSLINIEN" : "185",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Hamburger Straße / Höhe Eichenkamp"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6783224288, 53.7493856758 ]
+			},
+			"properties" : {
+				"HS_NR" : 216,
+				"FGU" : 0,
+				"NAME" : "Hamburger Straße",
+				"FAHRTRICHTUNG" : "Wittenberger Straße",
+				"BUSLINIEN" : "185, 6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Hamburger Straße / Adenauerdamm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6784279003, 53.7495776211 ]
+			},
+			"properties" : {
+				"HS_NR" : 217,
+				"FGU" : 1,
+				"NAME" : "Hamburger Straße",
+				"FAHRTRICHTUNG" : "Westerstraße",
+				"BUSLINIEN" : "185,6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Hamburger Straße / Langelohe"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6850707862, 53.7484488157 ]
+			},
+			"properties" : {
+				"HS_NR" : 218,
+				"FGU" : 1,
+				"NAME" : "Hinterstraße",
+				"FAHRTRICHTUNG" : "Hamburger Straße",
+				"BUSLINIEN" : "185, 6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Hans-Böckler-Straßen / Hamburger Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6847905349, 53.7478794773 ]
+			},
+			"properties" : {
+				"HS_NR" : 219,
+				"FGU" : 0,
+				"NAME" : "Hinterstraße",
+				"FAHRTRICHTUNG" : "Daimlerstraße",
+				"BUSLINIEN" : "185, 6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Hans-Böckler-Straße / Hinterstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6884613021, 53.7469616135 ]
+			},
+			"properties" : {
+				"HS_NR" : 220,
+				"FGU" : 0,
+				"NAME" : "Otto-Hahn-Straße",
+				"FAHRTRICHTUNG" : "Hans-Böckler-Straße",
+				"BUSLINIEN" : "185, 6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Höhe Otto-Hahn-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6923799993, 53.7463486496 ]
+			},
+			"properties" : {
+				"HS_NR" : 222,
+				"FGU" : 0,
+				"NAME" : "Daimlerstraße",
+				"FAHRTRICHTUNG" : "Hans-Böckler-Straße",
+				"BUSLINIEN" : "185, 6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Kurt-Wagener-Straße / Höhe Daimlerstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6926631617, 53.7462540635 ]
+			},
+			"properties" : {
+				"HS_NR" : 223,
+				"FGU" : 0,
+				"NAME" : "Daimlerstraße",
+				"FAHRTRICHTUNG" : "Kreishaus",
+				"BUSLINIEN" : "185, 6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Kurt-Wagener-Straße / Daimlerstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6956667371, 53.7460484492 ]
+			},
+			"properties" : {
+				"HS_NR" : 224,
+				"FGU" : 0,
+				"NAME" : "Lise-Meitner-Straße",
+				"FAHRTRICHTUNG" : "Kreishaus",
+				"BUSLINIEN" : "6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Höhe Lise-Meitner-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6958954636, 53.7461105622 ]
+			},
+			"properties" : {
+				"HS_NR" : 225,
+				"FGU" : 0,
+				"NAME" : "Lise-Meitner-Straße",
+				"FAHRTRICHTUNG" : "Daimlerstraße",
+				"BUSLINIEN" : "6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Kurt-Wagener-Straße / Lise-Meitner-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.7002947175, 53.7451726067 ]
+			},
+			"properties" : {
+				"HS_NR" : 226,
+				"FGU" : 0,
+				"NAME" : "Kurt-Wagener-Straße",
+				"FAHRTRICHTUNG" : "Ramskamp",
+				"BUSLINIEN" : "6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "vor Kreishaus"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.7001755546, 53.7443786113 ]
+			},
+			"properties" : {
+				"HS_NR" : 227,
+				"FGU" : 1,
+				"NAME" : "Kurt-Wagener-Straße",
+				"FAHRTRICHTUNG" : "Kurt-Wagener-Straße",
+				"BUSLINIEN" : "6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "gegenüber Kreishaus"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.7190707324, 53.7424070343 ]
+			},
+			"properties" : {
+				"HS_NR" : 228,
+				"FGU" : null,
+				"NAME" : "Dorfstraße (extern, Seeth-Ekholt)",
+				"FAHRTRICHTUNG" : "Elmshorn",
+				"BUSLINIEN" : "185, 6505",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Gemeinde Seeth-Ekholt"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.7190310807, 53.7422985741 ]
+			},
+			"properties" : {
+				"HS_NR" : 229,
+				"FGU" : 0,
+				"NAME" : "Dorfstraße (extern, Seeth-Ekholt) ???",
+				"FAHRTRICHTUNG" : "Seeth-Ekholt",
+				"BUSLINIEN" : "185, 6505",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Kreisstraße, gegenüber Haltestelle Seeth-Ekholt"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6996194934, 53.7410863127 ]
+			},
+			"properties" : {
+				"HS_NR" : 232,
+				"FGU" : 1,
+				"NAME" : "Ernst-Abbe-Straße",
+				"FAHRTRICHTUNG" : "Adenauer Damm",
+				"BUSLINIEN" : "6501, 6502, 6505",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Ramskamp / Ernst-Abbe-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6905965123, 53.7418342904 ]
+			},
+			"properties" : {
+				"HS_NR" : 234,
+				"FGU" : 0,
+				"NAME" : "Ramskamp (Mitte)",
+				"FAHRTRICHTUNG" : "Adenauer Damm",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Ramskamp / Daimlerstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6876666327, 53.7421849695 ]
+			},
+			"properties" : {
+				"HS_NR" : 236,
+				"FGU" : 0,
+				"NAME" : "Ramskamp (West)",
+				"FAHRTRICHTUNG" : "Adenauer Damm",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Ramskamp / Otto-Hahn-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6830604184, 53.7420379212 ]
+			},
+			"properties" : {
+				"HS_NR" : 237,
+				"FGU" : 1,
+				"NAME" : "WAK / BBS",
+				"FAHRTRICHTUNG" : "Wittenberger Straße",
+				"BUSLINIEN" : "6501, 6505",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "vor Wirtschaftsakademie / BBS"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6775532893, 53.7483988748 ]
+			},
+			"properties" : {
+				"HS_NR" : 239,
+				"FGU" : 1,
+				"NAME" : "Hamburger Straße",
+				"FAHRTRICHTUNG" : "Heidmühlenweg",
+				"BUSLINIEN" : "6502",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Adenauerdamm / Hamburger Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6805234463, 53.7441632828 ]
+			},
+			"properties" : {
+				"HS_NR" : 240,
+				"FGU" : 0,
+				"NAME" : "Adenauerdamm",
+				"FAHRTRICHTUNG" : "Hainholzer Damm",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Rethfelder Ring / Adenauerdamm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6812807767, 53.7428588846 ]
+			},
+			"properties" : {
+				"HS_NR" : 242,
+				"FGU" : 1,
+				"NAME" : "WAK / BBS",
+				"FAHRTRICHTUNG" : "Hamburger Straße",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Buchenweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6805960693, 53.740622347 ]
+			},
+			"properties" : {
+				"HS_NR" : 244,
+				"FGU" : 1,
+				"NAME" : "Waldorfschule",
+				"FAHRTRICHTUNG" : "Heidmühlenweg",
+				"BUSLINIEN" : "489, 6502, 6523, 6533",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "vor Schule"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6701319782, 53.7384114385 ]
+			},
+			"properties" : {
+				"HS_NR" : 247,
+				"FGU" : 1,
+				"NAME" : "Hainholz",
+				"FAHRTRICHTUNG" : "Hamburger Straße",
+				"BUSLINIEN" : "6501, 6502",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Hainholzer Damm / Hainholz"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6699533862, 53.7384146302 ]
+			},
+			"properties" : {
+				"HS_NR" : 248,
+				"FGU" : 1,
+				"NAME" : "Hainholz",
+				"FAHRTRICHTUNG" : "Adenauer Damm",
+				"BUSLINIEN" : "6501, 6502",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Hainholzer Damm / Hainholz"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6699540036, 53.7424515295 ]
+			},
+			"properties" : {
+				"HS_NR" : 251,
+				"FGU" : 1,
+				"NAME" : "Fröbelstraße (KGSE)",
+				"FAHRTRICHTUNG" : "Adenauer Damm",
+				"BUSLINIEN" : "6501, 6502",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "gegenüber Schule"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6707568484, 53.743133553 ]
+			},
+			"properties" : {
+				"HS_NR" : 252,
+				"FGU" : 0,
+				"NAME" : "Fröbelstraße (KGSE)",
+				"FAHRTRICHTUNG" : "Hamburger Straße",
+				"BUSLINIEN" : "489, 6501, 6502, 6507, 6534, 6535",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "vor Schule"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6721531931, 53.7449581776 ]
+			},
+			"properties" : {
+				"HS_NR" : 254,
+				"FGU" : 1,
+				"NAME" : "Hainholzer Damm",
+				"FAHRTRICHTUNG" : "Adenauer Damm",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Rethfelder Ring / Hainholzer Damm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6766520255, 53.745110917 ]
+			},
+			"properties" : {
+				"HS_NR" : 255,
+				"FGU" : 0,
+				"NAME" : "Rethfelder Ring",
+				"FAHRTRICHTUNG" : "Hainholzer Damm",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Rethfelder Ring / Nähe Eichenkamp"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6770936131, 53.7450013164 ]
+			},
+			"properties" : {
+				"HS_NR" : 256,
+				"FGU" : 0,
+				"NAME" : "Rethfelder Ring",
+				"FAHRTRICHTUNG" : "Adenauer Damm",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Rethfelder Ring / Nähe Schooltwiete"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6760577371, 53.7432366738 ]
+			},
+			"properties" : {
+				"HS_NR" : 257,
+				"FGU" : 0,
+				"NAME" : "Ramskamp (KGSE)",
+				"FAHRTRICHTUNG" : "Hainholzer Damm",
+				"BUSLINIEN" : "6505",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "vor Schule"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6721343998, 53.7437463741 ]
+			},
+			"properties" : {
+				"HS_NR" : 258,
+				"FGU" : 0,
+				"NAME" : "Hainholzer Schulstraße",
+				"FAHRTRICHTUNG" : "Schule",
+				"BUSLINIEN" : "6505",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Hainholzer Schulstraße / Hainholzer Damm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6719844525, 53.7438366234 ]
+			},
+			"properties" : {
+				"HS_NR" : 259,
+				"FGU" : 0,
+				"NAME" : "Hainholzer Schulstraße",
+				"FAHRTRICHTUNG" : "Hainholzer Damm",
+				"BUSLINIEN" : "6505",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Hainholzer Schulstraße / Hainholzer Damm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6822602485, 53.7519508504 ]
+			},
+			"properties" : {
+				"HS_NR" : 260,
+				"FGU" : null,
+				"NAME" : "Krankenhaus (extern)",
+				"FAHRTRICHTUNG" : null,
+				"BUSLINIEN" : "6502",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "vor Krankenhaus"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6553893015, 53.7527209776 ]
+			},
+			"properties" : {
+				"HS_NR" : 301,
+				"FGU" : 1,
+				"NAME" : "Probstendamm",
+				"FAHRTRICHTUNG" : "Wedenkamp",
+				"BUSLINIEN" : "185, 489, 6500, 6501, 6503, 6504, '||chr(10)||'6506, 6521",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Probstendamm / Buttermarkt, FGU 1, West"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6585201464, 53.7529252945 ]
+			},
+			"properties" : {
+				"HS_NR" : 302,
+				"FGU" : 1,
+				"NAME" : "Elmshorn, Post",
+				"FAHRTRICHTUNG" : "Holstenstraße",
+				"BUSLINIEN" : "185, 489, 6500, 6501, 6503, 6504, 6506",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Schauenburgerstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.659547524, 53.748175234 ]
+			},
+			"properties" : {
+				"HS_NR" : 303,
+				"FGU" : 1,
+				"NAME" : "Reichenstraße (Ost)",
+				"FAHRTRICHTUNG" : "Reichenstraße",
+				"BUSLINIEN" : "489, 6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Ansgarstraße / An der Bahn"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6592708947, 53.7461141161 ]
+			},
+			"properties" : {
+				"HS_NR" : 304,
+				"FGU" : 1,
+				"NAME" : "Am Eiskeller",
+				"FAHRTRICHTUNG" : "Reichenstraße",
+				"BUSLINIEN" : "489, 6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Ansgarstraße / Am Eiskeller"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6591921284, 53.7457194788 ]
+			},
+			"properties" : {
+				"HS_NR" : 305,
+				"FGU" : 0,
+				"NAME" : "Am Eiskeller",
+				"FAHRTRICHTUNG" : "Heidmühlenweg",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "?????????????????"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6604009169, 53.7432806765 ]
+			},
+			"properties" : {
+				"HS_NR" : 306,
+				"FGU" : 1,
+				"NAME" : "Ansgarstraße (Mitte)",
+				"FAHRTRICHTUNG" : "Reichenstraße",
+				"BUSLINIEN" : "489, 6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Ansgarkirche"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6602934178, 53.7429328122 ]
+			},
+			"properties" : {
+				"HS_NR" : 307,
+				"FGU" : 1,
+				"NAME" : "Ansgarstraße (Mitte)",
+				"FAHRTRICHTUNG" : "Heidmühlenweg",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "vor Ansgarkirche"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.661941298, 53.7379649534 ]
+			},
+			"properties" : {
+				"HS_NR" : 309,
+				"FGU" : 1,
+				"NAME" : "Hebbelplatz",
+				"FAHRTRICHTUNG" : "Hebbelplatz",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Morthorststraße / Hebbelplatz"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6619484935, 53.7378815994 ]
+			},
+			"properties" : {
+				"HS_NR" : 310,
+				"FGU" : 0,
+				"NAME" : "Hebbelplatz",
+				"FAHRTRICHTUNG" : "Heidmühlenweg",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Morthorststraße / Hebbelplatz"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6658349222, 53.7364102984 ]
+			},
+			"properties" : {
+				"HS_NR" : 311,
+				"FGU" : 1,
+				"NAME" : "Morthorststraße",
+				"FAHRTRICHTUNG" : "Hebbelplatz",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Morthorststraße / Heidkamp"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6658553653, 53.7360692602 ]
+			},
+			"properties" : {
+				"HS_NR" : 312,
+				"FGU" : 0,
+				"NAME" : "Morthorststraße",
+				"FAHRTRICHTUNG" : "Heidmühlenweg",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Heidkamp"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6679834667, 53.7338032548 ]
+			},
+			"properties" : {
+				"HS_NR" : 313,
+				"FGU" : 1,
+				"NAME" : "Liethmoor",
+				"FAHRTRICHTUNG" : "Köhnholz",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Liethmoor"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6603351575, 53.7312979858 ]
+			},
+			"properties" : {
+				"HS_NR" : 315,
+				"FGU" : 1,
+				"NAME" : "Liether Feldstraße",
+				"FAHRTRICHTUNG" : "Klein Nordende",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Lieth / Liethmoor"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6605515023, 53.7317062287 ]
+			},
+			"properties" : {
+				"HS_NR" : 316,
+				"FGU" : 1,
+				"NAME" : "Liether Feldstraße",
+				"FAHRTRICHTUNG" : "Heidmühlenweg",
+				"BUSLINIEN" : "489, 6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Lieth / Liether Feldstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6584243494, 53.7353186184 ]
+			},
+			"properties" : {
+				"HS_NR" : 317,
+				"FGU" : 1,
+				"NAME" : "Heidmühlenweg",
+				"FAHRTRICHTUNG" : "Adenauerdamm",
+				"BUSLINIEN" : "6503,6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Heidmühlenweg / Lieth"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.651900604, 53.7377443031 ]
+			},
+			"properties" : {
+				"HS_NR" : 319,
+				"FGU" : 1,
+				"NAME" : "Parkweg",
+				"FAHRTRICHTUNG" : "Reichenstraße",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Ollnstraße / Heidmühlenweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6519219861, 53.7379278485 ]
+			},
+			"properties" : {
+				"HS_NR" : 320,
+				"FGU" : 1,
+				"NAME" : "Parkweg",
+				"FAHRTRICHTUNG" : "Heidmühlenweg",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Ollnstraße / Heidmühlenweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.656202147, 53.7437959382 ]
+			},
+			"properties" : {
+				"HS_NR" : 323,
+				"FGU" : 0,
+				"NAME" : "Meteorstraße",
+				"FAHRTRICHTUNG" : "Ollnstraße",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Reinhold-Jürgensen-Platz / Meteorstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6568907856, 53.749238886 ]
+			},
+			"properties" : {
+				"HS_NR" : 325,
+				"FGU" : 1,
+				"NAME" : "Reichenstraße",
+				"FAHRTRICHTUNG" : "Hamburger Straße",
+				"BUSLINIEN" : "185, 489, 6501, 6503, 6504, 6506",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Rosenstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6526992104, 53.7471656633 ]
+			},
+			"properties" : {
+				"HS_NR" : 327,
+				"FGU" : 1,
+				"NAME" : "Eichstraße",
+				"FAHRTRICHTUNG" : "Köhnholz",
+				"BUSLINIEN" : "489, 6503, 6504, 6506",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Klostersande / Weberstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6527315738, 53.7470689958 ]
+			},
+			"properties" : {
+				"HS_NR" : 328,
+				"FGU" : 0,
+				"NAME" : "Eichstraße",
+				"FAHRTRICHTUNG" : "Reichenstraße",
+				"BUSLINIEN" : "489, 6503, 6504, 6506",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Klostersande / Margarethenstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6474532659, 53.7456191731 ]
+			},
+			"properties" : {
+				"HS_NR" : 330,
+				"FGU" : 0,
+				"NAME" : "Blücherstraße",
+				"FAHRTRICHTUNG" : "Reichenstraße",
+				"BUSLINIEN" : "489, 6506",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Klostersande / Blücherstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6428193129, 53.7432521748 ]
+			},
+			"properties" : {
+				"HS_NR" : 331,
+				"FGU" : 1,
+				"NAME" : "Köhnholz (Nord)",
+				"FAHRTRICHTUNG" : "Köhnholz",
+				"BUSLINIEN" : "6506",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Wilhelmstraße / Köhnholz"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6386871964, 53.7406271598 ]
+			},
+			"properties" : {
+				"HS_NR" : 334,
+				"FGU" : 0,
+				"NAME" : "Wilhelmstraße",
+				"FAHRTRICHTUNG" : "Köhnholz",
+				"BUSLINIEN" : "6506",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Mitte Wilhelmstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6434268497, 53.7428895467 ]
+			},
+			"properties" : {
+				"HS_NR" : 336,
+				"FGU" : 1,
+				"NAME" : "Köhnholz (Nord)",
+				"FAHRTRICHTUNG" : "Klein Nordende",
+				"BUSLINIEN" : "489",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Köhnholz / Wilhelmstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6451614828, 53.738715797 ]
+			},
+			"properties" : {
+				"HS_NR" : 337,
+				"FGU" : 1,
+				"NAME" : "Köhnholz (Süd)",
+				"FAHRTRICHTUNG" : "Klein Nordende",
+				"BUSLINIEN" : "489",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Nähe Heidmühlenweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6487625946, 53.7740901162 ]
+			},
+			"properties" : {
+				"HS_NR" : 401,
+				"FGU" : 1,
+				"NAME" : "Sonneck",
+				"FAHRTRICHTUNG" : "Papenhöhe",
+				"BUSLINIEN" : "6503",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Gerlingweg / Schneiderkamp"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6490676739, 53.7739499982 ]
+			},
+			"properties" : {
+				"HS_NR" : 402,
+				"FGU" : 1,
+				"NAME" : "Sonneck",
+				"FAHRTRICHTUNG" : "Sibirien",
+				"BUSLINIEN" : "6503",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Gerlingweg / Sonneck"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6363554536, 53.7623871909 ]
+			},
+			"properties" : {
+				"HS_NR" : 405,
+				"FGU" : 1,
+				"NAME" : "Anne-Frank-Straße",
+				"FAHRTRICHTUNG" : "Flamweg",
+				"BUSLINIEN" : "6500",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Nähe Anne-Frank-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6359843157, 53.762324147 ]
+			},
+			"properties" : {
+				"HS_NR" : 406,
+				"FGU" : 1,
+				"NAME" : "Anne-Frank-Straße",
+				"FAHRTRICHTUNG" : "Raa-Besenbek",
+				"BUSLINIEN" : "6500",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Hasenbusch / Anne-Frank-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6554597017, 53.7527296621 ]
+			},
+			"properties" : {
+				"HS_NR" : 301,
+				"FGU" : 1,
+				"NAME" : "Probstendamm",
+				"FAHRTRICHTUNG" : "Wedenkamp",
+				"BUSLINIEN" : "185, 489, 6500, 6501, 6503, 6504, '||chr(10)||'6506, 6521",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Probstendamm / Buttermarkt, FGU 2, Mitte"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.655526443, 53.7527351755 ]
+			},
+			"properties" : {
+				"HS_NR" : 301,
+				"FGU" : 1,
+				"NAME" : "Probstendamm",
+				"FAHRTRICHTUNG" : "Wedenkmap",
+				"BUSLINIEN" : "185, 489, 6500, 6501, 6503, 6504, '||chr(10)||'6506, 6521",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Probstendamm / Buttermarkt, FGU 3, Ost"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.65815099, 53.7562622042 ]
+			},
+			"properties" : {
+				"HS_NR" : 429,
+				"FGU" : 1,
+				"NAME" : "ZOB",
+				"FAHRTRICHTUNG" : null,
+				"BUSLINIEN" : "6533, 6534, 6535, 6521, 6523, 185, '||chr(10)||'6506, 6507, 489",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Omnibusbahnhof, FGU 1, Ost 1"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.658058389, 53.756402672 ]
+			},
+			"properties" : {
+				"HS_NR" : 429,
+				"FGU" : 1,
+				"NAME" : "ZOB",
+				"FAHRTRICHTUNG" : null,
+				"BUSLINIEN" : "6533, 6534, 6535, 6521, 6523, 185, '||chr(10)||'6506, 6507, 489",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Omnibusbahnhof, FGU 2, West"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6581810773, 53.7562143463 ]
+			},
+			"properties" : {
+				"HS_NR" : 429,
+				"FGU" : 1,
+				"NAME" : "ZOB",
+				"FAHRTRICHTUNG" : null,
+				"BUSLINIEN" : "6533, 6534, 6535, 6521, 6523, 185, '||chr(10)||'6506, 6507, 489",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Omnibusbahnhof, FGU 3, Ost 2"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6709665591, 53.7353403159 ]
+			},
+			"properties" : {
+				"HS_NR" : 245,
+				"FGU" : 1,
+				"NAME" : "Am Erlengrund",
+				"FAHRTRICHTUNG" : "Hamburger Straße",
+				"BUSLINIEN" : "6501, 6502",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Hainholzer Damm / Am Erlengrund"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.670123556, 53.7411004654 ]
+			},
+			"properties" : {
+				"HS_NR" : 250,
+				"FGU" : 1,
+				"NAME" : "Dornbusch",
+				"FAHRTRICHTUNG" : "Hamburger Straße",
+				"BUSLINIEN" : "6501, 6502",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Hainholzer Damm / Plinkstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6717252309, 53.7450576794 ]
+			},
+			"properties" : {
+				"HS_NR" : 253,
+				"FGU" : 0,
+				"NAME" : "Hainholzer Damm",
+				"FAHRTRICHTUNG" : "Hainholzer Damm",
+				"BUSLINIEN" : "6501, 6521",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Rethfelder Ring / Hainholzer Damm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6575983681, 53.7356134098 ]
+			},
+			"properties" : {
+				"HS_NR" : 318,
+				"FGU" : 1,
+				"NAME" : "Heidmühlenweg",
+				"FAHRTRICHTUNG" : "Köhnholz",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Nähe Hebbelstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6558533619, 53.7413241541 ]
+			},
+			"properties" : {
+				"HS_NR" : 321,
+				"FGU" : 1,
+				"NAME" : "Ollnstraße (Mitte)",
+				"FAHRTRICHTUNG" : "Heidmühlenweg",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Nähe Fehrsstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6546194973, 53.7486786563 ]
+			},
+			"properties" : {
+				"HS_NR" : 326,
+				"FGU" : 1,
+				"NAME" : "Reichenstraße",
+				"FAHRTRICHTUNG" : "Köhnholz",
+				"BUSLINIEN" : "489, 6503, 6504, 6506",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Nähe Ollnstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6476006386, 53.7457156411 ]
+			},
+			"properties" : {
+				"HS_NR" : 329,
+				"FGU" : 0,
+				"NAME" : "Blücherstraße",
+				"FAHRTRICHTUNG" : "Köhnholz",
+				"BUSLINIEN" : "489, 6506",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Blücherstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6386648634, 53.7407551848 ]
+			},
+			"properties" : {
+				"HS_NR" : 333,
+				"FGU" : 0,
+				"NAME" : "Wilhelmstraße",
+				"FAHRTRICHTUNG" : "Kurzenmoor",
+				"BUSLINIEN" : "6506",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Mitte Wilhelmstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.643674896, 53.7429620102 ]
+			},
+			"properties" : {
+				"HS_NR" : 335,
+				"FGU" : 1,
+				"NAME" : "Köhnholz (Nord)",
+				"FAHRTRICHTUNG" : "Westerstraße",
+				"BUSLINIEN" : "489",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Nähe Wilhelmstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6435118836, 53.7609765166 ]
+			},
+			"properties" : {
+				"HS_NR" : 408,
+				"FGU" : 1,
+				"NAME" : "Hasenbusch",
+				"FAHRTRICHTUNG" : "Gerberstraße",
+				"BUSLINIEN" : "6500, 6523, 6533, 6534, 6535",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Flamweg / Hasenbusch"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6446833649, 53.7595580831 ]
+			},
+			"properties" : {
+				"HS_NR" : 409,
+				"FGU" : 1,
+				"NAME" : "Amselstraße",
+				"FAHRTRICHTUNG" : "Papenhöhe",
+				"BUSLINIEN" : "6500, 6523, 6533, 6534, 6535",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Flamweg / Lönsweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6445830665, 53.7594508869 ]
+			},
+			"properties" : {
+				"HS_NR" : 410,
+				"FGU" : 1,
+				"NAME" : "Amselstraße",
+				"FAHRTRICHTUNG" : "Gerberstraße",
+				"BUSLINIEN" : "6500, 6523, 6533, 6534, 6535",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Flamweg / Amselstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6463669308, 53.7571416309 ]
+			},
+			"properties" : {
+				"HS_NR" : 411,
+				"FGU" : 1,
+				"NAME" : "Jahnstraße",
+				"FAHRTRICHTUNG" : "Papenhöhe",
+				"BUSLINIEN" : "6500, 6523, 6533, 6534, 6535",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Nähe Gärtnerstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.646227955, 53.7570837665 ]
+			},
+			"properties" : {
+				"HS_NR" : 412,
+				"FGU" : 1,
+				"NAME" : "Jahnstraße",
+				"FAHRTRICHTUNG" : "Gerberstraße",
+				"BUSLINIEN" : "6500, 6523, 6533, 6534, 6535",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Nähe Janhstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6355814544, 53.7560654173 ]
+			},
+			"properties" : {
+				"HS_NR" : 413,
+				"FGU" : 0,
+				"NAME" : "Burdiekstraße (Mitte)",
+				"FAHRTRICHTUNG" : "Gerberstraße",
+				"BUSLINIEN" : "6507",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6357640935, 53.7559364263 ]
+			},
+			"properties" : {
+				"HS_NR" : 414,
+				"FGU" : 1,
+				"NAME" : "Burdiekstraße (Mitte)",
+				"FAHRTRICHTUNG" : "Besenbeker Straße",
+				"BUSLINIEN" : "6507",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : null
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6375344151, 53.7538725062 ]
+			},
+			"properties" : {
+				"HS_NR" : 415,
+				"FGU" : 1,
+				"NAME" : "Burdiekstraße",
+				"FAHRTRICHTUNG" : "Glückstadt",
+				"BUSLINIEN" : "6507, 6521",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Sandberg / Burdiekstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6408822325, 53.7542762486 ]
+			},
+			"properties" : {
+				"HS_NR" : 417,
+				"FGU" : 0,
+				"NAME" : "Sandberg",
+				"FAHRTRICHTUNG" : "Glückstadt",
+				"BUSLINIEN" : "6507, 6521",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Höhe Sandberg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6406375345, 53.7541537945 ]
+			},
+			"properties" : {
+				"HS_NR" : 418,
+				"FGU" : 0,
+				"NAME" : "Sandberg",
+				"FAHRTRICHTUNG" : "Wedenkamp",
+				"BUSLINIEN" : "6507, 6521",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Gerberstraße / Sandberg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.642304429, 53.7547809875 ]
+			},
+			"properties" : {
+				"HS_NR" : 420,
+				"FGU" : 1,
+				"NAME" : "Turnstraße",
+				"FAHRTRICHTUNG" : "Gerberstraße",
+				"BUSLINIEN" : "6500, 6507, 6533",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Turnstraße / Gerberstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6457640343, 53.7542706504 ]
+			},
+			"properties" : {
+				"HS_NR" : 421,
+				"FGU" : 1,
+				"NAME" : "Gerberstraße",
+				"FAHRTRICHTUNG" : "Glückstadt",
+				"BUSLINIEN" : "6500, 6521",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Gerberstraße / Reeperbahn"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6507121803, 53.7527933966 ]
+			},
+			"properties" : {
+				"HS_NR" : 423,
+				"FGU" : 1,
+				"NAME" : "Flamweg / Marktstraße",
+				"FAHRTRICHTUNG" : "Schulstraße",
+				"BUSLINIEN" : "wird zur Zeit nicht angefahren",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Flamweg / Marktstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6521240601, 53.7519040094 ]
+			},
+			"properties" : {
+				"HS_NR" : 424,
+				"FGU" : 0,
+				"NAME" : "Wedenkamp (CCE)",
+				"FAHRTRICHTUNG" : "Gerberstraße",
+				"BUSLINIEN" : "6500",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Wedenkamp / Flamweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6584445394, 53.754328369 ]
+			},
+			"properties" : {
+				"HS_NR" : 426,
+				"FGU" : 1,
+				"NAME" : "Bahnhof Elmshorn (Holstenplatz)",
+				"FAHRTRICHTUNG" : "Mühlendamm",
+				"BUSLINIEN" : "6500, 6501, 6502, 6503, 6504, 6505",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Geschwister-Scholl-Straße / Königstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6579753274, 53.7544983736 ]
+			},
+			"properties" : {
+				"HS_NR" : 427,
+				"FGU" : 0,
+				"NAME" : "Bahnhof Elmshorn (Holstenplatz)",
+				"FAHRTRICHTUNG" : "Holstenstraße",
+				"BUSLINIEN" : "6500, 6501, 6502, 6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Königstraße / Holstenplatz"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6581152289, 53.7563332746 ]
+			},
+			"properties" : {
+				"HS_NR" : 429,
+				"FGU" : 0,
+				"NAME" : "ZOB",
+				"FAHRTRICHTUNG" : null,
+				"BUSLINIEN" : "489",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Omnibusbahnhof"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6554729021, 53.7557353592 ]
+			},
+			"properties" : {
+				"HS_NR" : 430,
+				"FGU" : 0,
+				"NAME" : "Feldstraße",
+				"FAHRTRICHTUNG" : "Schulstraße",
+				"BUSLINIEN" : "6507",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Feldstraße / Peter-Boldt-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6958873578, 53.7590631028 ]
+			},
+			"properties" : {
+				"HS_NR" : 501,
+				"FGU" : 1,
+				"NAME" : "Friedhof Kölln-Reisiek",
+				"FAHRTRICHTUNG" : null,
+				"BUSLINIEN" : "6500",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Stabeltwiete Kölln-Reisiek"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6817067543, 53.7672515674 ]
+			},
+			"properties" : {
+				"HS_NR" : 142,
+				"FGU" : 1,
+				"NAME" : "Hermann-Sudermann-Allee",
+				"FAHRTRICHTUNG" : "Barmstedt",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Kaltenweide / Adolph-Kolping-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6434443348, 53.7613267635 ]
+			},
+			"properties" : {
+				"HS_NR" : 407,
+				"FGU" : 1,
+				"NAME" : "Hasenbusch",
+				"FAHRTRICHTUNG" : "Papenhöhe",
+				"BUSLINIEN" : "6500, 6503, 6523, 6533, 6534, 6535 ",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Flamweg / Kaltenhof"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6569357419, 53.7691661038 ]
+			},
+			"properties" : {
+				"HS_NR" : 107,
+				"FGU" : 0,
+				"NAME" : "Fuchsberger Damm",
+				"FAHRTRICHTUNG" : "Friedensallee",
+				"BUSLINIEN" : "6503",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Höhe Reiterhof"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6736222114, 53.7660255696 ]
+			},
+			"properties" : {
+				"HS_NR" : 117,
+				"FGU" : 0,
+				"NAME" : "Stargarder Straße",
+				"FAHRTRICHTUNG" : "Kaltenweide",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Walfänger Straße / Florapromenade"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6720728344, 53.7617795873 ]
+			},
+			"properties" : {
+				"HS_NR" : 137,
+				"FGU" : 1,
+				"NAME" : "Kaltenweide (Mitte)",
+				"FAHRTRICHTUNG" : "Friedensallee",
+				"BUSLINIEN" : "6503, 6504, 6507",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Kaltenweide / Koppeldamm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6645853004, 53.7548830097 ]
+			},
+			"properties" : {
+				"HS_NR" : 206,
+				"FGU" : 1,
+				"NAME" : "Mühlenstraße",
+				"FAHRTRICHTUNG" : "Friedensallee",
+				"BUSLINIEN" : "6500, 6502",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Mühlendamm / Krückau"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6885253345, 53.7468610869 ]
+			},
+			"properties" : {
+				"HS_NR" : 221,
+				"FGU" : 0,
+				"NAME" : "Otto-Hahn-Straße",
+				"FAHRTRICHTUNG" : "Kreishaus",
+				"BUSLINIEN" : "185, 6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Daimlerstraße / Otto-Hahn-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6997787309, 53.7409123363 ]
+			},
+			"properties" : {
+				"HS_NR" : 231,
+				"FGU" : 0,
+				"NAME" : "Ernst-Abbe-Straße",
+				"FAHRTRICHTUNG" : "Wittenberger Straße",
+				"BUSLINIEN" : "6501, 6502, 6505",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Ernst-Abbe-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6808725635, 53.7407744529 ]
+			},
+			"properties" : {
+				"HS_NR" : 243,
+				"FGU" : 0,
+				"NAME" : "Waldorfschule (nur zum Aussteigen)",
+				"FAHRTRICHTUNG" : "Hamburger Straße",
+				"BUSLINIEN" : "6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "gegenüber Schule"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6612724783, 53.7379274693 ]
+			},
+			"properties" : {
+				"HS_NR" : 308,
+				"FGU" : 0,
+				"NAME" : "Hebbelplatz",
+				"FAHRTRICHTUNG" : "Reichenstraße",
+				"BUSLINIEN" : "489",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Hebbelplatz / Morthorststraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6563875417, 53.7438473079 ]
+			},
+			"properties" : {
+				"HS_NR" : 324,
+				"FGU" : 1,
+				"NAME" : "Meteorstraße",
+				"FAHRTRICHTUNG" : "Klostersande",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Nähe Meteorstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6435583693, 53.7736552862 ]
+			},
+			"properties" : {
+				"HS_NR" : 403,
+				"FGU" : 1,
+				"NAME" : "Grenzweg",
+				"FAHRTRICHTUNG" : "Sibirien",
+				"BUSLINIEN" : "6503",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Nähe Papenhöhe"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6588585799, 53.7723781152 ]
+			},
+			"properties" : {
+				"HS_NR" : 104,
+				"FGU" : 1,
+				"NAME" : "Fuchsberger Allee",
+				"FAHRTRICHTUNG" : "Sibirien",
+				"BUSLINIEN" : "6503",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Gerlingweg / Sibirien"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6653609657, 53.7565880616 ]
+			},
+			"properties" : {
+				"HS_NR" : 133,
+				"FGU" : 1,
+				"NAME" : "Krückauweg",
+				"FAHRTRICHTUNG" : "Friedensallee",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Kaltenweide / Friedensallee"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6741205055, 53.7570468711 ]
+			},
+			"properties" : {
+				"HS_NR" : 201,
+				"FGU" : 1,
+				"NAME" : "Elsa-Brandström-Schule",
+				"FAHRTRICHTUNG" : null,
+				"BUSLINIEN" : "6505",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "vor Schule"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6746615349, 53.7543974504 ]
+			},
+			"properties" : {
+				"HS_NR" : 205,
+				"FGU" : 1,
+				"NAME" : "Zum Krückaupark",
+				"FAHRTRICHTUNG" : "Wittenberger Straße",
+				"BUSLINIEN" : "6500",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Zum Krückaupark"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6919267142, 53.7415692237 ]
+			},
+			"properties" : {
+				"HS_NR" : 233,
+				"FGU" : 0,
+				"NAME" : "Ramskamp (Mitte)",
+				"FAHRTRICHTUNG" : "Wittenberger Straße",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Nähe Daimlerstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6702610494, 53.7357217448 ]
+			},
+			"properties" : {
+				"HS_NR" : 246,
+				"FGU" : 1,
+				"NAME" : "Am Erlengrund",
+				"FAHRTRICHTUNG" : "Adenauer Damm",
+				"BUSLINIEN" : "6501, 6502",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Am Erlengrund"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6679832269, 53.7337078073 ]
+			},
+			"properties" : {
+				"HS_NR" : 314,
+				"FGU" : 1,
+				"NAME" : "Liethmoor",
+				"FAHRTRICHTUNG" : "Adenauerdamm",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Heidmühlenweg / Liethmoor"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6560705242, 53.7415127215 ]
+			},
+			"properties" : {
+				"HS_NR" : 322,
+				"FGU" : 1,
+				"NAME" : "Ollnstraße (Mitte)",
+				"FAHRTRICHTUNG" : "Reichenstraße",
+				"BUSLINIEN" : "6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Ollnstraße / Fehrsstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6629926537, 53.7647076317 ]
+			},
+			"properties" : {
+				"HS_NR" : 128,
+				"FGU" : 1,
+				"NAME" : "Am Friedhof",
+				"FAHRTRICHTUNG" : "Koppeldamm",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Ellerndamm / Am Friedhof"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6644349063, 53.757934313 ]
+			},
+			"properties" : {
+				"HS_NR" : 131,
+				"FGU" : 1,
+				"NAME" : "Finanzamt",
+				"FAHRTRICHTUNG" : "Am Friedhof",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Friedensallee / gegenüber Finanzamt"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6689740449, 53.7581498868 ]
+			},
+			"properties" : {
+				"HS_NR" : 135,
+				"FGU" : 1,
+				"NAME" : "Moltkestraße",
+				"FAHRTRICHTUNG" : "Friedensallee",
+				"BUSLINIEN" : "6503, 6504, 6507, 6521, 6534, 6535",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Kaltenweide / Moltkestraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6760377667, 53.7635661228 ]
+			},
+			"properties" : {
+				"HS_NR" : 139,
+				"FGU" : 0,
+				"NAME" : "Walfängerstraße",
+				"FAHRTRICHTUNG" : "Friedensallee",
+				"BUSLINIEN" : "6501, 6503, 6504",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Kaltenweide / Walfängerstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6842626918, 53.7688079465 ]
+			},
+			"properties" : {
+				"HS_NR" : 143,
+				"FGU" : 0,
+				"NAME" : "Voßkuhlen",
+				"FAHRTRICHTUNG" : "Barmstedt",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Höhe Voßkuhlen"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6862584372, 53.7711393718 ]
+			},
+			"properties" : {
+				"HS_NR" : 146,
+				"FGU" : 1,
+				"NAME" : "Heidkoppelweg",
+				"FAHRTRICHTUNG" : "Barmstedt",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Kreuzung Sparrieshoop"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6745372159, 53.7544686646 ]
+			},
+			"properties" : {
+				"HS_NR" : 204,
+				"FGU" : 0,
+				"NAME" : "Zum Krückaupark",
+				"FAHRTRICHTUNG" : "Langelohe",
+				"BUSLINIEN" : "6500",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Köllner Chaussee / Zum Krückaupark"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.707918967, 53.741749882 ]
+			},
+			"properties" : {
+				"HS_NR" : 230,
+				"FGU" : null,
+				"NAME" : "Franzosenhof (extern)",
+				"FAHRTRICHTUNG" : null,
+				"BUSLINIEN" : "6501, 6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Einkaufszentrum "
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6884077668, 53.742020423 ]
+			},
+			"properties" : {
+				"HS_NR" : 235,
+				"FGU" : 0,
+				"NAME" : "Ramskamp (West)",
+				"FAHRTRICHTUNG" : "Wittenberger Straße",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Nähe Otto-Hahn-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6777271033, 53.7486248064 ]
+			},
+			"properties" : {
+				"HS_NR" : 238,
+				"FGU" : 0,
+				"NAME" : "Hamburger Straße",
+				"FAHRTRICHTUNG" : "Hamburger Straße",
+				"BUSLINIEN" : "6502",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Adenauerdamm / Hamburger Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.680460325, 53.7440724259 ]
+			},
+			"properties" : {
+				"HS_NR" : 241,
+				"FGU" : 0,
+				"NAME" : "Adenauerdamm",
+				"FAHRTRICHTUNG" : "Adenauer Damm",
+				"BUSLINIEN" : "6501",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Rethfelder Ring / Adenauerdamm"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6454353823, 53.7384465284 ]
+			},
+			"properties" : {
+				"HS_NR" : 338,
+				"FGU" : 1,
+				"NAME" : "Köhnholz (Süd)",
+				"FAHRTRICHTUNG" : "Westerstraße",
+				"BUSLINIEN" : "489",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Köhnholz / Heidmühlenweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6425793911, 53.7727383511 ]
+			},
+			"properties" : {
+				"HS_NR" : 404,
+				"FGU" : 0,
+				"NAME" : "Grenzweg",
+				"FAHRTRICHTUNG" : "Flamweg",
+				"BUSLINIEN" : "6503, 6522, 6523, 6533, 6534, 6535",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Nähe Gerlingweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6374422282, 53.7537850714 ]
+			},
+			"properties" : {
+				"HS_NR" : 416,
+				"FGU" : 0,
+				"NAME" : "Burdiekstraße",
+				"FAHRTRICHTUNG" : "Wedenkamp",
+				"BUSLINIEN" : "6507, 6521",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Burdiekstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6423878108, 53.7548809867 ]
+			},
+			"properties" : {
+				"HS_NR" : 419,
+				"FGU" : 0,
+				"NAME" : "Turnstraße",
+				"FAHRTRICHTUNG" : "Besenbeker Straße",
+				"BUSLINIEN" : "6500, 6507",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Turnstraße / Gerberstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6465568649, 53.7539627825 ]
+			},
+			"properties" : {
+				"HS_NR" : 422,
+				"FGU" : 1,
+				"NAME" : "Gerberstraße",
+				"FAHRTRICHTUNG" : "Wedenkamp",
+				"BUSLINIEN" : "6500, 6507, 6533",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Gerberstraße / Reeperbahn"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6529392856, 53.7519410173 ]
+			},
+			"properties" : {
+				"HS_NR" : 425,
+				"FGU" : 1,
+				"NAME" : "Wedenkamp (CCE)",
+				"FAHRTRICHTUNG" : "Vormstegen",
+				"BUSLINIEN" : "6500, 6533",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Wedenkamp / Nordufer"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6566457351, 53.7549355467 ]
+			},
+			"properties" : {
+				"HS_NR" : 428,
+				"FGU" : 0,
+				"NAME" : "Bahnhof Elmshorn (Holstenplatz)",
+				"FAHRTRICHTUNG" : "Schulstraße",
+				"BUSLINIEN" : "6533",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Holstenstraße / Schulstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6520607515, 53.7577958407 ]
+			},
+			"properties" : {
+				"HS_NR" : 431,
+				"FGU" : 0,
+				"NAME" : "Bismarckstraße",
+				"FAHRTRICHTUNG" : "Ost-West-Brücke",
+				"BUSLINIEN" : "3507, 6521",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Gärtnerstraße / Bismarckstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6624709804, 53.7690277216 ]
+			},
+			"properties" : {
+				"HS_NR" : 120,
+				"FGU" : 1,
+				"NAME" : "Zeppelinplatz",
+				"FAHRTRICHTUNG" : "Am Friedhof",
+				"BUSLINIEN" : "6503",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Koppeldamm / Philosophenweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6660307509, 53.747943876 ]
+			},
+			"properties" : {
+				"HS_NR" : 212,
+				"FGU" : 1,
+				"NAME" : "Bussardweg",
+				"FAHRTRICHTUNG" : "Westerstraße",
+				"BUSLINIEN" : "185, 6502",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Höhe Bussardweg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6699148297, 53.7403183571 ]
+			},
+			"properties" : {
+				"HS_NR" : 249,
+				"FGU" : 1,
+				"NAME" : "Dornbusch",
+				"FAHRTRICHTUNG" : "Adenauer Damm",
+				"BUSLINIEN" : "6501, 6502",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Hainholzer Damm / Am Dornbusch"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6423244152, 53.7430692431 ]
+			},
+			"properties" : {
+				"HS_NR" : 332,
+				"FGU" : 1,
+				"NAME" : "Köhnholz (Nord)",
+				"FAHRTRICHTUNG" : "Kurzenmoor",
+				"BUSLINIEN" : "6506",
+				"BLINDENLEITSYSTEM" : 1,
+				"STANDORT" : "Wilhelmstraße / Wenzel-Hablik-Straße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6785669488, 53.738138007 ]
+			},
+			"properties" : {
+				"HS_NR" : 261,
+				"FGU" : 0,
+				"NAME" : "Plinkstraße",
+				"FAHRTRICHTUNG" : "Hamburger Straße",
+				"BUSLINIEN" : "6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Adenauer Damm / Plinkstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6775225395, 53.7374337972 ]
+			},
+			"properties" : {
+				"HS_NR" : 262,
+				"FGU" : 0,
+				"NAME" : "Plinkstraße",
+				"FAHRTRICHTUNG" : "Heidmühlenweg",
+				"BUSLINIEN" : "6502",
+				"BLINDENLEITSYSTEM" : 0,
+				"STANDORT" : "Adenauerdamm / Plinkstraße"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.6529130613, 53.7546430924 ]
+			},
+			"properties" : {
+				"HS_NR" : 432,
+				"FGU" : 0,
+				"NAME" : "Peterstraße",
+				"FAHRTRICHTUNG" : "Gerberstraße",
+				"BUSLINIEN" : "6507",
+				"BLINDENLEITSYSTEM" : null,
+				"STANDORT" : "Schulstraße / Peterstraße"
+			}
+		}
+	]
+}
