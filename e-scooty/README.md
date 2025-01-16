@@ -1,4 +1,4 @@
-# confusion
+# escooty
 
 ## Project setup
 ```
