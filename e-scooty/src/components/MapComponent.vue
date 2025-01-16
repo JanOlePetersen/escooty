@@ -6,7 +6,7 @@
 
 <template>
   <div class="nav justify-content-center">
-    <h1>E Scooty</h1>
+    <h1>E-Scooty</h1>
   </div>
 
   <div>
@@ -20,7 +20,9 @@
             :id="'layer-' + index" 
             @mouseup="filterLayers(index)" 
             aria-current="page">
-            {{ option }}
+              <img class="s-img me-2" v-if="layerVisibility[index].visible" :src="CheckBox" alt="Checkbox" />
+              <img class="s-img me-2" v-else :src="CheckBoxOff" alt="Checkbox" />
+              {{ option }}
           </a>
         </li>
       </ul>
@@ -76,11 +78,14 @@ import BebauungsFlaeche from "../assets/BebauungsFlaeche.geojson";
 import Denkmal from "../assets/Denkmal.geojson";
 import L from "leaflet";
 
+import CheckBox from "../assets/square-check-regular.svg";
+import CheckBoxOff from "../assets/square-regular.svg";
+
 export default {
   components: {
     LMap,
     LTileLayer,
-    LGeoJson
+    LGeoJson,
   },
   data() {
     return {
@@ -161,7 +166,7 @@ export default {
             fillColor: "yellow",
             color: "#000",
             weight: 1,
-            opacity: 1,
+            opacity: 0.01,
             fillOpacity: 0.8
           });
         }
