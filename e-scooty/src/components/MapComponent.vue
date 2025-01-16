@@ -35,9 +35,9 @@
       <l-geo-json :geojson="elmshornStraßennetz" :options="geojsonOptionsStraßennetz" />
       <l-geo-json :geojson="elmshornVelorouten" :options="geojsonOptionsVelorouten" />
       <l-geo-json :geojson="escooterParkverbot" :options="geojsonOptionsParkverbot" />
-      <l-geo-json :geojson="escooterStellplatz" :options="geojsonOptionsStellplatz" />
       <l-geo-json :geojson="elmshornHaltestellen" :options="geojsonOptionsHaltestellen" />
       <l-geo-json :geojson="elmshornBebauungsFlaeche" :options="geojsonOptionsBebauungsFlaeche" />
+      <l-geo-json :geojson="escooterStellplatz" :options="geojsonOptionsStellplatz" />
       
 
     </l-map>
@@ -77,12 +77,20 @@ export default {
       elmshornBebauungsFlaeche: BebauungsFlaeche,
       geojsonOptionsStellplatz: {
       // Färbt die jeweilige genannte EScooterID ein
-        onEachFeature: (feature, layer) => {
-          if (feature.properties && feature.properties.Escoote_ID === 1) {
-            layer.setStyle({
+      onEachFeature: (feature, layer) => {
+          // if (feature.properties && feature.properties.Escoote_ID === 1) {
+          //   layer.setStyle({
+          //     color: 'red'
+          //   });
+          // }
+          layer.on({
+            click: () => {
+              layer.bindPopup(`Stellplatz ID: ${feature.properties.Escoote_ID}`).openPopup();
+              layer.setStyle({
               color: 'red'
             });
-          }
+            }
+          });
         }
       },
       geojsonOptionsParkverbot: {
