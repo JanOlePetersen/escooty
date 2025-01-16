@@ -1,5 +1,5 @@
 <template>
-  <MapComponent msg="Welcome to Your Vue.js App"/>
+  <MapComponent/>
 </template>
 
 <script>
