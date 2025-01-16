@@ -1,0 +1,128 @@
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+  
+  .format {
+    width: 50vw;
+    height: 50vh;
+  }
+  
+  .display-right {
+    display: right;
+  }
+  
+  /* ~~~~~~~~~~~ Button designs (Colors) ~~~~~~~~~~~ */
+  .btn-outline-dropdown {
+    background-color: #FFFFFF;
+    --bs-btn-border-color: #808080;
+    --bs-btn-hover-border-color: #808080;
+    --bs-gradient: none;
+  }
+  
+  .accept, .dropdown-item.active {
+    background-color: #90EE90;
+    color: #000000;
+    --bs-btn-border-color: #808080;
+    --bs-gradient: none;
+  }
+  .dropdown-item.active:hover, #leichte-sprache .green:hover {
+    background: #55CC55;
+  }
+  
+  .accept:hover, .cancel {
+    background-color: #D3D3D3;
+    --bs-btn-hover-border-color: #6C757D;
+    --bs-btn-border-color: #808080;
+    --bs-gradient: none;
+  }
+  
+  a, .accept:hover, .cancel {
+    color: #000000;
+  }
+  
+  .green {
+    background: #90EE90;
+  }
+  
+  #top-nav {
+    border-top: #F1F1F1 1px solid;
+  }
+  
+  
+  /* ~~~~~~~~~~~~~~~~~~~~~~ Nav bars ~~~~~~~~~~~~~~~~~~~~~~ */
+  nav {
+    position: fixed;
+    display: inline-block;
+    width: 100vw;
+  }
+  
+  #top-nav {
+    top: 56px;
+    position: fixed;
+  }
+  
+  #bottom-nav {
+    bottom: 0;
+  }
+  
+  .list-style-none {
+    list-style: none;
+  }
+  
+  .vue-dropdown-menu, .vue-dropdown-menu-settings {
+    position: absolute;
+    z-index: var(--bs-dropdown-zindex);
+    margin: 7px 0 0;
+    text-align: left;
+    list-style: none;
+    border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
+    border-radius: var(--bs-dropdown-border-radius);
+  }
+  .vue-dropdown-menu li, .vue-dropdown-menu-settings li {
+    margin: 3px;
+  }
+  
+  .medium-width {
+    min-width: 30vw;
+  }
+  
+  .display-right, .display-simple-right {
+    text-align: right;
+  }
+  
+  img {
+    object-fit: cover;
+  }
+  
+  .settings-img {
+    object-fit: contain;
+    height: 4vh;
+    width: 5vw;
+  }
+  
+  .s-img {
+    object-fit: contain;
+    height: 3vh;
+    width: 3vw;
+  }
+  
+  .project-image {
+    min-height: 10vh;
+    max-height: 15vh;
+    width: 100%;
+  }
+  
+  .search-img {
+    height: inherit;
+    object-fit: contain;
+  }
+  
+  .desktop-filter h3 {
+    margin-right: 3vw;
+  }
+  
+  .project-search {
+    width: 85%;
+  }
