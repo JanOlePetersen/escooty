@@ -231,11 +231,25 @@ export default {
       }
       clickedElement.classList.toggle('active');
     },
-    filterLayers(id) {
+    async filterLayers(id) {
+      if (this.layerVisibility[id].visible) {
+        this.layerVisibility[id].visible = !this.layerVisibility[id].visible;
+        return;
+      }
+      for (let i = id-1; i >= 0; i--) {
+        this.layerVisibility[i].visible = !this.layerVisibility[i].visible;
+      }
       this.layerVisibility[id].visible = !this.layerVisibility[id].visible;
+      for (let i = id-1; i >= 0; i--) {
+        this.layerVisibility[i].visible = !this.layerVisibility[i].visible;
+        await this.delay(0.1);
+      }
     },
     filterLayers2(id) {
       this.layerVisibility[id].visible = !this.layerVisibility[id].visible;
+    },
+    delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
     }
   }
 };
