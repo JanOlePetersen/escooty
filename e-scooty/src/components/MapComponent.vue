@@ -386,8 +386,11 @@ export default {
       this.tinurfBus = JSON.parse(JSON.stringify(newTin));
     },
     tinning() {
-      //console.log(turf.tin(this.elmshornHaltestellen));
-      const newTin = turf.tin(this.escooterStellplatzZentrum);
+      var combinedBlot = {
+        type: "FeatureCollection", // GeoJSON-Typ
+        features: [...this.elmshornHaltestellen.features, ...this.escooterStellplatzZentrum.features], // Features übernehmen
+      };
+      const newTin = turf.tin(combinedBlot);
       this.tinurf = JSON.parse(JSON.stringify(newTin));
     },
 
