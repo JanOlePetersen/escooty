@@ -6,16 +6,18 @@
 
 <template>
   <div class="nav justify-content-center">
-    <h1>E-Scooty</h1>
+    <img src="../assets/logo.png" alt="Logo" class="logo settings-img mt-1">
+    <h1 class="ms-2 me-2">E-Scooty</h1>
+    <img src="../assets/logo.png" alt="Logo" class="logo settings-img mt-1">
   </div>
 
   <div>
     <div> <!-- Filter active / completed project partizipation -->
-      <button @click="dropdownInformation = !dropdownInformation" class="btn btn-outline-dropdown align-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-layers">Ebenen</button>
+      <button @click="dropdownInformation = !dropdownInformation; callOnce()" class="btn btn-outline-dropdown align-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-layers">Ebenen</button>
       <ul v-show="dropdownInformation" @mouseleave="dropdownInformation = false" class="vue-dropdown-menu list-style-none text-small gap-1 p-2 rounded-3 shadow w-25 z-2 ml-filter-one" id="layer-options">
         <li v-for="(option, index) in filterOneOptions" :key="index">
           <a 
-            class="dropdown-item rounded-2 active layer-option" 
+            class="dropdown-item rounded-2 layer-option" 
             @mousedown="noneLoaded = false; handleFilter('layer-' + index)" 
             :id="'layer-' + index" 
             @mouseup="filterLayers(index)" 
@@ -45,7 +47,6 @@
     </div>
   </div>
 
-
   <div class = "format center">
     <l-map ref="map" v-model:zoom="zoom" :center="[53.75153044444902, 9.664619800111053]" @click="checkPlace" :bounds="bounds" :max-bounds="maxBounds" >
       <l-tile-layer
@@ -73,6 +74,7 @@
       <button v-if="layerVisibility[9].visible" @click="resetPointsBus" :disabled="!newPointsBus || newPointsBus.features.length === 0" class="btn btn-primary shadow" style="z-index: 1000; position: relative; top: 10px;">
         Zurücksetzen
       </button>
+      <l-geo-json :geojson="cityLimits" :options="cityLimitOptions"/>
       <l-geo-json v-if="layerVisibility[6].visible" :geojson="elmshornStrassenbeleuchtung" :options="geojsonOptionsStrassenbeleuchtung" />
       <l-geo-json v-if="layerVisibility[0].visible" :geojson="elmshornStraßennetz" :options="geojsonOptionsStraßennetz" />
       <l-geo-json v-if="layerVisibility[1].visible" :geojson="elmshornVelorouten" :options="geojsonOptionsVelorouten" />
@@ -88,7 +90,6 @@
       <l-geo-json v-if="layerVisibility[10].visible && addIcons" :geojson="addIcons" :options="bufferStyle"/>
       <l-geo-json v-if="layerVisibility[8].visible && addIconsLot" :geojson="addIconsLot" :options="bufferStyle"/>
       <l-geo-json v-if="layerVisibility[9].visible && addIconsBus" :geojson="addIconsBus" :options="bufferStyle"/>
-      <l-geo-json :geojson="cityLimits" :options="cityLimitOptions"/>
       <l-geo-json :geojson="cityLimitsMask" :options="cityLimitMaskOptions"/>
       <div v-if="layerVisibility[8].visible || layerVisibility[9].visible || layerVisibility[10].visible" class="legend" style="z-index: 1000; position: relative; top: -3vh;">
         <h4>Abdeckung</h4>
@@ -153,14 +154,14 @@ export default {
       dropdownInformation: false,
       dropdownHeat: false,
       layerVisibility: [
-        { id: 0, name: "Straßennetz", visible: true },
-        { id: 1, name: "Veloruten", visible: true },
+        { id: 0, name: "Straßennetz", visible: false },
+        { id: 1, name: "Veloruten", visible: false },
         { id: 2, name: "Stellplätze", visible: true },
-        { id: 3, name: "Straßenbeleuchtung", visible: true },
+        { id: 3, name: "Bushaltestellen", visible: true },
         { id: 4, name: "Parkverbot", visible: true },
-        { id: 5, name: "Bebauungsfläche", visible: true },
-        { id: 6, name: "Straßenbeleuchtung", visible: true },
-        { id: 7, name: "Denkmäler", visible: true },
+        { id: 5, name: "Bebauungsfläche", visible: false },
+        { id: 6, name: "Straßenbeleuchtung", visible: false },
+        { id: 7, name: "Denkmäler", visible: false },
         { id: 8, name: "Tinurf", visible: false },
         { id: 9, name: "TinBus", visible: false },
         { id: 10, name: "TinBoth", visible: false },
@@ -179,6 +180,7 @@ export default {
       tinurfBus: null,
       tinurfLot: null,
       tinurf: null,
+      once: true,
       newPoints: {
         type: "FeatureCollection", // GeoJSON-Typ
         features: [], // Features übernehmen
@@ -389,6 +391,14 @@ export default {
     };
   },
   methods: {
+    callOnce () {
+      if (this.once) {
+        document.getElementById('layer-' + 2).classList.toggle('active');
+        document.getElementById('layer-' + 3).classList.toggle('active');
+        document.getElementById('layer-' + 4).classList.toggle('active');
+        this.once = false;
+      }
+    },
     handleFilter(itemId) {
       const clickedElement = document.getElementById(itemId);
 
