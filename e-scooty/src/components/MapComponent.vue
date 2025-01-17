@@ -266,6 +266,16 @@ export default {
       geojsonOptionsDenkmal: {
         pointToLayer: (feature, latlng) => {
           return L.marker(latlng, { icon: denkmalIcon });
+        },
+        onEachFeature: (feature, layer) => {
+          layer.on({
+            mouseover: () => {
+              layer.bindPopup(`Name: ${feature.properties.NAME}`).openPopup();
+            },
+            mouseout: () => {
+              layer.closePopup();
+            },
+          })
         }
       },
     };
