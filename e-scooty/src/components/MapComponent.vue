@@ -268,7 +268,7 @@ export default {
         i++;
         j = 0;
         parkverbotFeatures.forEach((parkverbotFeature) => {
-          j++;
+          
           const isIntersecting = turf.booleanIntersects(stellplatzFeature, parkverbotFeature);
           if (isIntersecting) {
             intersections.push({
@@ -277,6 +277,7 @@ export default {
             });
             return;
           }
+          j++;
         });
       });
 

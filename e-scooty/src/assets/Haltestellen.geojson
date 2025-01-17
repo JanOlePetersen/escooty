@@ -870,38 +870,6 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ 9.7190707324, 53.7424070343 ]
-			},
-			"properties" : {
-				"HS_NR" : 228,
-				"FGU" : null,
-				"NAME" : "Dorfstraße (extern, Seeth-Ekholt)",
-				"FAHRTRICHTUNG" : "Elmshorn",
-				"BUSLINIEN" : "185, 6505",
-				"BLINDENLEITSYSTEM" : 0,
-				"STANDORT" : "Gemeinde Seeth-Ekholt"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ 9.7190310807, 53.7422985741 ]
-			},
-			"properties" : {
-				"HS_NR" : 229,
-				"FGU" : 0,
-				"NAME" : "Dorfstraße (extern, Seeth-Ekholt) ???",
-				"FAHRTRICHTUNG" : "Seeth-Ekholt",
-				"BUSLINIEN" : "185, 6505",
-				"BLINDENLEITSYSTEM" : 0,
-				"STANDORT" : "Kreisstraße, gegenüber Haltestelle Seeth-Ekholt"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
 				"coordinates" : [ 9.6996194934, 53.7410863127 ]
 			},
 			"properties" : {
@@ -2192,22 +2160,6 @@
 				"BUSLINIEN" : "6507",
 				"BLINDENLEITSYSTEM" : 0,
 				"STANDORT" : "Feldstraße / Peter-Boldt-Straße"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ 9.6958873578, 53.7590631028 ]
-			},
-			"properties" : {
-				"HS_NR" : 501,
-				"FGU" : 1,
-				"NAME" : "Friedhof Kölln-Reisiek",
-				"FAHRTRICHTUNG" : null,
-				"BUSLINIEN" : "6500",
-				"BLINDENLEITSYSTEM" : 1,
-				"STANDORT" : "Stabeltwiete Kölln-Reisiek"
 			}
 		},
 		{
