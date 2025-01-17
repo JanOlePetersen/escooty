@@ -89,6 +89,7 @@
       <l-geo-json v-if="layerVisibility[8].visible && addIconsLot" :geojson="addIconsLot" :options="bufferStyle"/>
       <l-geo-json v-if="layerVisibility[9].visible && addIconsBus" :geojson="addIconsBus" :options="bufferStyle"/>
       <l-geo-json :geojson="cityLimits" :options="cityLimitOptions"/>
+      <l-geo-json :geojson="cityLimitsMask" :options="cityLimitMaskOptions"/>
       <div v-if="layerVisibility[8].visible || layerVisibility[9].visible || layerVisibility[10].visible" class="legend" style="z-index: 1000; position: relative; top: -3vh;">
         <h4>Abdeckung</h4>
         <div class="gradient-bar"></div>
@@ -116,6 +117,7 @@ import BebauungsFlaeche from "../assets/BebauungsFlaeche.geojson";
 import Denkmal from "../assets/Denkmal.geojson";
 import HeatmapTest from "../assets/HeatmapTest.geojson";
 import CityLimits from "../assets/FP_Bereich.geojson";
+import CityLimitsMask from "../assets/FP_Bereich_Mask.geojson";
 import L from "leaflet";
 
 import * as turf from "@turf/turf";
@@ -202,6 +204,7 @@ export default {
       elmshornBebauungsFlaeche: BebauungsFlaeche,
       elmDenkmal: Denkmal,
       cityLimits: CityLimits,
+      cityLimitsmask: CityLimitsMask,
       escooterStellplatzZentrum: StellplatzZentrum,
       heatmapTesting: HeatmapTest,
       geojsonOptionsStellplatz: {
@@ -297,6 +300,11 @@ export default {
         }
       },
       cityLimitOptions: {
+        color: 'black',
+        opacity: 0,
+        fillOpacity: 0.1
+      },
+      cityLimitMaskOptions: {
         color: 'black',
         opacity: 0,
         fillOpacity: 0.1
