@@ -47,7 +47,7 @@
 
 
   <div class = "format center">
-    <l-map ref="map" v-model:zoom="zoom" :center="[53.75153044444902, 9.664619800111053]" @click="placeNewPoint" :bounds="bounds" :max-bounds="maxBounds" >
+    <l-map ref="map" v-model:zoom="zoom" :center="[53.75153044444902, 9.664619800111053]" @click="checkPlace" :bounds="bounds" :max-bounds="maxBounds" >
       <l-tile-layer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         layer-type="base"
@@ -307,7 +307,7 @@ export default {
       cityLimitMaskOptions: {
         color: 'black',
         opacity: 0,
-        fillOpacity: 0.8
+        fillOpacity: 0.6
       },
       geojsonOptionsStraßennetz: {
         "color": "green"
@@ -506,14 +506,14 @@ export default {
     },
 
     SetupHeatmaps(id){
-      if (id === 0 && !this.tinurfLot) this.tinningLot();
-      if (id === 1 && !this.tinurfBus) this.tinningBus();
+      if (id === 0) this.tinningLot();
+      if (id === 1) this.tinningBus();
       if (id === 2) this.tinning();
     },
     tinningLot() {
       var combinedBlot = {
         type: "FeatureCollection", // GeoJSON-Typ
-        features: [...this.escooterStellplatzZentrum.features, ...this.newPoints.features], // Features übernehmen
+        features: [...this.escooterStellplatzZentrum.features, ...this.newPointsLot.features], // Features übernehmen
       };
       const newTin = turf.tin(combinedBlot);
       this.tinurfLot = JSON.parse(JSON.stringify(newTin));
@@ -521,7 +521,7 @@ export default {
     tinningBus() {
       var combinedBlot = {
         type: "FeatureCollection", // GeoJSON-Typ
-        features: [...this.elmshornHaltestellen.features, ...this.newPoints.features], // Features übernehmen
+        features: [...this.elmshornHaltestellen.features, ...this.newPointsBus.features], // Features übernehmen
       };
       const newTin = turf.tin(combinedBlot);
       this.tinurfBus = JSON.parse(JSON.stringify(newTin));
@@ -533,6 +533,16 @@ export default {
       };
       const newTin = turf.tin(combinedBlot);
       this.tinurf = JSON.parse(JSON.stringify(newTin));
+    },
+    checkPlace(event) {
+      const latlng = event.latlng;
+      if (this.layerVisibility[10].visible) {
+        this.placeNewPoint(latlng);
+      } else if (this.layerVisibility[8].visible) {
+        this.placeNewPointLot(latlng);
+      } else if (this.layerVisibility[9].visible) {
+        this.placeNewPointBus(latlng);
+      }
     },
     enablePointPlacement(event) {
       event.stopPropagation();
@@ -547,7 +557,7 @@ export default {
     },
     placeNewPoint(event) {
       if (this.pointPlacementEnabled) { // Linksklick
-        const latlng = event.latlng;
+        const latlng = event;
         
         const newPoint = {
           type: "Feature",
@@ -585,10 +595,9 @@ export default {
       this.tinningLot();
     },
     placeNewPointLot(event) {
-      console.log(this.pointPlacementEnabledLot);
 
       if (this.pointPlacementEnabledLot) { // Linksklick
-        const latlng = event.latlng;
+        const latlng = event;
         
         const newPoint = {
           type: "Feature",
@@ -628,9 +637,8 @@ export default {
       this.tinningBus();
     },
     placeNewPointBus(event) {
-      console.log(this.pointPlacementEnabledBus);
       if (this.pointPlacementEnabledBus) { // Linksklick
-        const latlng = event.latlng;
+        const latlng = event;
         
         const newPoint = {
           type: "Feature",
