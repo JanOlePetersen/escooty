@@ -1,6 +1,6 @@
 <script setup>
   var filterOneOptions = ["Straßennetz", "Veloruten", "Stellplätze", "Bushaltestellen", "Parkverbot", "Bebauungsfläche", "Straßenbeleuchtung", "Denkmäler"];
-  var filterTwoOptions = ["Stellplätze", "Buslinien", "Nahverkehr"];
+  var filterTwoOptions = ["Stellplätze", "Buslinien", "Nahverkehr", "Überschneidungen", "Gebietsansicht"];
 </script>
 
 
@@ -27,7 +27,7 @@
         </li>
       </ul>
 
-      <button @click="dropdownHeat = !dropdownHeat" class="btn btn-outline-dropdown a%lign-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-heat" style="margin-left: 10vw">""Heatmaps""</button>
+      <button @click="dropdownHeat = !dropdownHeat" class="btn btn-outline-dropdown a%lign-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-heat" style="margin-left: 10vw">Fancy Name</button>
       <ul v-show="dropdownHeat" @mouseleave="dropdownHeat = false" class="vue-dropdown-menu list-style-none text-small gap-1 p-2 rounded-3 shadow w-25 z-2 ml-filter-two" id="heat-options">
         <li v-for="(option, index) in filterTwoOptions" :key="index">
           <a 
@@ -42,15 +42,6 @@
           </a>
         </li>
       </ul>
-      <button @click="checkIntersections" class="btn btn-primary shadow" style="margin-left: 10vw">
-        Prüfe Überschneidungen
-      </button>
-      <button @click="centreOfMass" class="btn btn-primary shadow" style="margin-left: 10vw">
-        Massezentrum bidde?
-      </button>
-      <button @click="tinning" class="btn btn-primary shadow" style="margin-left: 10vw">
-        Masse wird klasse
-      </button>
     </div>
   </div>
 
@@ -64,6 +55,12 @@
         minZoom="12"
       maxZoom="20"
       ></l-tile-layer>
+      <button v-if="layerVisibility[10].visible" @click="tinning" class="btn btn-primary shadow me-5" style="z-index: 1000; position: relative; top: 10px;">
+        Platziere Punkt
+      </button>
+      <button v-if="layerVisibility[10].visible" @click="tinning" class="btn btn-primary shadow" style="z-index: 1000; position: relative; top: 10px;">
+        Zurücksetzen
+      </button>
       <l-geo-json v-if="layerVisibility[6].visible" :geojson="elmshornStrassenbeleuchtung" :options="geojsonOptionsStrassenbeleuchtung" />
       <l-geo-json v-if="layerVisibility[0].visible" :geojson="elmshornStraßennetz" :options="geojsonOptionsStraßennetz" />
       <l-geo-json v-if="layerVisibility[1].visible" :geojson="elmshornVelorouten" :options="geojsonOptionsVelorouten" />
@@ -75,6 +72,7 @@
       <l-geo-json v-if="layerVisibility[8].visible && tinurfLot" :geojson="tinurfLot" :options="geojsonOptionsTin"/>
       <l-geo-json v-if="layerVisibility[9].visible && tinurfBus" :geojson="tinurfBus" :options="geojsonOptionsTin"/>
       <l-geo-json v-if="layerVisibility[10].visible && tinurf" :geojson="tinurf" :options="geojsonOptionsTin"/>
+      <l-geo-json v-if="layerVisibility[11].visible" :geojson="tinurf" :options="geojsonOptionsTin"/>
 
     </l-map>
   </div>
@@ -139,7 +137,9 @@ export default {
         { id: 7, name: "Denkmäler", visible: true },
         { id: 8, name: "Tinurf", visible: false },
         { id: 9, name: "TinBus", visible: false },
-        { id: 10, name: "TinBoth", visible: false }
+        { id: 10, name: "TinBoth", visible: false },
+        { id: 11, name: "reUnion", visible: false },
+        { id: 12, name: "gebiete", visible: false }
       ],
       zoom: 13,
       tinurfBus: null,
@@ -191,24 +191,21 @@ export default {
       },
 
       geojsonOptionsTin: {
-        onEachFeature: (feature, layer) => {
+        onEachFeature: (feature, layer) => {          
+          const area = turf.area(feature); // Berechne die Fläche
+          let color = "white";
+          if (area < 25000) color = "#ee3e32";
+          else if (area < 50000) color = "#f68838";
+          else if (area < 75000) color = "#fbb021";
+          else if (area < 100000) color = "#1b8a5a";
+          else if (area < 150000) color = "	#00544d";
+          //else if (area < 200000) color = "blue";
+          else color = "#1d4877";
 
-          
-              const area = turf.area(feature); // Berechne die Fläche
-              let color = "white";
-              if (area < 25000) color = "#ee3e32";
-              else if (area < 50000) color = "#f68838";
-              else if (area < 75000) color = "#fbb021";
-              else if (area < 100000) color = "#1b8a5a";
-              else if (area < 150000) color = "	#00544d";
-              //else if (area < 200000) color = "blue";
-              else color = "#1d4877";
-
-              layer.setStyle({
-                color: color,
-                weight: 1,
-                fillOpacity: 0.5,
-              
+          layer.setStyle({
+            color: color,
+            weight: 1,
+            fillOpacity: 0.5,    
           })
         }
       },
@@ -313,7 +310,7 @@ export default {
     filterLayers2(id) {
       this.layerVisibility[id].visible = !this.layerVisibility[id].visible;
       if (this.layerVisibility[id].visible) {
-        for (var i = 8; i < 11 ; i++) {
+        for (var i = 8; i < 13 ; i++) {
           if (this.layerVisibility[i].visible && i != id) {
             this.handleFilter('heat-' + (i-8));
             this.layerVisibility[i].visible = false;
@@ -353,13 +350,34 @@ export default {
             this.filterLayers(i);
           }
         }
+      } else if (id === 11 && this.layerVisibility[id].visible) {
+        for (i = 0; i < 8 ; i++) {
+          if (this.layerVisibility[i].visible && i != 2 && i != 4) {
+            this.handleFilter('layer-' + i);
+            this.filterLayers(i);
+          }
+          else if (!this.layerVisibility[i].visible && (i == 2 || i == 4)) {
+            this.handleFilter('layer-' + i);
+            this.filterLayers(i);
+          }
+        }
+      } else if (id === 12 && this.layerVisibility[id].visible) {
+        for (i = 0; i < 8 ; i++) {
+          if (this.layerVisibility[i].visible && i != 2 && i != 5) {
+            this.handleFilter('layer-' + i);
+            this.filterLayers(i);
+          }
+          else if (!this.layerVisibility[i].visible && (i == 2 || i == 5)) {
+            this.handleFilter('layer-' + i);
+            this.filterLayers(i);
+          }
+        }
       }
     },
     delay(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
 
     },
-
     centreOfMass() {
       var centres = [];
       const stellplatzFeatures = this.escooterStellplatz.features;
@@ -368,7 +386,6 @@ export default {
       })
       console.log("Centres: " + centres);
     },
-
     SetupHeatmaps(id){
       if (id === 0 && !this.tinurfLot) this.tinningLot();
       if (id === 1 && !this.tinurfBus) this.tinningBus();
@@ -393,7 +410,6 @@ export default {
       const newTin = turf.tin(combinedBlot);
       this.tinurf = JSON.parse(JSON.stringify(newTin));
     },
-
     checkIntersections() {
       var i = 0;
       var j = 0;
