@@ -61,6 +61,18 @@
       <button v-if="layerVisibility[10].visible" @click="resetPoints" :disabled="!newPoints || newPoints.features.length === 0" class="btn btn-primary shadow" style="z-index: 1000; position: relative; top: 10px;">
         Zurücksetzen
       </button>
+      <button v-if="layerVisibility[8].visible" @click="enablePointPlacementLot" class="btn btn-primary shadow me-5" style="z-index: 1000; position: relative; top: 10px;">
+        Platziere Punkt
+      </button>
+      <button v-if="layerVisibility[8].visible" @click="resetPointsLot" :disabled="!newPointsLot || newPointsLot.features.length === 0" class="btn btn-primary shadow" style="z-index: 1000; position: relative; top: 10px;">
+        Zurücksetzen
+      </button>
+      <button v-if="layerVisibility[9].visible" @click="enablePointPlacementBus" class="btn btn-primary shadow me-5" style="z-index: 1000; position: relative; top: 10px;">
+        Platziere Punkt
+      </button>
+      <button v-if="layerVisibility[9].visible" @click="resetPointsBus" :disabled="!newPointsBus || newPointsBus.features.length === 0" class="btn btn-primary shadow" style="z-index: 1000; position: relative; top: 10px;">
+        Zurücksetzen
+      </button>
       <l-geo-json v-if="layerVisibility[6].visible" :geojson="elmshornStrassenbeleuchtung" :options="geojsonOptionsStrassenbeleuchtung" />
       <l-geo-json v-if="layerVisibility[0].visible" :geojson="elmshornStraßennetz" :options="geojsonOptionsStraßennetz" />
       <l-geo-json v-if="layerVisibility[1].visible" :geojson="elmshornVelorouten" :options="geojsonOptionsVelorouten" />
@@ -74,6 +86,8 @@
       <l-geo-json v-if="layerVisibility[10].visible && tinurf" :geojson="tinurf" :options="geojsonOptionsTin"/>
       <l-geo-json v-if="layerVisibility[11].visible" :geojson="bufferedgeojson" :options="bufferStyle"/>
       <l-geo-json v-if="layerVisibility[10].visible && addIcons" :geojson="addIcons" :options="bufferStyle"/>
+      <l-geo-json v-if="layerVisibility[8].visible && addIconsLot" :geojson="addIconsLot" :options="bufferStyle"/>
+      <l-geo-json v-if="layerVisibility[9].visible && addIconsBus" :geojson="addIconsBus" :options="bufferStyle"/>
       <l-geo-json :geojson="cityLimits" :options="cityLimitOptions"/>
       <div v-if="layerVisibility[8].visible || layerVisibility[9].visible || layerVisibility[10].visible" class="legend" style="z-index: 1000; position: relative; top: -3vh;">
         <h4>Abdeckung</h4>
@@ -167,7 +181,17 @@ export default {
         type: "FeatureCollection", // GeoJSON-Typ
         features: [], // Features übernehmen
       },
+      newPointsLot: {
+        type: "FeatureCollection", // GeoJSON-Typ
+        features: [], // Features übernehmen
+      },
+      newPointsBus: {
+        type: "FeatureCollection", // GeoJSON-Typ
+        features: [], // Features übernehmen
+      },
       pointPlacementEnabled: false,
+      pointPlacementEnabledLot: false,
+      pointPlacementEnabledbus: false,
       bufferedgeojson: null,
       escooterStellplatz: Escooter_Stellplatz,
       escooterParkverbot: EScooter_Parkverbot_EL,
@@ -275,7 +299,7 @@ export default {
       cityLimitOptions: {
         color: 'black',
         opacity: 0,
-        fillOpacity: 0
+        fillOpacity: 0.1
       },
       geojsonOptionsStraßennetz: {
         "color": "green"
@@ -478,15 +502,20 @@ export default {
       if (id === 1 && !this.tinurfBus) this.tinningBus();
       if (id === 2) this.tinning();
     },
-
     tinningLot() {
-      //console.log(turf.tin(this.elmshornHaltestellen));
-      const newTin = turf.tin(this.escooterStellplatzZentrum);
+      var combinedBlot = {
+        type: "FeatureCollection", // GeoJSON-Typ
+        features: [...this.escooterStellplatzZentrum.features, ...this.newPoints.features], // Features übernehmen
+      };
+      const newTin = turf.tin(combinedBlot);
       this.tinurfLot = JSON.parse(JSON.stringify(newTin));
     },
     tinningBus() {
-      //console.log(turf.tin(this.elmshornHaltestellen));
-      const newTin = turf.tin(this.elmshornHaltestellen);
+      var combinedBlot = {
+        type: "FeatureCollection", // GeoJSON-Typ
+        features: [...this.elmshornHaltestellen.features, ...this.newPoints.features], // Features übernehmen
+      };
+      const newTin = turf.tin(combinedBlot);
       this.tinurfBus = JSON.parse(JSON.stringify(newTin));
     },
     tinning() {
@@ -536,6 +565,91 @@ export default {
         }
       }
     },
+    enablePointPlacementLot(event) {
+      event.stopPropagation();
+      this.pointPlacementEnabledLot = true;
+    },
+    resetPointsLot(event) {
+      event.stopPropagation();
+      this.newPointsLot.features = [];
+      this.addIconsLot = JSON.parse(JSON.stringify(""));
+      //this.escooterStellplatzZentrum.features = this.escooterStellplatzZentrum.features.filter(feature => !this.newPoints.includes(feature));
+      this.tinningLot();
+    },
+    placeNewPointLot(event) {
+      console.log(this.pointPlacementEnabledLot);
+
+      if (this.pointPlacementEnabledLot) { // Linksklick
+        const latlng = event.latlng;
+        
+        const newPoint = {
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [latlng.lng, latlng.lat],
+          },
+          properties: {},
+        };
+
+        console.log(turf.pointsWithinPolygon(newPoint, this.cityLimits).features.length > 0);
+        
+        if (turf.pointsWithinPolygon(newPoint, this.cityLimits).features.length > 0) {	
+          this.newPointsLot.features.push(newPoint);
+
+          var combinedIcons = {
+            type: "FeatureCollection", // GeoJSON-Typ
+            features: [...this.newPointsLot.features], // Features übernehmen
+          };
+          const newTin = turf.combine(combinedIcons);
+          this.addIconsLot = JSON.parse(JSON.stringify(newTin));
+
+          this.tinningLot();
+          this.pointPlacementEnabledLot = false;
+        }
+      }
+    },
+    enablePointPlacementBus(event) {
+      event.stopPropagation();
+      this.pointPlacementEnabledBus = true;
+    },
+    resetPointsBus(event) {
+      event.stopPropagation();
+      this.newPointsBus.features = [];
+      this.addIconsBus = JSON.parse(JSON.stringify(""));
+      //this.escooterStellplatzZentrum.features = this.escooterStellplatzZentrum.features.filter(feature => !this.newPoints.includes(feature));
+      this.tinningBus();
+    },
+    placeNewPointBus(event) {
+      console.log(this.pointPlacementEnabledBus);
+      if (this.pointPlacementEnabledBus) { // Linksklick
+        const latlng = event.latlng;
+        
+        const newPoint = {
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [latlng.lng, latlng.lat],
+          },
+          properties: {},
+        };
+        console.log(turf.pointsWithinPolygon(newPoint, this.cityLimits).features.length > 0);
+        
+        if (turf.pointsWithinPolygon(newPoint, this.cityLimits).features.length > 0) {	
+          this.newPointsBus.features.push(newPoint);
+
+          var combinedIcons = {
+            type: "FeatureCollection", // GeoJSON-Typ
+            features: [...this.newPointsBus.features], // Features übernehmen
+          };
+          const newTin = turf.combine(combinedIcons);
+          this.addIconsBus = JSON.parse(JSON.stringify(newTin));
+
+          this.tinningBus();
+          this.pointPlacementEnabledBus = false;
+        }
+      }
+    },
+
     checkIntersections() {
       var i = 0;
       var j = 0;
