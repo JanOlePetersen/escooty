@@ -204,7 +204,7 @@ export default {
       elmshornBebauungsFlaeche: BebauungsFlaeche,
       elmDenkmal: Denkmal,
       cityLimits: CityLimits,
-      cityLimitsmask: CityLimitsMask,
+      cityLimitsMask: CityLimitsMask,
       escooterStellplatzZentrum: StellplatzZentrum,
       heatmapTesting: HeatmapTest,
       geojsonOptionsStellplatz: {
@@ -307,7 +307,7 @@ export default {
       cityLimitMaskOptions: {
         color: 'black',
         opacity: 0,
-        fillOpacity: 0.1
+        fillOpacity: 0.8
       },
       geojsonOptionsStraßennetz: {
         "color": "green"
