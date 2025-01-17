@@ -27,7 +27,7 @@
         </li>
       </ul>
 
-      <button @click="dropdownHeat = !dropdownHeat" class="btn btn-outline-dropdown a%lign-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-heat" style="margin-left: 10vw">Fancy Name</button>
+      <button @click="dropdownHeat = !dropdownHeat" class="btn btn-outline-dropdown a%lign-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-heat" style="margin-left: 10vw">Planungshilfen</button>
       <ul v-show="dropdownHeat" @mouseleave="dropdownHeat = false" class="vue-dropdown-menu list-style-none text-small gap-1 p-2 rounded-3 shadow w-25 z-2 ml-filter-two" id="heat-options">
         <li v-for="(option, index) in filterTwoOptions" :key="index">
           <a 
@@ -74,6 +74,7 @@
       <l-geo-json v-if="layerVisibility[10].visible && tinurf" :geojson="tinurf" :options="geojsonOptionsTin"/>
       <l-geo-json v-if="layerVisibility[11].visible" :geojson="bufferedgeojson" :options="bufferStyle"/>
       <l-geo-json v-if="layerVisibility[10].visible && addIcons" :geojson="addIcons" :options="bufferStyle"/>
+      <l-geo-json :geojson="cityLimits" :options="cityLimitOptions"/>
 
     </l-map>
   </div>
@@ -93,6 +94,7 @@ import StellplatzZentrum from "../assets/StellplatzZentrum.geojson";
 import BebauungsFlaeche from "../assets/BebauungsFlaeche.geojson";
 import Denkmal from "../assets/Denkmal.geojson";
 import HeatmapTest from "../assets/HeatmapTest.geojson";
+import CityLimits from "../assets/FP_Bereich.geojson";
 import L from "leaflet";
 
 import * as turf from "@turf/turf";
@@ -168,6 +170,7 @@ export default {
       elmshornVelorouten: Velorouten,
       elmshornBebauungsFlaeche: BebauungsFlaeche,
       elmDenkmal: Denkmal,
+      cityLimits: CityLimits,
       escooterStellplatzZentrum: StellplatzZentrum,
       heatmapTesting: HeatmapTest,
       geojsonOptionsStellplatz: {
@@ -261,6 +264,11 @@ export default {
             fillOpacity: 0.8
           });
         }
+      },
+      cityLimitOptions: {
+        color: 'black',
+        opacity: 0,
+        fillOpacity: 0
       },
       geojsonOptionsStraßennetz: {
         "color": "green"
@@ -505,20 +513,20 @@ export default {
           },
           properties: {},
         };
+        
+        if (turf.pointsWithinPolygon(newPoint, this.cityLimits).features.length > 0) {	
+          this.newPoints.features.push(newPoint);
 
-      // Add the marker to the tinurf layer
+          var combinedIcons = {
+            type: "FeatureCollection", // GeoJSON-Typ
+            features: [...this.newPoints.features], // Features übernehmen
+          };
+          const newTin = turf.combine(combinedIcons);
+          this.addIcons = JSON.parse(JSON.stringify(newTin));
 
-        this.newPoints.features.push(newPoint);
-
-        var combinedIcons = {
-          type: "FeatureCollection", // GeoJSON-Typ
-          features: [...this.newPoints.features], // Features übernehmen
-        };
-        const newTin = turf.combine(combinedIcons);
-        this.addIcons = JSON.parse(JSON.stringify(newTin));
-
-        this.tinning();
-        this.pointPlacementEnabled = false;
+          this.tinning();
+          this.pointPlacementEnabled = false;
+        }
       }
     },
     checkIntersections() {
