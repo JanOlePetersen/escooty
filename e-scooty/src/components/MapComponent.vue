@@ -262,21 +262,53 @@ export default {
             layer.setStyle({
               color: '#7bb35d'
             });
+            layer.on({
+              mouseover: () => {
+                layer.bindPopup("Wohngebiet").openPopup();
+              },
+              mouseout: () => {
+                layer.closePopup();
+              },
+            })
           }
           if (feature.properties && feature.properties.allgArtDerBaulNutzung === 2000) {
             layer.setStyle({
               color: '#6cc0df'
             });
+            layer.on({
+              mouseover: () => {
+                layer.bindPopup("Gewerbegebiet").openPopup();
+              },
+              mouseout: () => {
+                layer.closePopup();
+              },
+            })
           }
           if (feature.properties && feature.properties.allgArtDerBaulNutzung === 3000) {
             layer.setStyle({
               color: '#a8afb1'
             });
+            layer.on({
+              mouseover: () => {
+                layer.bindPopup("Industriegebiet").openPopup();
+              },
+              mouseout: () => {
+                layer.closePopup();
+              },
+            })
           }
           if (feature.properties && feature.properties.allgArtDerBaulNutzung === 4000) {
             layer.setStyle({
               color: '#a8afb1'
             });
+            layer.on({
+              mouseover: () => {
+                layer.bindPopup("Sondergebiet").openPopup();
+              },
+              mouseout: () => {
+                layer.closePopup();
+              },
+            })
           }
         }
       },
