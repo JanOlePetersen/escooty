@@ -278,13 +278,18 @@ export default {
         this.layerVisibility[id].visible = !this.layerVisibility[id].visible;
         return;
       }
+      
+      var wasNotLoaded = [];
       for (let i = id-1; i >= 0; i--) {
-        this.layerVisibility[i].visible = !this.layerVisibility[i].visible;
+        if (this.layerVisibility[i].visible) this.layerVisibility[i].visible = !this.layerVisibility[i].visible;
+        else wasNotLoaded.push(this.layerVisibility[i].id);
       }
       this.layerVisibility[id].visible = !this.layerVisibility[id].visible;
       for (let i = id-1; i >= 0; i--) {
-        this.layerVisibility[i].visible = !this.layerVisibility[i].visible;
-        await this.delay(0.1);
+        if (!wasNotLoaded.includes(i)) {
+          this.layerVisibility[i].visible = !this.layerVisibility[i].visible;
+          await this.delay(0.1);
+        }
       }
     },
     filterLayers2(id) {
