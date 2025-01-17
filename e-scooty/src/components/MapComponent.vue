@@ -47,7 +47,7 @@
 
 
   <div class = "format center">
-    <l-map ref="map" v-model:zoom="zoom" :center="[53.75153044444902, 9.664619800111053]">
+    <l-map ref="map" v-model:zoom="zoom" :center="[53.75153044444902, 9.664619800111053]" :bounds="bounds" :max-bounds="maxBounds" >
       <l-tile-layer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         layer-type="base"
@@ -142,6 +142,14 @@ export default {
         { id: 12, name: "gebiete", visible: false }
       ],
       zoom: 13,
+      bounds: [
+        [53.7, 9.8],
+        [53.8, 9.5]
+      ],
+      maxBounds: [
+        [53.7, 9.8],
+        [53.8, 9.5]
+      ],
       tinurfBus: null,
       tinurfLot: null,
       tinurf: null,
