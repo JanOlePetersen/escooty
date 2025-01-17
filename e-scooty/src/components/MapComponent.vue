@@ -58,7 +58,7 @@
       <button v-if="layerVisibility[10].visible" @click="enablePointPlacement" class="btn btn-primary shadow me-5" style="z-index: 1000; position: relative; top: 10px;">
         Platziere Punkt
       </button>
-      <button v-if="layerVisibility[10].visible" @click="resetPoints" class="btn btn-primary shadow" style="z-index: 1000; position: relative; top: 10px;">
+      <button v-if="layerVisibility[10].visible" @click="resetPoints" :disabled="!newPoints || newPoints.features.length === 0" class="btn btn-primary shadow" style="z-index: 1000; position: relative; top: 10px;">
         Zurücksetzen
       </button>
       <l-geo-json v-if="layerVisibility[6].visible" :geojson="elmshornStrassenbeleuchtung" :options="geojsonOptionsStrassenbeleuchtung" />
@@ -173,36 +173,31 @@ export default {
       geojsonOptionsStellplatz: {
       // Färbt die jeweilige genannte EScooterID ein
       color: 'blue',
-      onEachFeature: (feature, layer) => {
-          // if (feature.properties && feature.properties.Escoote_ID === 1) {
-          //   layer.setStyle({
-          //     color: 'red'
-          //   });
-          // }
-          layer.on({
-            click: () => {
-              layer.bindPopup(`Stellplatz ID: ${feature.properties.Escoote_ID}`).openPopup();
-              layer.setStyle({
-              color: 'red'
-            });
-            },
-            mouseover: () => {
-              layer.setStyle({
-                weight: 7
-              })
-            },
-            mouseout: () => {
-              layer.setStyle({
-                weight: 2
-              })
-            },
-            popupclose: () => {
-              layer.setStyle({
-                color: 'blue'
-              })
-            }
-          })
-        }
+      // onEachFeature: (feature, layer) => {
+      //     layer.on({
+      //       click: () => {
+      //         layer.bindPopup(`Stellplatz ID: ${feature.properties.Escoote_ID}`).openPopup();
+      //         layer.setStyle({
+      //         color: 'red'
+      //       });
+      //       },
+      //       mouseover: () => {
+      //         layer.setStyle({
+      //           weight: 7
+      //         })
+      //       },
+      //       mouseout: () => {
+      //         layer.setStyle({
+      //           weight: 2
+      //         })
+      //       },
+      //       popupclose: () => {
+      //         layer.setStyle({
+      //           color: 'blue'
+      //         })
+      //       }
+      //     })
+      //   }
       },
 
       geojsonOptionsTin: {
@@ -231,6 +226,16 @@ export default {
       geojsonOptionsHaltestellen: {
         pointToLayer: (feature, latlng) => {
           return L.marker(latlng, { icon: busStopIcon });
+        },
+        onEachFeature: (feature, layer) => {
+          layer.on({
+            mouseover: () => {
+              layer.bindPopup(`Bushaltestelle: ${feature.properties.NAME}`).openPopup();
+            },
+            mouseout: () => {
+              layer.closePopup();
+            },
+          })
         }
       },
       geojsonOptionsStrassenbeleuchtung: {
@@ -282,7 +287,7 @@ export default {
         onEachFeature: (feature, layer) => {
           layer.on({
             mouseover: () => {
-              layer.bindPopup(`Name: ${feature.properties.NAME}`).openPopup();
+              layer.bindPopup(`Denkmal: ${feature.properties.NAME}`).openPopup();
             },
             mouseout: () => {
               layer.closePopup();
