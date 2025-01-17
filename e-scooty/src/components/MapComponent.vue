@@ -206,13 +206,13 @@ export default {
         onEachFeature: (feature, layer) => {          
           const area = turf.area(feature); // Berechne die Fläche
           let color = "white";
-          if (area < 25000) color = "#ee3e32";
-          else if (area < 50000) color = "#f68838";
-          else if (area < 75000) color = "#fbb021";
-          else if (area < 100000) color = "#1b8a5a";
-          else if (area < 150000) color = "	#00544d";
+          if (area < 25000) color = "#1d4877";
+          else if (area < 50000) color = "#00544d";
+          else if (area < 75000) color = "#1b8a5a";
+          else if (area < 100000) color = "#fbb021";
+          else if (area < 150000) color = "	#f68838";
           //else if (area < 200000) color = "blue";
-          else color = "#1d4877";
+          else color = "#ee3e32";
 
           layer.setStyle({
             color: color,
