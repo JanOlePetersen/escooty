@@ -27,12 +27,12 @@
         </li>
       </ul>
 
-      <button @click="dropdownHeat = !dropdownHeat" class="btn btn-outline-dropdown align-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-heat" style="margin-left: 10vw">""Heatmaps""</button>
+      <button @click="dropdownHeat = !dropdownHeat" class="btn btn-outline-dropdown a%lign-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-heat" style="margin-left: 10vw">""Heatmaps""</button>
       <ul v-show="dropdownHeat" @mouseleave="dropdownHeat = false" class="vue-dropdown-menu list-style-none text-small gap-1 p-2 rounded-3 shadow w-25 z-2 ml-filter-two" id="heat-options">
         <li v-for="(option, index) in filterTwoOptions" :key="index">
           <a 
             class="dropdown-item rounded-2 heat-option" 
-            @mousedown="noneLoaded = false; handleFilter('heat-' + index)" 
+            @mousedown="noneLoaded = false; handleFilter('heat-' + index); SetupHeatmaps(index)" 
             :id="'heat-' + index" 
             @mouseup="filterLayers2((index + 8))" 
             aria-current="page">
@@ -72,8 +72,8 @@
       <l-geo-json v-if="layerVisibility[3].visible" :geojson="elmshornHaltestellen" :options="geojsonOptionsHaltestellen" />
       <l-geo-json v-if="layerVisibility[5].visible" :geojson="elmshornBebauungsFlaeche" :options="geojsonOptionsBebauungsFlaeche" />
       <l-geo-json v-if="layerVisibility[7].visible" :geojson="elmDenkmal" :options="geojsonOptionsDenkmal" />
-      <l-geo-json v-if="layerVisibility[8].visible && tinurf" :geojson="tinurf" :options="geojsonOptionsTin"/>
-      <l-geo-json v-if="layerVisibility[9].visible && tinurf" :geojson="tinurf" :options="geojsonOptionsTin"/>
+      <l-geo-json v-if="layerVisibility[8].visible && tinurfLot" :geojson="tinurfLot" :options="geojsonOptionsTin"/>
+      <l-geo-json v-if="layerVisibility[9].visible && tinurfBus" :geojson="tinurfBus" :options="geojsonOptionsTin"/>
       <l-geo-json v-if="layerVisibility[10].visible && tinurf" :geojson="tinurf" :options="geojsonOptionsTin"/>
 
     </l-map>
@@ -93,6 +93,7 @@ import Haltestellen from "../assets/Haltestellen.geojson";
 import StellplatzZentrum from "../assets/StellplatzZentrum.geojson";
 import BebauungsFlaeche from "../assets/BebauungsFlaeche.geojson";
 import Denkmal from "../assets/Denkmal.geojson";
+import HeatmapTest from "../assets/HeatmapTest.geojson";
 import L from "leaflet";
 
 import * as turf from "@turf/turf";
@@ -141,6 +142,8 @@ export default {
         { id: 10, name: "TinBoth", visible: false }
       ],
       zoom: 13,
+      tinurfBus: null,
+      tinurfLot: null,
       tinurf: null,
       escooterStellplatz: Escooter_Stellplatz,
       escooterParkverbot: EScooter_Parkverbot_EL,
@@ -151,6 +154,7 @@ export default {
       elmshornBebauungsFlaeche: BebauungsFlaeche,
       elmDenkmal: Denkmal,
       escooterStellplatzZentrum: StellplatzZentrum,
+      heatmapTesting: HeatmapTest,
       geojsonOptionsStellplatz: {
       // Färbt die jeweilige genannte EScooterID ein
       color: 'blue',
@@ -189,8 +193,7 @@ export default {
       geojsonOptionsTin: {
         onEachFeature: (feature, layer) => {
 
-          layer.on({
-            mouseover: () => {
+          
               const area = turf.area(feature); // Berechne die Fläche
               let color = "white";
               if (area < 25000) color = "#ee3e32";
@@ -205,8 +208,7 @@ export default {
                 color: color,
                 weight: 1,
                 fillOpacity: 0.5,
-              })
-            }
+              
           })
         }
       },
@@ -357,11 +359,26 @@ export default {
       console.log("Centres: " + centres);
     },
 
-    tinning() {
+    SetupHeatmaps(id){
+      if (id === 0 && !this.tinurfLot) this.tinningLot();
+      if (id === 1 && !this.tinurfBus) this.tinningBus();
+      if (id === 2) this.tinning();
+    },
+
+    tinningLot() {
+      //console.log(turf.tin(this.elmshornHaltestellen));
+      const newTin = turf.tin(this.escooterStellplatzZentrum);
+      this.tinurfLot = JSON.parse(JSON.stringify(newTin));
+    },
+    tinningBus() {
       //console.log(turf.tin(this.elmshornHaltestellen));
       const newTin = turf.tin(this.elmshornHaltestellen);
+      this.tinurfBus = JSON.parse(JSON.stringify(newTin));
+    },
+    tinning() {
+      //console.log(turf.tin(this.elmshornHaltestellen));
+      const newTin = turf.tin(this.escooterStellplatzZentrum);
       this.tinurf = JSON.parse(JSON.stringify(newTin));
-  console.log("TIN GeoJSON:", this.tinurf);
     },
 
     checkIntersections() {
