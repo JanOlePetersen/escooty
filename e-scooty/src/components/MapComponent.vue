@@ -38,7 +38,7 @@
             aria-current="page">
               <img class="s-img me-2" v-if="layerVisibility[(index + 8)].visible" :src="CheckBox" alt="Checkbox" />
               <img class="s-img me-2" v-else :src="CheckBoxOff" alt="Checkbox" />
-            {{ option }}
+              {{ option }}
           </a>
         </li>
       </ul>
@@ -53,7 +53,7 @@
         layer-type="base"
         name="OpenStreetMap"
         minZoom="12"
-      maxZoom="20"
+        maxZoom="18"
       ></l-tile-layer>
       <button v-if="layerVisibility[10].visible" @click="tinning" class="btn btn-primary shadow me-5" style="z-index: 1000; position: relative; top: 10px;">
         Platziere Punkt
