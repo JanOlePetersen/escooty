@@ -75,7 +75,14 @@
       <l-geo-json v-if="layerVisibility[11].visible" :geojson="bufferedgeojson" :options="bufferStyle"/>
       <l-geo-json v-if="layerVisibility[10].visible && addIcons" :geojson="addIcons" :options="bufferStyle"/>
       <l-geo-json :geojson="cityLimits" :options="cityLimitOptions"/>
-
+      <div v-if="layerVisibility[8].visible || layerVisibility[9].visible || layerVisibility[10].visible" class="legend" style="z-index: 1000; position: relative; top: -3vh;">
+        <h4>Abdeckung</h4>
+        <div class="gradient-bar"></div>
+        <div class="legend-labels">
+          <span>hoch</span>
+          <span>niedrig</span>
+        </div>
+  </div>
     </l-map>
   </div>
 </template>
@@ -596,5 +603,35 @@ main {
 
 .custom-icon-bus{
   filter: invert(43%) sepia(5%) saturate(4177%) hue-rotate(140deg) brightness(89%) contrast(86%);
+}
+</style>
+
+<style scoped>
+/* ...existing code... */
+.legend {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+.legend h4 {
+  margin: 0 0 10px;
+}
+.gradient-bar {
+  height: 20px;
+  background: linear-gradient(to right, #1d4877, #00544d, #1b8a5a, #fbb021, #f68838, #ee3e32);
+  border: 1px solid #000;
+  margin-bottom: 10px;
+}
+.legend-labels {
+  display: flex;
+  justify-content: space-between;
+}
+.legend-labels span {
+  font-size: 12px;
 }
 </style>
