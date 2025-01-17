@@ -50,7 +50,7 @@
 
 
   <div class = "format center">
-    <l-map ref="map" v-model:zoom="zoom" :center="[53.75153044444902, 9.664619800111053]" :bounds="bounds" :max-bounds="maxBounds" >
+    <l-map ref="map" v-model:zoom="zoom" :center="[53.75153044444902, 9.664619800111053]" @click="placeNewPoint" :bounds="bounds" :max-bounds="maxBounds" >
       <l-tile-layer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         layer-type="base"
@@ -58,10 +58,10 @@
         minZoom="12"
         maxZoom="18"
       ></l-tile-layer>
-      <button v-if="layerVisibility[10].visible" @click="tinning" class="btn btn-primary shadow me-5" style="z-index: 1000; position: relative; top: 10px;">
+      <button v-if="layerVisibility[10].visible" @click="enablePointPlacement" class="btn btn-primary shadow me-5" style="z-index: 1000; position: relative; top: 10px;">
         Platziere Punkt
       </button>
-      <button v-if="layerVisibility[10].visible" @click="tinning" class="btn btn-primary shadow" style="z-index: 1000; position: relative; top: 10px;">
+      <button v-if="layerVisibility[10].visible" @click="resetPoints" class="btn btn-primary shadow" style="z-index: 1000; position: relative; top: 10px;">
         Zurücksetzen
       </button>
       <l-geo-json v-if="layerVisibility[6].visible" :geojson="elmshornStrassenbeleuchtung" :options="geojsonOptionsStrassenbeleuchtung" />
@@ -156,6 +156,11 @@ export default {
       tinurfBus: null,
       tinurfLot: null,
       tinurf: null,
+      newPoints: {
+        type: "FeatureCollection", // GeoJSON-Typ
+        features: [], // Features übernehmen
+      },
+      pointPlacementEnabled: false,
       bufferedgeojson: null,
       escooterStellplatz: Escooter_Stellplatz,
       escooterParkverbot: EScooter_Parkverbot_EL,
@@ -425,10 +430,37 @@ export default {
     tinning() {
       var combinedBlot = {
         type: "FeatureCollection", // GeoJSON-Typ
-        features: [...this.elmshornHaltestellen.features, ...this.escooterStellplatzZentrum.features], // Features übernehmen
+        features: [...this.elmshornHaltestellen.features, ...this.escooterStellplatzZentrum.features, ...this.newPoints.features], // Features übernehmen
       };
       const newTin = turf.tin(combinedBlot);
       this.tinurf = JSON.parse(JSON.stringify(newTin));
+    },
+    enablePointPlacement(event) {
+      event.stopPropagation();
+      this.pointPlacementEnabled = true;
+    },
+    resetPoints(event) {
+      event.stopPropagation();
+      this.newPoints.features = [];
+      //this.escooterStellplatzZentrum.features = this.escooterStellplatzZentrum.features.filter(feature => !this.newPoints.includes(feature));
+      this.tinning();
+    },
+    placeNewPoint(event) {
+      if (this.pointPlacementEnabled) { // Linksklick
+        const latlng = event.latlng;
+        const newPoint = {
+          type: "Feature",
+          geometry: {
+            type: "Point",
+            coordinates: [latlng.lng, latlng.lat],
+          },
+          properties: {},
+        };
+        this.newPoints.features.push(newPoint);
+        // console.log('Map clicked', this.newPoints);
+        this.tinning();
+        this.pointPlacementEnabled = false;
+      }
     },
     checkIntersections() {
       var i = 0;
