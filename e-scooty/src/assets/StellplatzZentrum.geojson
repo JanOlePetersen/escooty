@@ -1,0 +1,110 @@
+{
+	"type" : "FeatureCollection",
+	"name" : "StellplatzZentrum_JSON",
+	"features" : [
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.696862428340337, 53.746059209330355 ]
+			},
+			"properties" : { "Escoote_ID": 1 }
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.646300903742292, 53.73664637118715 ]
+			},
+			"properties" : { "Escoote_ID": 2 }
+		},
+        {
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.650730530279203, 53.7528008321194 ]
+			},
+			"properties" : { "Escoote_ID": 3 }
+		},
+        {
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.659160647938176, 53.75647511784118 ]
+			},
+			"properties" : { "Escoote_ID": 4 }
+		},
+        {
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.674472810990148, 53.75675768263649 ]
+			},
+			"properties" : { "Escoote_ID": 5 }
+		},
+        {
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.663665801746994, 53.77198171799704 ]
+			},
+			"properties" : { "Escoote_ID": 6 }
+		},
+        {
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.659735535160442, 53.75460975098073 ]
+			},
+			"properties" : { "Escoote_ID": 7 }
+		},
+        {
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.654059873158236, 53.75243579935799 ]
+			},
+			"properties" : { "Escoote_ID": 8 }
+		},
+        {
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.648908845532414, 53.77779632090252 ]
+			},
+			"properties" : { "Escoote_ID": 9 }
+		},
+        {
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.700364998332146, 53.744807319059895 ]
+			},
+			"properties" : { "Escoote_ID": 10 }
+		},
+        {
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.699371567263627, 53.741146836593394 ]
+			},
+			"properties" : { "Escoote_ID": 11 }
+		},
+        {
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.687533700047476, 53.74719386805141 ]
+			},
+			"properties" : { "Escoote_ID": 12 }
+		},
+        {
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ 9.658027271209164, 53.755124277409074 ]
+			},
+			"properties" : { "Escoote_ID": 13 }
+		}
+    ]
+}

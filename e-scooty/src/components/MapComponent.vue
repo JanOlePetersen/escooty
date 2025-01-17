@@ -43,6 +43,12 @@
       <button @click="checkIntersections" class="btn btn-primary shadow" style="margin-left: 10vw">
         Prüfe Überschneidungen
       </button>
+      <button @click="centreOfMass" class="btn btn-primary shadow" style="margin-left: 10vw">
+        Massezentrum bidde?
+      </button>
+      <button @click="tinning" class="btn btn-primary shadow" style="margin-left: 10vw">
+        Masse wird klasse
+      </button>
     </div>
   </div>
 
@@ -64,6 +70,7 @@
       <l-geo-json v-if="layerVisibility[3].visible" :geojson="elmshornHaltestellen" :options="geojsonOptionsHaltestellen" />
       <l-geo-json v-if="layerVisibility[5].visible" :geojson="elmshornBebauungsFlaeche" :options="geojsonOptionsBebauungsFlaeche" />
       <l-geo-json v-if="layerVisibility[7].visible" :geojson="elmDenkmal" :options="geojsonOptionsDenkmal" />
+      <l-geo-json v-if="layerVisibility[8].visible && tinurf" :geojson="tinurf" :options="geojsonOptionsTin"/>
 
     </l-map>
   </div>
@@ -79,6 +86,7 @@ import Velorouten from "../assets/Velorouten.geojson";
 import Escooter_Stellplatz from "../assets/Escooter_Stellplatz.geojson";
 import EScooter_Parkverbot_EL from "../assets/EScooter_Parkverbot_EL.geojson";
 import Haltestellen from "../assets/Haltestellen.geojson";
+import StellplatzZentrum from "../assets/StellplatzZentrum.geojson";
 import BebauungsFlaeche from "../assets/BebauungsFlaeche.geojson";
 import Denkmal from "../assets/Denkmal.geojson";
 import L from "leaflet";
@@ -123,9 +131,11 @@ export default {
         { id: 4, name: "Parkverbot", visible: true },
         { id: 5, name: "Bebauungsfläche", visible: true },
         { id: 6, name: "Straßenbeleuchtung", visible: true },
-        { id: 7, name: "Denkmäler", visible: true }
+        { id: 7, name: "Denkmäler", visible: true },
+        { id: 8, name: "Tinurf", visible: true }
       ],
       zoom: 13,
+      tinurf: null,
       escooterStellplatz: Escooter_Stellplatz,
       escooterParkverbot: EScooter_Parkverbot_EL,
       elmshornHaltestellen: Haltestellen,
@@ -134,6 +144,7 @@ export default {
       elmshornVelorouten: Velorouten,
       elmshornBebauungsFlaeche: BebauungsFlaeche,
       elmDenkmal: Denkmal,
+      escooterStellplatzZentrum: StellplatzZentrum,
       geojsonOptionsStellplatz: {
       // Färbt die jeweilige genannte EScooterID ein
       color: 'blue',
@@ -168,6 +179,32 @@ export default {
           })
         }
       },
+
+      geojsonOptionsTin: {
+        onEachFeature: (feature, layer) => {
+
+          layer.on({
+            mouseover: () => {
+              const area = turf.area(feature); // Berechne die Fläche
+              let color = "white";
+              if (area < 25000) color = "#ee3e32";
+              else if (area < 50000) color = "#f68838";
+              else if (area < 75000) color = "#fbb021";
+              else if (area < 100000) color = "#1b8a5a";
+              else if (area < 150000) color = "	#00544d";
+              //else if (area < 200000) color = "blue";
+              else color = "#1d4877";
+
+              layer.setStyle({
+                color: color,
+                weight: 1,
+                fillOpacity: 0.5,
+              })
+            }
+          })
+        }
+      },
+
       geojsonOptionsParkverbot: {
         color: 'red'
       },
@@ -257,6 +294,23 @@ export default {
       return new Promise(resolve => setTimeout(resolve, ms));
 
     },
+
+    centreOfMass() {
+      var centres = [];
+      const stellplatzFeatures = this.escooterStellplatz.features;
+      stellplatzFeatures.forEach((stellplatzFeature) => {
+        centres.push(turf.centerOfMass(stellplatzFeature).geometry.coordinates);
+      })
+      console.log("Centres: " + centres);
+    },
+
+    tinning() {
+      //console.log(turf.tin(this.elmshornHaltestellen));
+      const newTin = turf.tin(this.elmshornHaltestellen);
+      this.tinurf = JSON.parse(JSON.stringify(newTin));
+  console.log("TIN GeoJSON:", this.tinurf);
+    },
+
     checkIntersections() {
       var i = 0;
       var j = 0;
