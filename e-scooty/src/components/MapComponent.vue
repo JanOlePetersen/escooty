@@ -42,6 +42,9 @@
           </a>
         </li>
       </ul>
+      <button @click="createBuffer" class="btn btn-primary shadow me-5" style="z-index: 1000; position: relative; top: 10px;">
+        Büffel
+      </button>
     </div>
   </div>
 
@@ -72,7 +75,7 @@
       <l-geo-json v-if="layerVisibility[8].visible && tinurfLot" :geojson="tinurfLot" :options="geojsonOptionsTin"/>
       <l-geo-json v-if="layerVisibility[9].visible && tinurfBus" :geojson="tinurfBus" :options="geojsonOptionsTin"/>
       <l-geo-json v-if="layerVisibility[10].visible && tinurf" :geojson="tinurf" :options="geojsonOptionsTin"/>
-      <l-geo-json v-if="layerVisibility[11].visible" :geojson="tinurf" :options="geojsonOptionsTin"/>
+      <l-geo-json v-if="layerVisibility[11].visible" :geojson="bufferedgeojson" :options="bufferStyle"/>
 
     </l-map>
   </div>
@@ -153,6 +156,7 @@ export default {
       tinurfBus: null,
       tinurfLot: null,
       tinurf: null,
+      bufferedgeojson: null,
       escooterStellplatz: Escooter_Stellplatz,
       escooterParkverbot: EScooter_Parkverbot_EL,
       elmshornHaltestellen: Haltestellen,
@@ -394,6 +398,14 @@ export default {
       })
       console.log("Centres: " + centres);
     },
+
+    createBuffer() {
+      const bufferDistance = 25;
+      const buffered = turf.buffer(this.elmshornHaltestellen, bufferDistance, { units: "metres" });
+      this.bufferedgeojson = buffered;
+      console.log("Buffered GeoJSON: ", buffered);
+    },
+
     SetupHeatmaps(id){
       if (id === 0 && !this.tinurfLot) this.tinningLot();
       if (id === 1 && !this.tinurfBus) this.tinningBus();
