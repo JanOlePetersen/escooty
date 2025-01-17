@@ -1,6 +1,6 @@
 <script setup>
   var filterOneOptions = ["Straßennetz", "Veloruten", "Stellplätze", "Bushaltestellen", "Parkverbot", "Bebauungsfläche", "Straßenbeleuchtung", "Denkmäler"];
-  var filterTwoOptions = [2023, 2024, 2025];
+  var filterTwoOptions = ["Stellplätze", "Buslinien", "Nahverkehr"];
 </script>
 
 
@@ -27,15 +27,17 @@
         </li>
       </ul>
 
-      <button @click="dropdownActuality = !dropdownActuality" class="btn btn-outline-dropdown align-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-active" style="margin-left: 10vw">Anderer Filter</button>
-      <ul v-show="dropdownActuality" @mouseleave="dropdownActuality = false" class="vue-dropdown-menu list-style-none text-small gap-1 p-2 rounded-3 shadow w-25 z-2 ml-filter-two" id="active-options">
+      <button @click="dropdownHeat = !dropdownHeat" class="btn btn-outline-dropdown align-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-heat" style="margin-left: 10vw">""Heatmaps""</button>
+      <ul v-show="dropdownHeat" @mouseleave="dropdownHeat = false" class="vue-dropdown-menu list-style-none text-small gap-1 p-2 rounded-3 shadow w-25 z-2 ml-filter-two" id="heat-options">
         <li v-for="(option, index) in filterTwoOptions" :key="index">
           <a 
-            class="dropdown-item rounded-2 active active-option" 
-            @mousedown="noneLoaded = false; handleFilter('active-' + index)" 
-            :id="'active-' + index" 
-            @mouseup="filterLayers2()" 
+            class="dropdown-item rounded-2 heat-option" 
+            @mousedown="noneLoaded = false; handleFilter('heat-' + index)" 
+            :id="'heat-' + index" 
+            @mouseup="filterLayers2((index + 8))" 
             aria-current="page">
+              <img class="s-img me-2" v-if="layerVisibility[(index + 8)].visible" :src="CheckBox" alt="Checkbox" />
+              <img class="s-img me-2" v-else :src="CheckBoxOff" alt="Checkbox" />
             {{ option }}
           </a>
         </li>
@@ -71,6 +73,8 @@
       <l-geo-json v-if="layerVisibility[5].visible" :geojson="elmshornBebauungsFlaeche" :options="geojsonOptionsBebauungsFlaeche" />
       <l-geo-json v-if="layerVisibility[7].visible" :geojson="elmDenkmal" :options="geojsonOptionsDenkmal" />
       <l-geo-json v-if="layerVisibility[8].visible && tinurf" :geojson="tinurf" :options="geojsonOptionsTin"/>
+      <l-geo-json v-if="layerVisibility[9].visible && tinurf" :geojson="tinurf" :options="geojsonOptionsTin"/>
+      <l-geo-json v-if="layerVisibility[10].visible && tinurf" :geojson="tinurf" :options="geojsonOptionsTin"/>
 
     </l-map>
   </div>
@@ -122,7 +126,7 @@ export default {
   data() {
     return {
       dropdownInformation: false,
-      dropdownActuality: false,
+      dropdownHeat: false,
       layerVisibility: [
         { id: 0, name: "Straßennetz", visible: true },
         { id: 1, name: "Veloruten", visible: true },
@@ -132,7 +136,9 @@ export default {
         { id: 5, name: "Bebauungsfläche", visible: true },
         { id: 6, name: "Straßenbeleuchtung", visible: true },
         { id: 7, name: "Denkmäler", visible: true },
-        { id: 8, name: "Tinurf", visible: true }
+        { id: 8, name: "Tinurf", visible: false },
+        { id: 9, name: "TinBus", visible: false },
+        { id: 10, name: "TinBoth", visible: false }
       ],
       zoom: 13,
       tinurf: null,
@@ -278,7 +284,7 @@ export default {
         this.layerVisibility[id].visible = !this.layerVisibility[id].visible;
         return;
       }
-      
+
       var wasNotLoaded = [];
       for (let i = id-1; i >= 0; i--) {
         if (this.layerVisibility[i].visible) this.layerVisibility[i].visible = !this.layerVisibility[i].visible;
@@ -294,6 +300,48 @@ export default {
     },
     filterLayers2(id) {
       this.layerVisibility[id].visible = !this.layerVisibility[id].visible;
+      if (this.layerVisibility[id].visible) {
+        for (var i = 8; i < 11 ; i++) {
+          if (this.layerVisibility[i].visible && i != id) {
+            this.handleFilter('heat-' + (i-8));
+            this.layerVisibility[i].visible = false;
+          }
+        }
+      }
+      if (id === 8 && this.layerVisibility[id].visible) {
+        for (i = 0; i < 8 ; i++) {
+          if (this.layerVisibility[i].visible && i != 2) {
+            this.handleFilter('layer-' + i);
+            this.filterLayers(i);
+          }
+          else if (!this.layerVisibility[i].visible && i == 2) {
+            this.handleFilter('layer-' + i);
+            this.filterLayers(i);
+          }
+        }
+      } else if (id === 9 && this.layerVisibility[id].visible) {
+        for (i = 0; i < 8 ; i++) {
+          if (this.layerVisibility[i].visible && i != 3) {
+            this.handleFilter('layer-' + i);
+            this.filterLayers(i);
+          }
+          else if (!this.layerVisibility[i].visible && i == 3) {
+            this.handleFilter('layer-' + i);
+            this.filterLayers(i);
+          }
+        }
+      } else if (id === 10 && this.layerVisibility[id].visible) {
+        for (i = 0; i < 8 ; i++) {
+          if (this.layerVisibility[i].visible && i != 3 && i != 2) {
+            this.handleFilter('layer-' + i);
+            this.filterLayers(i);
+          }
+          else if (!this.layerVisibility[i].visible && (i == 2 || i == 3)) {
+            this.handleFilter('layer-' + i);
+            this.filterLayers(i);
+          }
+        }
+      }
     },
     delay(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
