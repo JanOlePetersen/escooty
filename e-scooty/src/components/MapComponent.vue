@@ -1,6 +1,6 @@
 <script setup>
-  var filterOneOptions = ["Straßennetz", "Veloruten", "Stellplätze", "Bushaltestellen", "Parkverbot", "Bebauungsfläche", "Straßenbeleuchtung", "Denkmäler"];
-  var filterTwoOptions = ["Stellplätze", "Buslinien", "Nahverkehr", "Überschneidungen", "Gebietsansicht"];
+  var filterOneOptions = ["Straßennetz", "Veloruten", "E-Scooter Abstellplätze", "Bushaltestellen", "E-Scooter Parkverbot", "Bebauungsfläche", "Straßenbeleuchtung", "Denkmäler"];
+  var filterTwoOptions = ["E-Scooter Abstellplätze", "Buslinien", "Nahverkehr", "Überschneidungen", "Gebietsansicht"];
 </script>
 
 
@@ -172,32 +172,34 @@ export default {
       heatmapTesting: HeatmapTest,
       geojsonOptionsStellplatz: {
       // Färbt die jeweilige genannte EScooterID ein
-      color: 'blue',
-      // onEachFeature: (feature, layer) => {
-      //     layer.on({
+        color: 'blue',
+       onEachFeature: (feature, layer) => {
+           layer.on({
       //       click: () => {
       //         layer.bindPopup(`Stellplatz ID: ${feature.properties.Escoote_ID}`).openPopup();
       //         layer.setStyle({
       //         color: 'red'
       //       });
       //       },
-      //       mouseover: () => {
+             mouseover: () => {
       //         layer.setStyle({
       //           weight: 7
       //         })
-      //       },
-      //       mouseout: () => {
+              layer.bindPopup("E-Scooter Abstellplatz").openPopup();
+             },
+             mouseout: () => {
       //         layer.setStyle({
       //           weight: 2
       //         })
-      //       },
+      layer.closePopup();
+             },
       //       popupclose: () => {
       //         layer.setStyle({
       //           color: 'blue'
       //         })
       //       }
-      //     })
-      //   }
+           })
+         }
       },
 
       geojsonOptionsTin: {
@@ -221,7 +223,17 @@ export default {
       },
 
       geojsonOptionsParkverbot: {
-        color: 'red'
+        color: 'red',
+        onEachFeature: (feature, layer) => {
+          layer.on({
+              mouseover: () => {
+                layer.bindPopup("Parkverbot für E-Scooter").openPopup();
+              },
+              mouseout: () => {
+                layer.closePopup();
+              },
+            })
+        }
       },
       geojsonOptionsHaltestellen: {
         pointToLayer: (feature, latlng) => {
