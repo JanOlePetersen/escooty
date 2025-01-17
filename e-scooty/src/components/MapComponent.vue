@@ -76,6 +76,7 @@
       <l-geo-json v-if="layerVisibility[9].visible && tinurfBus" :geojson="tinurfBus" :options="geojsonOptionsTin"/>
       <l-geo-json v-if="layerVisibility[10].visible && tinurf" :geojson="tinurf" :options="geojsonOptionsTin"/>
       <l-geo-json v-if="layerVisibility[11].visible" :geojson="bufferedgeojson" :options="bufferStyle"/>
+      <l-geo-json v-if="layerVisibility[10].visible && addIcons" :geojson="addIcons" :options="bufferStyle"/>
 
     </l-map>
   </div>
@@ -442,12 +443,14 @@ export default {
     resetPoints(event) {
       event.stopPropagation();
       this.newPoints.features = [];
+      this.addIcons = JSON.parse(JSON.stringify(""));
       //this.escooterStellplatzZentrum.features = this.escooterStellplatzZentrum.features.filter(feature => !this.newPoints.includes(feature));
       this.tinning();
     },
     placeNewPoint(event) {
       if (this.pointPlacementEnabled) { // Linksklick
         const latlng = event.latlng;
+        
         const newPoint = {
           type: "Feature",
           geometry: {
@@ -456,8 +459,18 @@ export default {
           },
           properties: {},
         };
+
+      // Add the marker to the tinurf layer
+
         this.newPoints.features.push(newPoint);
-        // console.log('Map clicked', this.newPoints);
+
+        var combinedIcons = {
+          type: "FeatureCollection", // GeoJSON-Typ
+          features: [...this.newPoints.features], // Features übernehmen
+        };
+        const newTin = turf.combine(combinedIcons);
+        this.addIcons = JSON.parse(JSON.stringify(newTin));
+
         this.tinning();
         this.pointPlacementEnabled = false;
       }
