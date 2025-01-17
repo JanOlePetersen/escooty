@@ -42,9 +42,6 @@
           </a>
         </li>
       </ul>
-      <button @click="createBuffer" class="btn btn-primary shadow me-5" style="z-index: 1000; position: relative; top: 10px;">
-        Büffel
-      </button>
     </div>
   </div>
 
@@ -511,6 +508,9 @@ export default {
       }
     },
   },
+  mounted() {
+    this.createBuffer();
+  }
 };
 </script>
 
