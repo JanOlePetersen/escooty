@@ -1,6 +1,11 @@
 <script setup>
+// each filter option
   var filterOneOptions = ["Straßennetz", "Veloruten", "E-Scooter Abstellplätze", "Bushaltestellen", "E-Scooter Parkverbot", "Bebauungsfläche", "Straßenbeleuchtung", "Denkmäler"];
   var filterTwoOptions = ["E-Scooter Abstellplätze", "Buslinien", "Nahverkehr", "Überschneidungen", "Gebietsansicht"];
+
+// tooltip info for each filter and option
+  var filterOneTooltip = ["Straßen innerghalb der Stadtgrenzen", "Fahrradruten zusätzlich zum Straßennetz", "E-Scooter Abstellplätze für die Betreiber", "Bushaltestellen der verschiedenen Linien", "Parkverbot für E-Scooterin diesen Bereichen", "Wohng-, Industrie-, Gewerbegebiete", "Orte der Straßenlaternen", "Kulturdenkmäler"];
+  var filterTwoTooltip = ["Bereichsabdeckunng der E-Scooter Abstellplätze", "Bereichsabdeckunng der Buslinien", "Bereichsabdeckunng des Nahverkehrs", "Überschneidungen von Abstellplätzen der E-Scooter mit deren Verbotszonen", "In welchen Gebieten sind die Abstellplätze"];
 </script>
 
 
@@ -17,7 +22,7 @@
       <ul v-show="dropdownInformation" @mouseleave="dropdownInformation = false" class="vue-dropdown-menu list-style-none text-small gap-1 p-2 rounded-3 shadow w-25 z-2 ml-filter-one" id="layer-options">
         <li v-for="(option, index) in filterOneOptions" :key="index">
           <a 
-            class="dropdown-item rounded-2 layer-option" 
+            class="dropdown-item rounded-2 layer-option tip" 
             @mousedown="noneLoaded = false; handleFilter('layer-' + index)" 
             :id="'layer-' + index" 
             @mouseup="filterLayers(index)" 
@@ -25,15 +30,16 @@
               <img class="s-img me-2" v-if="layerVisibility[index].visible" :src="CheckBox" alt="Checkbox" />
               <img class="s-img me-2" v-else :src="CheckBoxOff" alt="Checkbox" />
               {{ option }}
+              <span class="tooltiptext"> {{ filterOneTooltip[index] }}</span>
           </a>
         </li>
       </ul>
 
-      <button @click="dropdownHeat = !dropdownHeat" class="btn btn-outline-dropdown a%lign-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-heat" style="margin-left: 10vw">Planungshilfen</button>
+      <button @click="dropdownHeat = !dropdownHeat" class="btn btn-outline-dropdown align-items-center mb-2 mb-lg-0 text-decoration-none dropdown-toggle button-size shadow w-25" data-bs-toggle="dropdown" aria-expanded="false" id="filter-heat" style="margin-left: 10vw">Planungshilfen</button>
       <ul v-show="dropdownHeat" @mouseleave="dropdownHeat = false" class="vue-dropdown-menu list-style-none text-small gap-1 p-2 rounded-3 shadow w-25 z-2 ml-filter-two" id="heat-options">
         <li v-for="(option, index) in filterTwoOptions" :key="index">
           <a 
-            class="dropdown-item rounded-2 heat-option" 
+            class="dropdown-item rounded-2 heat-option tip" 
             @mousedown="noneLoaded = false; handleFilter('heat-' + index); SetupHeatmaps(index)" 
             :id="'heat-' + index" 
             @mouseup="filterLayers2((index + 8))" 
@@ -41,6 +47,7 @@
               <img class="s-img me-2" v-if="layerVisibility[(index + 8)].visible" :src="CheckBox" alt="Checkbox" />
               <img class="s-img me-2" v-else :src="CheckBoxOff" alt="Checkbox" />
               {{ option }}
+              <span class="tooltiptext"> {{ filterTwoTooltip[index] }}</span>
           </a>
         </li>
       </ul>
@@ -56,22 +63,22 @@
         minZoom="12"
         maxZoom="18"
       ></l-tile-layer>
-      <button v-if="layerVisibility[10].visible" @click="enablePointPlacement" class="btn btn-primary shadow me-5" style="z-index: 1000; position: relative; top: 10px;">
+      <button v-if="layerVisibility[10].visible" @click="enablePointPlacement" class="btn btn-primary shadow me-5 buttons">
         Platziere Punkt
       </button>
-      <button v-if="layerVisibility[10].visible" @click="resetPoints" :disabled="!newPoints || newPoints.features.length === 0" class="btn btn-primary shadow" style="z-index: 1000; position: relative; top: 10px;">
+      <button v-if="layerVisibility[10].visible" @click="resetPoints" :disabled="!newPoints || newPoints.features.length === 0" class="btn btn-primary shadow buttons">
         Zurücksetzen
       </button>
-      <button v-if="layerVisibility[8].visible" @click="enablePointPlacementLot" class="btn btn-primary shadow me-5" style="z-index: 1000; position: relative; top: 10px;">
+      <button v-if="layerVisibility[8].visible" @click="enablePointPlacementLot" class="btn btn-primary shadow me-5 buttons">
         Platziere Punkt
       </button>
-      <button v-if="layerVisibility[8].visible" @click="resetPointsLot" :disabled="!newPointsLot || newPointsLot.features.length === 0" class="btn btn-primary shadow" style="z-index: 1000; position: relative; top: 10px;">
+      <button v-if="layerVisibility[8].visible" @click="resetPointsLot" :disabled="!newPointsLot || newPointsLot.features.length === 0" class="btn btn-primary shadow buttons">
         Zurücksetzen
       </button>
-      <button v-if="layerVisibility[9].visible" @click="enablePointPlacementBus" class="btn btn-primary shadow me-5" style="z-index: 1000; position: relative; top: 10px;">
+      <button v-if="layerVisibility[9].visible" @click="enablePointPlacementBus" class="btn btn-primary shadow me-5 buttons">
         Platziere Punkt
       </button>
-      <button v-if="layerVisibility[9].visible" @click="resetPointsBus" :disabled="!newPointsBus || newPointsBus.features.length === 0" class="btn btn-primary shadow" style="z-index: 1000; position: relative; top: 10px;">
+      <button v-if="layerVisibility[9].visible" @click="resetPointsBus" :disabled="!newPointsBus || newPointsBus.features.length === 0" class="btn btn-primary shadow buttons">
         Zurücksetzen
       </button>
       <l-geo-json :geojson="cityLimits" :options="cityLimitOptions"/>
@@ -214,29 +221,12 @@ export default {
         color: 'blue',
        onEachFeature: (feature, layer) => {
            layer.on({
-      //       click: () => {
-      //         layer.bindPopup(`Stellplatz ID: ${feature.properties.Escoote_ID}`).openPopup();
-      //         layer.setStyle({
-      //         color: 'red'
-      //       });
-      //       },
              mouseover: () => {
-      //         layer.setStyle({
-      //           weight: 7
-      //         })
               layer.bindPopup("E-Scooter Abstellplatz").openPopup();
              },
              mouseout: () => {
-      //         layer.setStyle({
-      //           weight: 2
-      //         })
-      layer.closePopup();
+              layer.closePopup();
              },
-      //       popupclose: () => {
-      //         layer.setStyle({
-      //           color: 'blue'
-      //         })
-      //       }
            })
          }
       },
@@ -392,6 +382,7 @@ export default {
   },
   methods: {
     callOnce () {
+      // only color active filters on mounted
       if (this.once) {
         document.getElementById('layer-' + 2).classList.toggle('active');
         document.getElementById('layer-' + 3).classList.toggle('active');
@@ -399,6 +390,7 @@ export default {
         this.once = false;
       }
     },
+    // switches active filter (options) elements for all filters
     handleFilter(itemId) {
       const clickedElement = document.getElementById(itemId);
 
@@ -409,6 +401,7 @@ export default {
       }
       clickedElement.classList.toggle('active');
     },
+    // activate / deactivate chosen layers; and keep set order of layeers
     async filterLayers(id) {
       if (this.layerVisibility[id].visible) {
         this.layerVisibility[id].visible = !this.layerVisibility[id].visible;
@@ -416,18 +409,22 @@ export default {
       }
 
       var wasNotLoaded = [];
+      // deactivate layers on top
       for (let i = id-1; i >= 0; i--) {
         if (this.layerVisibility[i].visible) this.layerVisibility[i].visible = !this.layerVisibility[i].visible;
         else wasNotLoaded.push(this.layerVisibility[i].id);
       }
+      // toggle chosen filter option
       this.layerVisibility[id].visible = !this.layerVisibility[id].visible;
+      // reactivate layers on top
       for (let i = id-1; i >= 0; i--) {
         if (!wasNotLoaded.includes(i)) {
           this.layerVisibility[i].visible = !this.layerVisibility[i].visible;
-          await this.delay(0.1);
+          await this.delay(0.1); //wait till layer is rendered
         }
       }
     },
+    // show planning aids with corresponding recommended layers
     filterLayers2(id) {
       this.layerVisibility[id].visible = !this.layerVisibility[id].visible;
       if (this.layerVisibility[id].visible) {
@@ -495,10 +492,12 @@ export default {
         }
       }
     },
+    // wait for miliseconds (ms)
     delay(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
 
     },
+    // calculate center of object and place point there
     centreOfMass() {
       var centres = [];
       const stellplatzFeatures = this.escooterStellplatz.features;
@@ -514,12 +513,13 @@ export default {
       this.bufferedgeojson = buffered;
       console.log("Buffered GeoJSON: ", buffered);
     },
-
+    // activate heatmap corresponding to planning aid chosen
     SetupHeatmaps(id){
       if (id === 0) this.tinningLot();
       if (id === 1) this.tinningBus();
       if (id === 2) this.tinning();
     },
+    // create areamap for escooter parking spaces (also update on new spot placed)
     tinningLot() {
       var combinedBlot = {
         type: "FeatureCollection", // GeoJSON-Typ
@@ -528,6 +528,7 @@ export default {
       const newTin = turf.tin(combinedBlot);
       this.tinurfLot = JSON.parse(JSON.stringify(newTin));
     },
+    // create areamap for bus stops (also update on new spot placed)
     tinningBus() {
       var combinedBlot = {
         type: "FeatureCollection", // GeoJSON-Typ
@@ -536,6 +537,7 @@ export default {
       const newTin = turf.tin(combinedBlot);
       this.tinurfBus = JSON.parse(JSON.stringify(newTin));
     },
+    // create areamap for escooter parking spaces ahnd busa stops combined (also update on new spot placed)
     tinning() {
       var combinedBlot = {
         type: "FeatureCollection", // GeoJSON-Typ
@@ -544,6 +546,7 @@ export default {
       const newTin = turf.tin(combinedBlot);
       this.tinurf = JSON.parse(JSON.stringify(newTin));
     },
+    // decide which point place method is colled depending on active layer
     checkPlace(event) {
       const latlng = event.latlng;
       if (this.layerVisibility[10].visible) {
@@ -554,16 +557,18 @@ export default {
         this.placeNewPointBus(latlng);
       }
     },
+    // enable placement for new point (layer 10)
     enablePointPlacement(event) {
       event.stopPropagation();
       this.pointPlacementEnabled = true;
     },
+    // remove (user) added points (layer 10)
     resetPoints(event) {
       event.stopPropagation();
       this.newPoints.features = [];
       this.addIcons = JSON.parse(JSON.stringify(""));
       //this.escooterStellplatzZentrum.features = this.escooterStellplatzZentrum.features.filter(feature => !this.newPoints.includes(feature));
-      this.tinning();
+      this.tinning(); //create new map
     },
     placeNewPoint(event) {
       if (this.pointPlacementEnabled) { // Linksklick
@@ -588,21 +593,23 @@ export default {
           const newTin = turf.combine(combinedIcons);
           this.addIcons = JSON.parse(JSON.stringify(newTin));
 
-          this.tinning();
+          this.tinning(); //create new map
           this.pointPlacementEnabled = false;
         }
       }
     },
+    // enable placement for new point (layer 8)
     enablePointPlacementLot(event) {
       event.stopPropagation();
       this.pointPlacementEnabledLot = true;
     },
+    // remove (user) added points (layer 8)
     resetPointsLot(event) {
       event.stopPropagation();
       this.newPointsLot.features = [];
       this.addIconsLot = JSON.parse(JSON.stringify(""));
       //this.escooterStellplatzZentrum.features = this.escooterStellplatzZentrum.features.filter(feature => !this.newPoints.includes(feature));
-      this.tinningLot();
+      this.tinningLot(); //create new map
     },
     placeNewPointLot(event) {
 
@@ -630,21 +637,23 @@ export default {
           const newTin = turf.combine(combinedIcons);
           this.addIconsLot = JSON.parse(JSON.stringify(newTin));
 
-          this.tinningLot();
+          this.tinningLot(); //create new map
           this.pointPlacementEnabledLot = false;
         }
       }
     },
+    // enable placement for new point (layer 9)
     enablePointPlacementBus(event) {
       event.stopPropagation();
       this.pointPlacementEnabledBus = true;
     },
+    // remove (user) added points (layer 9)
     resetPointsBus(event) {
       event.stopPropagation();
       this.newPointsBus.features = [];
       this.addIconsBus = JSON.parse(JSON.stringify(""));
       //this.escooterStellplatzZentrum.features = this.escooterStellplatzZentrum.features.filter(feature => !this.newPoints.includes(feature));
-      this.tinningBus();
+      this.tinningBus(); //create new map
     },
     placeNewPointBus(event) {
       if (this.pointPlacementEnabledBus) { // Linksklick
@@ -670,7 +679,7 @@ export default {
           const newTin = turf.combine(combinedIcons);
           this.addIconsBus = JSON.parse(JSON.stringify(newTin));
 
-          this.tinningBus();
+          this.tinningBus(); //create new map
           this.pointPlacementEnabledBus = false;
         }
       }
@@ -743,35 +752,5 @@ main {
 
 .custom-icon-bus{
   filter: invert(43%) sepia(5%) saturate(4177%) hue-rotate(140deg) brightness(89%) contrast(86%);
-}
-</style>
-
-<style scoped>
-/* ...existing code... */
-.legend {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  background: white;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  width: 300px;
-}
-.legend h4 {
-  margin: 0 0 10px;
-}
-.gradient-bar {
-  height: 20px;
-  background: linear-gradient(to right, #1d4877, #00544d, #1b8a5a, #fbb021, #f68838, #ee3e32);
-  border: 1px solid #000;
-  margin-bottom: 10px;
-}
-.legend-labels {
-  display: flex;
-  justify-content: space-between;
-}
-.legend-labels span {
-  font-size: 12px;
 }
 </style>

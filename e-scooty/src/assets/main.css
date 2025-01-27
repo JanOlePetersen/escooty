@@ -175,3 +175,68 @@ img {
     width: 25vw;
     min-width: 165px;
 }
+
+/* ...existing code... */
+.legend {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+.legend h4 {
+  margin: 0 0 10px;
+}
+.gradient-bar {
+  height: 20px;
+  background: linear-gradient(to right, #1d4877, #00544d, #1b8a5a, #fbb021, #f68838, #ee3e32);
+  border: 1px solid #000;
+  margin-bottom: 10px;
+}
+.legend-labels {
+  display: flex;
+  justify-content: space-between;
+}
+.legend-labels span {
+  font-size: 12px;
+}
+
+/* Tooltip container */
+.tip {
+  z-index: 1001;
+}
+
+/* Tooltip text */
+.tip .tooltiptext {
+  visibility: hidden;
+  width: 20vw;
+  left: 22vw;
+  overflow-wrap: break-word;
+  text-wrap: wrap;
+  height: 9vh;
+  background-color: whitesmoke;
+  color: black;
+  text-align: left;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #000;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1002;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.buttons {
+    z-index: 1000;
+    position: relative;
+    top: 10px;
+    width: 15vw;
+}
