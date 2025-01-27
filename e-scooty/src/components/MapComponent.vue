@@ -81,7 +81,7 @@
       <button v-if="layerVisibility[9].visible" @click="resetPointsBus" :disabled="!newPointsBus || newPointsBus.features.length === 0" class="btn btn-primary shadow buttons">
         Zurücksetzen
       </button>
-      <l-geo-json :geojson="cityLimits" :options="cityLimitOptions"/>
+      <l-geo-json :geojson="cityLimits" :options="cityLimitOptions"/> <!-- Einbinden der verschiedenen Layers/geoJSONs -->
       <l-geo-json v-if="layerVisibility[6].visible" :geojson="elmshornStrassenbeleuchtung" :options="geojsonOptionsStrassenbeleuchtung" />
       <l-geo-json v-if="layerVisibility[0].visible" :geojson="elmshornStraßennetz" :options="geojsonOptionsStraßennetz" />
       <l-geo-json v-if="layerVisibility[1].visible" :geojson="elmshornVelorouten" :options="geojsonOptionsVelorouten" />
@@ -175,7 +175,7 @@ export default {
         { id: 11, name: "reUnion", visible: false },
         { id: 12, name: "gebiete", visible: false }
       ],
-      zoom: 13,
+      zoom: 13, // Zoomstufe zu beginn
       bounds: [
         [53.7, 9.8],
         [53.8, 9.5]
@@ -183,7 +183,7 @@ export default {
       maxBounds: [
         [53.7, 9.8],
         [53.8, 9.5]
-      ],
+      ], // Begrenzung des Kartenausschnitts
       tinurfBus: null,
       tinurfLot: null,
       tinurf: null,
@@ -251,7 +251,7 @@ export default {
         }
       },
 
-      geojsonOptionsParkverbot: {
+      geojsonOptionsParkverbot: { //Färbt Parkverbotszonen Rot ein und fügt ein Hover-Popup hinzu
         color: 'red',
         onEachFeature: (feature, layer) => {
           layer.on({
@@ -264,7 +264,7 @@ export default {
             })
         }
       },
-      geojsonOptionsHaltestellen: {
+      geojsonOptionsHaltestellen: { //Weist Bushaltestellen Icons zu und fügt ein Hover-Popup hinzu, das den Namen der Haltestelle anzeigt
         pointToLayer: (feature, latlng) => {
           return L.marker(latlng, { icon: busStopIcon });
         },
@@ -296,7 +296,7 @@ export default {
         opacity: 0,
         fillOpacity: 0.1
       },
-      cityLimitMaskOptions: {
+      cityLimitMaskOptions: { //Färbt Bereich außerhalb der Stadtgrenzen Schwarz ein
         color: 'black',
         opacity: 0,
         fillOpacity: 0.6
@@ -307,7 +307,7 @@ export default {
       geojsonOptionsVelorouten: {
         "color": "blue"
       },
-      geojsonOptionsBebauungsFlaeche: {
+      geojsonOptionsBebauungsFlaeche: { //Färbt die verschiedenen Bebauungsflächen entsprechend ihrer Nutzung ein und fügt erklärende Hover-Popups hinzu
         onEachFeature: (feature, layer) => {
           if (feature.properties && feature.properties.allgArtDerBaulNutzung === 1000) {
             layer.setStyle({
@@ -363,7 +363,7 @@ export default {
           }
         }
       },
-      geojsonOptionsDenkmal: {
+      geojsonOptionsDenkmal: { //Weist Denkmälern Icons zu und fügt ein Hover-Popup hinzu, das den Namen oder die Art des Denkmals anzeigt
         pointToLayer: (feature, latlng) => {
           return L.marker(latlng, { icon: denkmalIcon });
         },
