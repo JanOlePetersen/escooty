@@ -1,11 +1,11 @@
 <script setup>
 // each filter option
-  var filterOneOptions = ["Straßennetz", "Veloruten", "E-Scooter Abstellplätze", "Bushaltestellen", "E-Scooter Parkverbot", "Bebauungsfläche", "Straßenbeleuchtung", "Denkmäler"];
+  var filterOneOptions = ["Straßennetz", "Velorouten", "E-Scooter Abstellplätze", "Bushaltestellen", "E-Scooter Parkverbot", "Bebauungsfläche", "Straßenbeleuchtung", "Denkmäler"];
   var filterTwoOptions = ["E-Scooter Abstellplätze", "Buslinien", "Nahverkehr", "Überschneidungen", "Gebietsansicht"];
 
 // tooltip info for each filter and option
-  var filterOneTooltip = ["Straßen innerghalb der Stadtgrenzen", "Fahrradruten zusätzlich zum Straßennetz", "E-Scooter Abstellplätze für die Betreiber", "Bushaltestellen der verschiedenen Linien", "Parkverbot für E-Scooterin diesen Bereichen", "Wohng-, Industrie-, Gewerbegebiete", "Orte der Straßenlaternen", "Kulturdenkmäler"];
-  var filterTwoTooltip = ["Bereichsabdeckunng der E-Scooter Abstellplätze", "Bereichsabdeckunng der Buslinien", "Bereichsabdeckunng des Nahverkehrs", "Überschneidungen von Abstellplätzen der E-Scooter mit deren Verbotszonen", "In welchen Gebieten sind die Abstellplätze"];
+  var filterOneTooltip = ["Straßen innerhalb der Stadtgrenzen", "Fahrradrouten zusätzlich zum Straßennetz", "E-Scooter Abstellplätze für die Betreiber", "Bushaltestellen der verschiedenen Linien", "Parkverbot für E-Scooter in diesen Bereichen", "Wohn-, Industrie-, Gewerbegebiete", "Orte der Straßenlaternen", "Kulturdenkmäler"];
+  var filterTwoTooltip = ["Bereichsabdeckung der E-Scooter Abstellplätze", "Bereichsabdeckung der Buslinien", "Bereichsabdeckung des Nahverkehrs", "Überschneidungen von Abstellplätzen der E-Scooter mit den Parkverbotszonen", "In welchen Gebieten sind die Abstellplätze"];
 </script>
 
 
@@ -162,7 +162,7 @@ export default {
       dropdownHeat: false,
       layerVisibility: [
         { id: 0, name: "Straßennetz", visible: false },
-        { id: 1, name: "Veloruten", visible: false },
+        { id: 1, name: "Velorouten", visible: false },
         { id: 2, name: "Stellplätze", visible: true },
         { id: 3, name: "Bushaltestellen", visible: true },
         { id: 4, name: "Parkverbot", visible: true },
