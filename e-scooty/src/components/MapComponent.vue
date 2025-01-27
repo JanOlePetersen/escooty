@@ -5,7 +5,7 @@
 
 // tooltip info for each filter and option
   var filterOneTooltip = ["Straßen innerhalb der Stadtgrenzen", "Fahrradrouten zusätzlich zum Straßennetz", "E-Scooter Abstellplätze für die Betreiber", "Bushaltestellen der verschiedenen Linien", "Parkverbot für E-Scooter in diesen Bereichen", "Wohn-, Industrie- & Gewerbegebiete", "Orte der Straßenlaternen", "Kulturdenkmäler"];
-  var filterTwoTooltip = ["Bereichsabdeckung der E-Scooter Abstellplätze", "Bereichsabdeckung der Buslinien", "Bereichsabdeckung des Buslinien und E-Scooter Abstellplätzen", "Überschneidungen von Abstellplätzen der E-Scooter mit den Parkverbotszonen", "In welchen Wohn-, Industrie- und Gewerbegebieten befinden sich die Abstellplätze"];
+  var filterTwoTooltip = ["Bereichsabdeckung der E-Scooter Abstellplätze", "Bereichsabdeckung der Buslinien", "Bereichsabdeckung der Buslinien und E-Scooter Abstellplätzen", "Überschneidungen von Abstellplätzen der E-Scooter mit den Parkverbotszonen", "In welchen Wohn-, Industrie- und Gewerbegebieten befinden sich die Abstellplätze"];
 </script>
 
 
