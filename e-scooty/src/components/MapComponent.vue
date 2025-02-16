@@ -685,6 +685,7 @@ export default {
       }
     },
 
+    //unused function to calculate the amount of intersections between escooterStellplatz and escooterParkverbot
     checkIntersections() {
       var i = 0;
       var j = 0;
